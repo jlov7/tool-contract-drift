@@ -1,0 +1,105 @@
+name: Public artifact CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  public-artifact:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11", "3.12"]
+    steps:
+      - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
+        with:
+          python-version: ${{ matrix.python-version }}
+      - uses: astral-sh/setup-uv@d0cc045d04ccac9d8b7881df0226f9e82c39688e # v6.8.0
+        with:
+          version: "0.11.28"
+      - name: Require PDF text audit tool
+        run: command -v pdftotext
+      - name: Verify exact public file set and corpus
+        run: PYTHONDONTWRITEBYTECODE=1 python scripts/verify_public_export.py .
+      - name: Audit public tracked tree and reachable history
+        run: PYTHONDONTWRITEBYTECODE=1 python scripts/verify_public_history.py .
+      - name: Check lockfile
+        run: uv lock --check
+      - name: Run public distribution tests
+        run: PYTHONDONTWRITEBYTECODE=1 python -m unittest discover -s public_tests -v
+      - name: Build wheel and source distribution
+        run: uv build
+      - name: Verify wheel and source-distribution bytes
+        run: PYTHONDONTWRITEBYTECODE=1 python scripts/verify_built_distributions.py --dist dist
+      - name: Install and test wheel
+        run: |
+          uv venv /tmp/tcd-wheel
+          uv pip install --python /tmp/tcd-wheel/bin/python dist/*.whl
+          /tmp/tcd-wheel/bin/tool-descriptor-review \
+            --before examples/before_descriptor.json \
+            --after examples/after_descriptor.json --format json \
+            --output /tmp/wheel-review.json
+          /tmp/tcd-wheel/bin/python -c 'import json; d=json.load(open("/tmp/wheel-review.json")); assert d["status"] == "changed" and d["change_count"] > 0 and d["policy_findings"]'
+          /tmp/tcd-wheel/bin/tool-contract-drift lint \
+            --corpus public-reproduction-53 \
+            --format json \
+            --output /tmp/wheel-public.json
+          /tmp/tcd-wheel/bin/tool-contract-drift configured-baselines \
+            --corpus public-reproduction-53 \
+            --output /tmp/wheel-carriers.md \
+            --json /tmp/wheel-carriers.json
+          private_id=$(/tmp/tcd-wheel/bin/python -c 'from tool_contract_drift.corpora import PRIVATE_CANONICAL_CORPUS_ID; print(PRIVATE_CANONICAL_CORPUS_ID)')
+          if /tmp/tcd-wheel/bin/tool-contract-drift lint \
+            --corpus "$private_id" \
+            --format json; then
+            echo "Private corpus unexpectedly available in the wheel" >&2
+            exit 1
+          fi
+          /tmp/tcd-wheel/bin/python -c 'import json; d=json.load(open("/tmp/wheel-public.json")); assert d["corpus"]["id"] == "public-reproduction-53" and d["corpus"]["fixture_count"] == 53 and d["summary"]["total_findings"] == 25'
+          /tmp/tcd-wheel/bin/python -c 'import json; s=json.load(open("/tmp/wheel-carriers.json"))["summary"]; assert s["fixture_count"] == s["configured_spectral_exact_matches"] == s["oasdiff_mapper_exact_matches"] == 53'
+      - name: Install and test source distribution
+        run: |
+          uv venv /tmp/tcd-sdist
+          uv pip install --python /tmp/tcd-sdist/bin/python dist/*.tar.gz
+          /tmp/tcd-sdist/bin/tool-descriptor-review \
+            --before examples/before_descriptor.json \
+            --after examples/after_descriptor.json --format json \
+            --output /tmp/sdist-review.json
+          /tmp/tcd-sdist/bin/python -c 'import json; d=json.load(open("/tmp/sdist-review.json")); assert d["status"] == "changed" and d["change_count"] > 0 and d["policy_findings"]'
+          /tmp/tcd-sdist/bin/tool-contract-drift lint \
+            --corpus public-reproduction-53 \
+            --format json \
+            --output /tmp/sdist-public.json
+          /tmp/tcd-sdist/bin/tool-contract-drift configured-baselines \
+            --corpus public-reproduction-53 \
+            --output /tmp/sdist-carriers.md \
+            --json /tmp/sdist-carriers.json
+          private_id=$(/tmp/tcd-sdist/bin/python -c 'from tool_contract_drift.corpora import PRIVATE_CANONICAL_CORPUS_ID; print(PRIVATE_CANONICAL_CORPUS_ID)')
+          if /tmp/tcd-sdist/bin/tool-contract-drift lint \
+            --corpus "$private_id" \
+            --format json; then
+            echo "Private corpus unexpectedly available in the source distribution" >&2
+            exit 1
+          fi
+          /tmp/tcd-sdist/bin/python -c 'import json; d=json.load(open("/tmp/sdist-public.json")); assert d["corpus"]["id"] == "public-reproduction-53" and d["corpus"]["fixture_count"] == 53 and d["summary"]["total_findings"] == 25'
+          /tmp/tcd-sdist/bin/python -c 'import json; s=json.load(open("/tmp/sdist-carriers.json"))["summary"]; assert s["fixture_count"] == s["configured_spectral_exact_matches"] == s["oasdiff_mapper_exact_matches"] == 53'
+      - name: Exercise composite Action public corpus
+        uses: ./
+        with:
+          builtin-corpus: "true"
+          format: sarif
+          output: /tmp/action-public.sarif
+          fail-on: none
+      - name: Validate Action output boundary
+        run: |
+          python -c 'import json; d=json.load(open("/tmp/action-public.sarif")); r=d["runs"][0]; assert r["tool"]["driver"]["properties"]["corpus_id"] == "public-reproduction-53" and len(r["results"]) == 25'

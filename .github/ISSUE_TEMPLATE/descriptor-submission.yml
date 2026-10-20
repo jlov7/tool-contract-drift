@@ -1,0 +1,67 @@
+name: Descriptor-pair submission
+description: Propose a real or synthetic before/after descriptor pair for a future, non-held-out corpus revision.
+title: "[Descriptor pair] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        A submitted pair becomes visible to maintainers and cannot remain held out for the same release. Prefer newly authored synthetic pairs. Do not include third-party descriptor bytes without exact authority, license, or record-specific permission evidence; metadata-only or hash-only submissions are welcome.
+  - type: dropdown
+    id: source_type
+    attributes:
+      label: Source type
+      options:
+        - Synthetic
+        - First-party and owned by submitter
+        - Third-party bytes with exact license or permission evidence
+        - Metadata or hashes only; bytes not offered
+        - Unclear; provenance review requested
+    validations:
+      required: true
+  - type: input
+    id: source_url
+    attributes:
+      label: Public source URL
+      description: Optional for synthetic cases; otherwise link the exact commit or stable source record.
+  - type: input
+    id: license
+    attributes:
+      label: Authority, license, permission, or metadata-only basis
+      description: State who authored or controls the bytes and give exact source/license/permission evidence, or explain why only metadata and hashes are supplied. Repository visibility and notices are not permission findings.
+    validations:
+      required: true
+  - type: textarea
+    id: before
+    attributes:
+      label: Before descriptor
+      description: Omit this field when submitting metadata or hashes only.
+      render: json
+  - type: textarea
+    id: after
+    attributes:
+      label: After descriptor
+      description: Omit this field when submitting metadata or hashes only.
+      render: json
+  - type: textarea
+    id: decision
+    attributes:
+      label: Reapproval question
+      description: Explain what changed and why a reviewer might renew, deny, or leave approval unchanged.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected labels or manual-review outcome
+      description: Treat this as a submitter hypothesis, not a gold label.
+  - type: checkboxes
+    id: boundaries
+    attributes:
+      label: Submission boundaries
+      options:
+        - label: I removed secrets, personal data, and employer/client-confidential information.
+          required: true
+        - label: I documented my authority, license, or record-specific permission for any descriptor bytes supplied; otherwise I included metadata and hashes only.
+          required: true
+        - label: I understand this case will not be scored as unseen held-out evidence after maintainers inspect it.
+          required: true

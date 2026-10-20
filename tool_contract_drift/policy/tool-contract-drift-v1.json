@@ -1,0 +1,126 @@
+{
+  "policy_version": "tool-contract-drift-v1",
+  "status": "pre-review policy draft",
+  "scope": [
+    "Evaluate static before/after MCP/App-style tool descriptors.",
+    "Emit review/reapproval labels for descriptor drift.",
+    "Do not execute tools, inspect server code, verify authorization, or decide runtime safety."
+  ],
+  "descriptor_fields": [
+    "name",
+    "description",
+    "input_schema",
+    "output_schema",
+    "output_template",
+    "annotations",
+    "auth.scopes",
+    "security_schemes",
+    "execution",
+    "icons",
+    "_meta"
+  ],
+  "output_contract": [
+    "fixture_id",
+    "tool_name",
+    "risk",
+    "severity",
+    "reason",
+    "evidence",
+    "generic_baseline_labels",
+    "reapproval_required"
+  ],
+  "generic_baseline_labels": [
+    "tool_added",
+    "tool_removed",
+    "description_changed",
+    "input_schema_changed",
+    "output_schema_changed",
+    "output_template_changed",
+    "annotations_changed",
+    "annotation_explicit_restatement",
+    "annotation_safer_explicit",
+    "annotation_actual_escalation",
+    "annotation_mixed_semantics",
+    "auth_changed",
+    "security_schemes_changed",
+    "execution_changed",
+    "icons_changed",
+    "metadata_changed",
+    "extensions_changed"
+  ],
+  "labels": [
+    {
+      "id": "readonly_to_destructive",
+      "default_severity": "high",
+      "trigger_intent": "A previously read-only tool moves toward write or destructive behavior through annotations, risky scopes, or side-effect text.",
+      "review_question": "Does prior approval still apply if the tool can now mutate state or cause side effects?"
+    },
+    {
+      "id": "destructive_hint_escalation",
+      "default_severity": "high",
+      "trigger_intent": "The effective destructiveHint changes from false to true after applying MCP defaults.",
+      "review_question": "Does the tool need renewed review because destructive behavior is now explicit?"
+    },
+    {
+      "id": "destructive_hint_downgrade",
+      "default_severity": "medium",
+      "trigger_intent": "An explicit destructiveHint changes from true to false while effective readOnlyHint remains false.",
+      "review_question": "Is the descriptor making a destructive tool look less risky?"
+    },
+    {
+      "id": "description_injection_drift",
+      "default_severity": "high",
+      "trigger_intent": "A tool description gains agent-instruction, prompt-injection, exfiltration, or hidden-instruction text.",
+      "review_question": "Could the changed descriptor steer the model or reviewer outside the approved tool contract?"
+    },
+    {
+      "id": "auth_scope_expansion",
+      "default_severity": "high",
+      "trigger_intent": "New auth scopes introduce write, delete, admin, payment, deploy, secret, or sensitive read capability.",
+      "review_question": "Does the agent receive materially broader authority?"
+    },
+    {
+      "id": "closed_world_to_open_world_input",
+      "default_severity": "medium",
+      "trigger_intent": "Input bounds loosen through enum or const removal, required-field weakening, closed-object property expansion, sound local allOf weakening, or openWorldHint escalation.",
+      "review_question": "Can the agent now act over a broader or less predictable input space?"
+    },
+    {
+      "id": "schema_containment_unresolved",
+      "default_severity": "medium",
+      "trigger_intent": "Input-schema containment depends on references, boolean schemas, non-monotonic combiners, or unsupported JSON Schema applicators.",
+      "review_question": "Does a complete JSON Schema evaluation show widening, narrowing, or a mixed change?"
+    },
+    {
+      "id": "sensitive_output_template_drift",
+      "default_severity": "high",
+      "trigger_intent": "Output template changes while sensitive output fields are added or newly rendered.",
+      "review_question": "Is sensitive data now exposed in a different UI or resource boundary?"
+    },
+    {
+      "id": "sensitive_output_schema_expansion",
+      "default_severity": "high",
+      "trigger_intent": "Output schema adds sensitive fields without an output-template change.",
+      "review_question": "Did the descriptor add sensitive output without making the presentation boundary obvious?"
+    },
+    {
+      "id": "risky_tool_added",
+      "default_severity": "high",
+      "trigger_intent": "A newly added tool has risky name, description, destructive annotation, or risky auth scopes.",
+      "review_question": "Should a new tool with side-effect, admin, payment, secret, shell, or destructive behavior be approved before use?"
+    }
+  ],
+  "config_contract": {
+    "policy_version": "tool-contract-drift-v1",
+    "enabled_rules": "null or list of label ids; when non-null only listed labels are emitted",
+    "disabled_rules": "list of label ids to suppress globally",
+    "severity_overrides": "object mapping label id to high or medium",
+    "suppressions": "list of objects keyed by risk, fixture_id, and/or tool_name",
+    "sarif": "optional information_uri and semantic_version overrides"
+  },
+  "claim_boundary": [
+    "Labels are review and reapproval signals, not vulnerability findings.",
+    "Exact configured-substitute matches on the current corpus show policy portability, not external validation.",
+    "External reviewer lift remains unproven until completed response packets are scored."
+  ]
+}

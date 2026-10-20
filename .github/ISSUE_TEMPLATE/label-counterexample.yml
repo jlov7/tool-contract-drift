@@ -1,0 +1,90 @@
+name: Label or counterexample dispute
+description: Challenge a policy label with a minimal descriptor pair, control, or semantic argument.
+title: "[Label dispute] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Counterexamples, false positives, false negatives, and arguments for demotion are welcome. Submitted cases are never treated as held out after inspection and will not be rescored as unseen evidence in the same release.
+  - type: input
+    id: rule
+    attributes:
+      label: Rule or label ID
+      placeholder: schema_containment_unresolved
+    validations:
+      required: true
+  - type: input
+    id: case
+    attributes:
+      label: Case or corpus identity
+      description: Give a public case ID, custom-case label, or corpus ID. Do not reveal an active blinded assignment.
+    validations:
+      required: true
+  - type: dropdown
+    id: dispute_type
+    attributes:
+      label: Dispute type
+      options:
+        - False positive
+        - False negative
+        - Severity disagreement
+        - Manual-review boundary disagreement
+        - Default-semantics disagreement
+        - Taxonomy or wording disagreement
+    validations:
+      required: true
+  - type: textarea
+    id: observed
+    attributes:
+      label: Current output
+      description: Include the command, emitted label, and relevant evidence fields.
+    validations:
+      required: true
+  - type: textarea
+    id: argument
+    attributes:
+      label: Counterargument
+      description: Explain the protocol, schema, or review semantics that make the current result wrong or misleading.
+    validations:
+      required: true
+  - type: textarea
+    id: control
+    attributes:
+      label: Minimal counterexample and control
+      description: Prefer a newly authored synthetic pair. Omit third-party descriptor bytes unless you can document authority, license, or record-specific permission below.
+      render: json
+  - type: dropdown
+    id: byte_route
+    attributes:
+      label: Descriptor-byte route
+      description: Select the route that applies to any before/after bytes in this report.
+      options:
+        - Newly authored synthetic pair
+        - Submitter-owned or controlled bytes with evidence below
+        - Third-party bytes with exact license or permission evidence below
+        - Metadata and hashes only; no descriptor bytes included
+    validations:
+      required: true
+  - type: textarea
+    id: rights_evidence
+    attributes:
+      label: Authority, license, permission, or metadata-only evidence
+      description: State who authored or controls the bytes and give the exact source/license/permission URL or text. For metadata-only reports, identify the omitted source and confirm no descriptor payload is included.
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Primary sources
+      description: Link the exact specification, schema, or official documentation that supports the dispute.
+  - type: checkboxes
+    id: boundaries
+    attributes:
+      label: Submission boundaries
+      options:
+        - label: This submission does not expose gold labels, answer keys, private mappings, or active reviewer assignments.
+          required: true
+        - label: Any included descriptor bytes follow the selected route and are supported by the authority, license, or permission evidence above; otherwise I included metadata and hashes only.
+          required: true
+        - label: I understand that repository visibility or license metadata alone is not a project legal determination or permission finding.
+          required: true

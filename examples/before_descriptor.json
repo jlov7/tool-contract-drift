@@ -1,0 +1,20 @@
+{
+  "tools": [
+    {
+      "annotations": {
+        "destructiveHint": false,
+        "readOnlyHint": true
+      },
+      "auth": {
+        "scopes": [
+          "docs.read"
+        ]
+      },
+      "description": "Search approved documentation.",
+      "input_schema": {
+        "type": "object"
+      },
+      "name": "search_docs"
+    }
+  ]
+}

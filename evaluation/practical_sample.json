@@ -1,0 +1,431 @@
+{
+  "baseline_commit": "b32da072264089492acb294e39f3e4e94bb2567a",
+  "comparator": {
+    "alias": "independent-comparator",
+    "bin": {
+      "mcpdiff": "dist/cli.js"
+    },
+    "integrity": "sha512-hcWQyNSEuxsE3Ucuw7vSdz5xdU7eCwrRzzmYkD+vK0R0XEfocIj/ea6/vioOFsiQJX/p5S2EKC4YyvIqM3DHCw==",
+    "license_metadata": "MIT",
+    "package": "mcpdiff",
+    "published_at": "2026-07-17T00:22:55.617Z",
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/samlader/mcpdiff.git"
+    },
+    "tarball": "https://registry.npmjs.org/mcpdiff/-/mcpdiff-0.1.0.tgz",
+    "version": "0.1.0"
+  },
+  "protocol_sha256": "b44ea367ec76f79f98dc4fa54e34e3456bff410c503b480d9af2b3ab1ecb18f0",
+  "publication_cutoff": "2026-10-18T00:00:00Z",
+  "registry_response_sha256": {
+    "@modelcontextprotocol/server-filesystem": "d00fe62bfb1b093aa032b2e5d277b09bff959a5e7d6d454bc9f9b9428cd31ed0",
+    "@modelcontextprotocol/server-memory": "3ebba0a6cddd1884cc4962f162ba2e834b4163b3f920b7e71ea912b4f37a976f",
+    "@modelcontextprotocol/server-sequential-thinking": "51496f626be84d4ef00dbbdab0b9e8dfbb72f09f247715633c14fd2a09e0994c",
+    "@playwright/mcp": "78e43c0b4206a5fc7f1239d1c34791b120061cff9f4181ab6f1dcb2897da3b20",
+    "@upstash/context7-mcp": "70bc2d37866e35cc4ce2ad1335ee9de40d3dda08bc61537c829829dbb31a169c",
+    "mcpdiff": "332ca9d90fa6aa9c9be924775c9736fa7719b67f3cf71d13d6f3daf572fb126d"
+  },
+  "releases": [
+    {
+      "alias": "server-0-0",
+      "bin": {
+        "mcp-server-filesystem": "dist/index.js"
+      },
+      "integrity": "sha512-bGAfu3fWRVeF10NxvPhFBDlRen6ExSx6YkKJzoVgQMNrbdVVV4okfGGQ3KBRu9ygXYfw5/N9ermHAJXA0uys+g==",
+      "license_metadata": "MIT",
+      "package": "@modelcontextprotocol/server-filesystem",
+      "published_at": "2026-01-14T16:03:10.655Z",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/modelcontextprotocol/servers.git"
+      },
+      "tarball": "https://registry.npmjs.org/@modelcontextprotocol/server-filesystem/-/server-filesystem-2026.1.14.tgz",
+      "version": "2026.1.14"
+    },
+    {
+      "alias": "server-0-1",
+      "bin": {
+        "mcp-server-filesystem": "dist/index.js"
+      },
+      "integrity": "sha512-JwEaH4dRRzwcNMwX8WJVCJyXfFxXjFKdgwHxjQhFLhi02kszgyyj611LV9puBLDO1IiDQSCjfKFSPaemegnvwg==",
+      "license_metadata": "SEE LICENSE IN LICENSE",
+      "package": "@modelcontextprotocol/server-filesystem",
+      "published_at": "2026-07-04T23:05:24.200Z",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/modelcontextprotocol/servers.git"
+      },
+      "tarball": "https://registry.npmjs.org/@modelcontextprotocol/server-filesystem/-/server-filesystem-2026.7.4.tgz",
+      "version": "2026.7.4"
+    },
+    {
+      "alias": "server-0-2",
+      "bin": {
+        "mcp-server-filesystem": "dist/index.js"
+      },
+      "integrity": "sha512-Mmjg4anFBD5OzbPnGJOA0jPPN8645ERhQk38HQLpSenx1ox9bfdPkmAzUnNjeQtqQGFLtKe13J20RtLBmUKMZA==",
+      "license_metadata": "SEE LICENSE IN LICENSE",
+      "package": "@modelcontextprotocol/server-filesystem",
+      "published_at": "2026-07-10T03:31:10.875Z",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/modelcontextprotocol/servers.git"
+      },
+      "tarball": "https://registry.npmjs.org/@modelcontextprotocol/server-filesystem/-/server-filesystem-2026.7.10.tgz",
+      "version": "2026.7.10"
+    },
+    {
+      "alias": "server-0-3",
+      "bin": {
+        "mcp-server-filesystem": "dist/index.js"
+      },
+      "integrity": "sha512-kKaFkyAh6oipvc9+EAbJ552JafnMnOq5nzmzWkp1jJdBhTAAGpmIpWihUG1+rfNhmEFM98gUZDdCHCDD4v6a7Q==",
+      "license_metadata": "SEE LICENSE IN LICENSE",
+      "package": "@modelcontextprotocol/server-filesystem",
+      "published_at": "2026-08-31T20:25:55.419Z",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/modelcontextprotocol/servers.git"
+      },
+      "tarball": "https://registry.npmjs.org/@modelcontextprotocol/server-filesystem/-/server-filesystem-2026.8.31.tgz",
+      "version": "2026.8.31"
+    },
+    {
+      "alias": "server-0-4",
+      "bin": {
+        "mcp-server-filesystem": "dist/index.js"
+      },
+      "integrity": "sha512-2fN6qhpsiPSBAe0ev1qDPk4sCWdULCZQTuYc4ZY7+BDWQ1XCxLB+7dqStF2ZflgG4G/9vTwQsjxh7pjFqrrpcg==",
+      "license_metadata": "SEE LICENSE IN LICENSE",
+      "package": "@modelcontextprotocol/server-filesystem",
+      "published_at": "2026-10-11T02:44:10.659Z",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/modelcontextprotocol/servers.git"
+      },
+      "tarball": "https://registry.npmjs.org/@modelcontextprotocol/server-filesystem/-/server-filesystem-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    {
+      "alias": "server-1-0",
+      "bin": {
+        "mcp-server-memory": "dist/index.js"
+      },
+      "integrity": "sha512-woL22c8U+9bvp+VQVxDatzg2pMr94jSp5Z+1GyTOvGmfZINjypkyA1ID8I/4HgR/ecATRxFznSK85AESaV+1MA==",
+      "license_metadata": "MIT",
+      "package": "@modelcontextprotocol/server-memory",
+      "published_at": "2025-11-25T19:03:03.021Z",
+      "repository": null,
+      "tarball": "https://registry.npmjs.org/@modelcontextprotocol/server-memory/-/server-memory-2025.11.25.tgz",
+      "version": "2025.11.25"
+    },
+    {
+      "alias": "server-1-1",
+      "bin": {
+        "mcp-server-memory": "dist/index.js"
+      },
+      "integrity": "sha512-7F0hbaEB4lVqkYhNWmrC5jJjEWPCofgXd7OIk3h97HyvJL6aTAhlUNYaH8lCDxAzlK9sr2pLCkZEYI+m4HSOiA==",
+      "license_metadata": "MIT",
+      "package": "@modelcontextprotocol/server-memory",
+      "published_at": "2026-01-27T09:25:54.132Z",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/modelcontextprotocol/servers.git"
+      },
+      "tarball": "https://registry.npmjs.org/@modelcontextprotocol/server-memory/-/server-memory-2026.1.26.tgz",
+      "version": "2026.1.26"
+    },
+    {
+      "alias": "server-1-2",
+      "bin": {
+        "mcp-server-memory": "dist/index.js"
+      },
+      "integrity": "sha512-D+NNzChsOHN72y58ngDmO+TzjJijGi/sSY/gBydhB3TJCcm1XQEozVWwEpruHeXt/HSkMV3Z/BpHDhdt1MLD5w==",
+      "license_metadata": "SEE LICENSE IN LICENSE",
+      "package": "@modelcontextprotocol/server-memory",
+      "published_at": "2026-07-04T23:05:12.015Z",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/modelcontextprotocol/servers.git"
+      },
+      "tarball": "https://registry.npmjs.org/@modelcontextprotocol/server-memory/-/server-memory-2026.7.4.tgz",
+      "version": "2026.7.4"
+    },
+    {
+      "alias": "server-1-3",
+      "bin": {
+        "mcp-server-memory": "dist/index.js"
+      },
+      "integrity": "sha512-ljj/3S4aGjxdNSQWw6gucKKGnTLdBPWxzapyY/MT2tOVyZwvxChvevXSLPwx59nKJAlVpUVW+cOlnVRXRwiqMQ==",
+      "license_metadata": "SEE LICENSE IN LICENSE",
+      "package": "@modelcontextprotocol/server-memory",
+      "published_at": "2026-08-31T20:23:48.078Z",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/modelcontextprotocol/servers.git"
+      },
+      "tarball": "https://registry.npmjs.org/@modelcontextprotocol/server-memory/-/server-memory-2026.8.31.tgz",
+      "version": "2026.8.31"
+    },
+    {
+      "alias": "server-1-4",
+      "bin": {
+        "mcp-server-memory": "dist/index.js"
+      },
+      "integrity": "sha512-UDMtMrw2xeI16mcn7O4fesp9Pf3hYh91thuU5KSz0BxKqwnTwEytZKjHfkrqxxmKp0r4QHoiEkMV99UmadmODw==",
+      "license_metadata": "SEE LICENSE IN LICENSE",
+      "package": "@modelcontextprotocol/server-memory",
+      "published_at": "2026-10-11T02:42:27.160Z",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/modelcontextprotocol/servers.git"
+      },
+      "tarball": "https://registry.npmjs.org/@modelcontextprotocol/server-memory/-/server-memory-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    {
+      "alias": "server-2-0",
+      "bin": {
+        "mcp-server-sequential-thinking": "dist/index.js"
+      },
+      "integrity": "sha512-E91aiN9uKg8BL0Cw52jRWcGYkGzCEDIdILvyW08JdVte99bLqvSIlT9U0dz24TeZxnxc2Wx9dSdCyMo1mLOeKA==",
+      "license_metadata": "MIT",
+      "package": "@modelcontextprotocol/server-sequential-thinking",
+      "published_at": "2025-11-25T19:03:01.504Z",
+      "repository": null,
+      "tarball": "https://registry.npmjs.org/@modelcontextprotocol/server-sequential-thinking/-/server-sequential-thinking-2025.11.25.tgz",
+      "version": "2025.11.25"
+    },
+    {
+      "alias": "server-2-1",
+      "bin": {
+        "mcp-server-sequential-thinking": "dist/index.js"
+      },
+      "integrity": "sha512-eFR5I9Z9czXQhDn05wahetZU83YNPO+p1HLSEZZEM5q9U1CLF7zv9+TrmSBfRoPaksEAoM8pTWQ33lRCScSFeQ==",
+      "license_metadata": "MIT",
+      "package": "@modelcontextprotocol/server-sequential-thinking",
+      "published_at": "2025-12-18T16:05:40.713Z",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/modelcontextprotocol/servers.git"
+      },
+      "tarball": "https://registry.npmjs.org/@modelcontextprotocol/server-sequential-thinking/-/server-sequential-thinking-2025.12.18.tgz",
+      "version": "2025.12.18"
+    },
+    {
+      "alias": "server-2-2",
+      "bin": {
+        "mcp-server-sequential-thinking": "dist/index.js"
+      },
+      "integrity": "sha512-tmR/ieGaeweffLNBrDp1H1w4sn4M6TN5yWSbMS+YMfS+0GDyPjnNKzqCl2uqfdRiX3D44PJUhwiDGqtJp6tFhw==",
+      "license_metadata": "SEE LICENSE IN LICENSE",
+      "package": "@modelcontextprotocol/server-sequential-thinking",
+      "published_at": "2026-07-04T23:05:13.130Z",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/modelcontextprotocol/servers.git"
+      },
+      "tarball": "https://registry.npmjs.org/@modelcontextprotocol/server-sequential-thinking/-/server-sequential-thinking-2026.7.4.tgz",
+      "version": "2026.7.4"
+    },
+    {
+      "alias": "server-2-3",
+      "bin": {
+        "mcp-server-sequential-thinking": "dist/index.js"
+      },
+      "integrity": "sha512-/EMH++1j2e+VmHwpibw1IUPHxA0tcQY09Yo5/OIPwW/8irEKLAufJNGSZQhCK18n8TUvV6WwZyQOuaDKxe/CeQ==",
+      "license_metadata": "SEE LICENSE IN LICENSE",
+      "package": "@modelcontextprotocol/server-sequential-thinking",
+      "published_at": "2026-08-31T20:23:44.857Z",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/modelcontextprotocol/servers.git"
+      },
+      "tarball": "https://registry.npmjs.org/@modelcontextprotocol/server-sequential-thinking/-/server-sequential-thinking-2026.8.31.tgz",
+      "version": "2026.8.31"
+    },
+    {
+      "alias": "server-2-4",
+      "bin": {
+        "mcp-server-sequential-thinking": "dist/index.js"
+      },
+      "integrity": "sha512-ykTmeS4Eejs+FESDrD73mDBNYCkb+cCZJ1MWuv7/vwucbVgGfEbBL5HVt2nVw0/vNF8jz+o9sO/WmxxfXt0J6w==",
+      "license_metadata": "SEE LICENSE IN LICENSE",
+      "package": "@modelcontextprotocol/server-sequential-thinking",
+      "published_at": "2026-10-11T02:42:52.391Z",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/modelcontextprotocol/servers.git"
+      },
+      "tarball": "https://registry.npmjs.org/@modelcontextprotocol/server-sequential-thinking/-/server-sequential-thinking-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    {
+      "alias": "server-3-0",
+      "bin": {
+        "playwright-mcp": "cli.js"
+      },
+      "integrity": "sha512-VpqD4a3vFyGQMY9sh3UJiO6wjcurggkljKfAyCHL0QWGY5m6Ehr3MNsAAHPDHO//n13g0PCjpHatAOiulrqdZQ==",
+      "license_metadata": "Apache-2.0",
+      "package": "@playwright/mcp",
+      "published_at": "2026-08-06T00:20:45.023Z",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/microsoft/playwright-mcp.git"
+      },
+      "tarball": "https://registry.npmjs.org/@playwright/mcp/-/mcp-0.0.79.tgz",
+      "version": "0.0.79"
+    },
+    {
+      "alias": "server-3-1",
+      "bin": {
+        "playwright-mcp": "cli.js"
+      },
+      "integrity": "sha512-FOPXHm2SvFhAQylm10jMZ35B/SR2TaMLVkavAlwoG4N2qCb5RqbvhQYcu3zmXNyxR2DW0Ooxe+9XPVt5UjKRCQ==",
+      "license_metadata": "Apache-2.0",
+      "package": "@playwright/mcp",
+      "published_at": "2026-09-01T03:48:24.350Z",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/microsoft/playwright-mcp.git"
+      },
+      "tarball": "https://registry.npmjs.org/@playwright/mcp/-/mcp-0.0.80.tgz",
+      "version": "0.0.80"
+    },
+    {
+      "alias": "server-3-2",
+      "bin": {
+        "playwright-mcp": "cli.js"
+      },
+      "integrity": "sha512-c4eVex1nS53IzLHlwAm0J9ZISDTvA7RndFX8oVcQOrmvIrKSkByazpq79lZHWJuWTB7Gpk0sLBQoRepyIgmneA==",
+      "license_metadata": "Apache-2.0",
+      "package": "@playwright/mcp",
+      "published_at": "2026-09-14T21:25:54.484Z",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/microsoft/playwright-mcp.git"
+      },
+      "tarball": "https://registry.npmjs.org/@playwright/mcp/-/mcp-0.0.81.tgz",
+      "version": "0.0.81"
+    },
+    {
+      "alias": "server-3-3",
+      "bin": {
+        "playwright-mcp": "cli.js"
+      },
+      "integrity": "sha512-OCqftfb8H4dnqm/njbTBRk3seUvUPttOlJUxCtEzXGETYOlRH5Qt3bbXIjmZIuWAxD9RF+yg1ASrPeXvm0y5cA==",
+      "license_metadata": "Apache-2.0",
+      "package": "@playwright/mcp",
+      "published_at": "2026-09-18T23:38:28.161Z",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/microsoft/playwright-mcp.git"
+      },
+      "tarball": "https://registry.npmjs.org/@playwright/mcp/-/mcp-0.0.82.tgz",
+      "version": "0.0.82"
+    },
+    {
+      "alias": "server-3-4",
+      "bin": {
+        "playwright-mcp": "cli.js"
+      },
+      "integrity": "sha512-oNcl+Ae2/IAjhfPeP46BfIkSakfmprY+aOtkv5MjrQ4lPav4/yNtPhL0iq8SlIM90oApWgBDUxaNKvktazUKOg==",
+      "license_metadata": "Apache-2.0",
+      "package": "@playwright/mcp",
+      "published_at": "2026-09-28T23:19:13.609Z",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/microsoft/playwright-mcp.git"
+      },
+      "tarball": "https://registry.npmjs.org/@playwright/mcp/-/mcp-0.0.83.tgz",
+      "version": "0.0.83"
+    },
+    {
+      "alias": "server-4-0",
+      "bin": {
+        "context7-mcp": "dist/index.js"
+      },
+      "integrity": "sha512-E2iIf3aGnEvkfBv4GdtWTpOocmG7nfxJJpa2JuOXwxJfA3Bfx9wa1aQODwDmwWG9cL6qfOSVnWVsUJkvYWOQ3g==",
+      "license_metadata": "MIT",
+      "package": "@upstash/context7-mcp",
+      "published_at": "2026-10-09T14:53:15.212Z",
+      "repository": {
+        "directory": "packages/mcp",
+        "type": "git",
+        "url": "git+https://github.com/upstash/context7.git"
+      },
+      "tarball": "https://registry.npmjs.org/@upstash/context7-mcp/-/context7-mcp-4.2.1.tgz",
+      "version": "4.2.1"
+    },
+    {
+      "alias": "server-4-1",
+      "bin": {
+        "context7-mcp": "dist/index.js"
+      },
+      "integrity": "sha512-fuDt5nWjE5JkAPLjU0m+m0LlJphxyegAvAmcwHoA5jrzAhKo/rVV0RFA8TOwODGdDVdt/nPxNslkxeDIDp/rPA==",
+      "license_metadata": "MIT",
+      "package": "@upstash/context7-mcp",
+      "published_at": "2026-10-09T15:37:57.050Z",
+      "repository": {
+        "directory": "packages/mcp",
+        "type": "git",
+        "url": "git+https://github.com/upstash/context7.git"
+      },
+      "tarball": "https://registry.npmjs.org/@upstash/context7-mcp/-/context7-mcp-4.3.0.tgz",
+      "version": "4.3.0"
+    },
+    {
+      "alias": "server-4-2",
+      "bin": {
+        "context7-mcp": "dist/index.js"
+      },
+      "integrity": "sha512-OYwY+t1jvMOWeI8QXuL5oTR84WNQIj6CzjJKZn5Y5Bv4isDOkq/bE6fNzty3oXGkhU1+kHQD42YlodPPEvtgWg==",
+      "license_metadata": "MIT",
+      "package": "@upstash/context7-mcp",
+      "published_at": "2026-10-13T13:38:22.371Z",
+      "repository": {
+        "directory": "packages/mcp",
+        "type": "git",
+        "url": "git+https://github.com/upstash/context7.git"
+      },
+      "tarball": "https://registry.npmjs.org/@upstash/context7-mcp/-/context7-mcp-4.4.0.tgz",
+      "version": "4.4.0"
+    },
+    {
+      "alias": "server-4-3",
+      "bin": {
+        "context7-mcp": "dist/index.js"
+      },
+      "integrity": "sha512-HtFuzT7c88ycSzNRrkBRQD4nIYQD6AgQETs2TeKrofFDv6R9RqAYFspopfDq6/OuAnfGZJj5rGrX4whnXbHYLQ==",
+      "license_metadata": "MIT",
+      "package": "@upstash/context7-mcp",
+      "published_at": "2026-10-13T14:10:31.460Z",
+      "repository": {
+        "directory": "packages/mcp",
+        "type": "git",
+        "url": "git+https://github.com/upstash/context7.git"
+      },
+      "tarball": "https://registry.npmjs.org/@upstash/context7-mcp/-/context7-mcp-4.4.1.tgz",
+      "version": "4.4.1"
+    },
+    {
+      "alias": "server-4-4",
+      "bin": {
+        "context7-mcp": "dist/index.js"
+      },
+      "integrity": "sha512-cH6N/gyCqtrK9h+FnzyFdWeeufQzfoZ9xXYS3X7IbqktH+NkpFnRkr+VVTNTwdPFAATh4jycuv1QWOXRHN0drQ==",
+      "license_metadata": "MIT",
+      "package": "@upstash/context7-mcp",
+      "published_at": "2026-10-15T16:39:20.418Z",
+      "repository": {
+        "directory": "packages/mcp",
+        "type": "git",
+        "url": "git+https://github.com/upstash/context7.git"
+      },
+      "tarball": "https://registry.npmjs.org/@upstash/context7-mcp/-/context7-mcp-4.4.2.tgz",
+      "version": "4.4.2"
+    }
+  ],
+  "schema_version": "practical-review-evaluation-v1"
+}

@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/tool-contract-drift-config.schema.json",
+  "title": "Agent Tool Contract Drift Lint Config",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "policy_version": {
+      "type": "string",
+      "const": "tool-contract-drift-v1"
+    },
+    "enabled_rules": {
+      "anyOf": [
+        {"type": "null"},
+        {
+          "type": "array",
+          "items": {"$ref": "#/$defs/rule_id"},
+          "uniqueItems": true
+        }
+      ]
+    },
+    "disabled_rules": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/rule_id"},
+      "uniqueItems": true
+    },
+    "severity_overrides": {
+      "type": "object",
+      "additionalProperties": false,
+      "patternProperties": {
+        "^(readonly_to_destructive|destructive_hint_escalation|destructive_hint_downgrade|auth_scope_expansion|closed_world_to_open_world_input|schema_containment_unresolved|sensitive_output_template_drift|sensitive_output_schema_expansion|description_injection_drift|risky_tool_added)$": {
+          "enum": ["high", "medium"]
+        }
+      }
+    },
+    "suppressions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "fixture_id": {"type": "string"},
+          "tool_name": {"type": "string"},
+          "risk": {"$ref": "#/$defs/rule_id"},
+          "reason": {"type": "string", "minLength": 1}
+        },
+        "anyOf": [
+          {"required": ["fixture_id"]},
+          {"required": ["tool_name"]},
+          {"required": ["risk"]}
+        ],
+        "required": ["reason"]
+      }
+    },
+    "sarif": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "information_uri": {"type": "string"},
+        "semantic_version": {"type": "string"}
+      }
+    }
+  },
+  "required": ["policy_version"],
+  "$defs": {
+    "rule_id": {
+      "enum": [
+        "readonly_to_destructive",
+        "destructive_hint_escalation",
+        "destructive_hint_downgrade",
+        "auth_scope_expansion",
+        "closed_world_to_open_world_input",
+        "schema_containment_unresolved",
+        "sensitive_output_template_drift",
+        "sensitive_output_schema_expansion",
+        "description_injection_drift",
+        "risky_tool_added"
+      ]
+    }
+  }
+}

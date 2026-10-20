@@ -1,0 +1,627 @@
+{
+  "active_study_visibility": {
+    "declared_current_counts": {
+      "event_count": 0,
+      "response_count": 0,
+      "returned_count": 0,
+      "sent_count": 0
+    },
+    "external_publication_authorized": false,
+    "local_export_visibility_passed": true,
+    "observed_current_counts": {
+      "event_count": 0,
+      "response_count": 0,
+      "returned_count": 0,
+      "sent_count": 0
+    },
+    "restart_valid": false,
+    "sequence_status": "local_candidate_before_external_validation_and_approval",
+    "study_status": "pre_outreach_private"
+  },
+  "archive_root": "tool-contract-drift-0.1.0a0",
+  "boundary": "Deterministic public pre-review source export with a separate manifest-bound 53-case all-synthetic reproduction corpus and zero source-derived descriptor bytes. It retains 28 project-authored synthetic regression records from the private corpus and adds 25 new synthetic quiet controls. It excludes the selectable private 65-case corpus surface, all 37 private source-derived records, coordinator and blinded-study materials, gold/answer artifacts, identity/custody data, and private provenance working files; source-record metadata is inventory only and is not permission.",
+  "corpora": {
+    "private": {
+      "corpus_selectable_surface_included": false,
+      "expected_fixture_count": 65,
+      "id": "private-canonical-65",
+      "redistribution_blocked_fixture_count": 12,
+      "retained_synthetic_fixture_count": 28,
+      "source_derived_descriptor_bytes_included": false
+    },
+    "public": {
+      "composition": {
+        "all_fixture_bytes_authored_for_this_project": true,
+        "construction_version": "public-reproduction-corpus-v1",
+        "newly_authored_synthetic_quiet_control_count": 25,
+        "newly_authored_synthetic_quiet_control_ids_sha256": "a20d0c9d4df6c61ee888c0b8d3d71c957a3cf621fa47213ce1dba3a03ec51316",
+        "newly_authored_synthetic_quiet_control_records_sha256": "e55a8b9e49c0418745cce5f55010044052aabba5d55031082101bbcf79559f11",
+        "relationship_to_private_canonical": "separate_manifest_identity_reuses_private_synthetic_records_not_a_private_corpus_subset",
+        "retained_from_private_canonical_descriptor_pairs_sha256": "1050809458224ce7468354bf484a9ad8c2526187db510679f2945c063370783d",
+        "retained_from_private_canonical_synthetic_fixture_count": 28,
+        "retained_from_private_canonical_synthetic_fixture_ids_sha256": "f14b4ca80dd97324bb04afe974adf0f63363eef16fc0bb1b228deaca2d65aed2",
+        "retained_from_private_canonical_synthetic_fixture_records_sha256": "d83bbd5d362c1b26cc7be0f2ef0704ac7813a13a78efb74a1c0b2e62044cd345",
+        "source_derived_descriptor_byte_count": 0,
+        "total_authored_synthetic_fixture_count": 53
+      },
+      "configured_policy_shared_semantics_exact_matches": 53,
+      "content_manifest_sha256": "330c174becdcc98efee8ef438e389ea4e13af767c89f0e851a2528497e2f3e2e",
+      "finding_count": 25,
+      "finding_set_sha256": "b92ed6d8123c3b66f73a0e2acfd04c0fd05b13df0d39b8e5ba7171978347e74f",
+      "fixture_count": 53,
+      "id": "public-reproduction-53",
+      "independent_comparator_evidence": false,
+      "metadata_only_private_source_record_count": 37,
+      "oasdiff_style_shared_semantics_exact_matches": 53,
+      "public_hash_allowlist_entry_count": 31,
+      "public_provenance_case_record_count": 0,
+      "source_derived_descriptor_byte_count": 0,
+      "synthetic_fixture_count": 53
+    }
+  },
+  "excluded_surfaces": [
+    "selectable private-canonical-65 corpus/file surface",
+    "coordinator and internal planning directories",
+    "reviewer assignments, packets, returns, identities, and custody records",
+    "gold labels, answer keys, and sealed adjudication materials",
+    "private provenance/source-replay working files",
+    "all source-derived private descriptor bytes, including the 12 blocker-marked records",
+    "AI audit and local agent state"
+  ],
+  "file_set_sha256": "0ddc5faf59774da5c1c1d92ef583283f2e529257f4b515f1e13cf2f4c47da677",
+  "files": [
+    {
+      "mode": "0644",
+      "path": ".github/ISSUE_TEMPLATE/carrier-alternative.yml",
+      "sha256": "14fc0b637a70dffcbef865c7b5507d567dccd46d1bb511310f98d642ed0cbe5b",
+      "size_bytes": 2343
+    },
+    {
+      "mode": "0644",
+      "path": ".github/ISSUE_TEMPLATE/config.yml",
+      "sha256": "1f103c6a9dd07cd13a9a6f17ace6b813f47747eb9cb7e00488cb2073caaf91bb",
+      "size_bytes": 28
+    },
+    {
+      "mode": "0644",
+      "path": ".github/ISSUE_TEMPLATE/descriptor-submission.yml",
+      "sha256": "6fc045927a395370733bac308278233d02f191d6a36dd877ca064b8dc0894973",
+      "size_bytes": 2804
+    },
+    {
+      "mode": "0644",
+      "path": ".github/ISSUE_TEMPLATE/label-counterexample.yml",
+      "sha256": "5872cd5d1e102f68c5475ce1e8600a60e252173e0dd0c5c3fbffd40a0130a010",
+      "size_bytes": 3631
+    },
+    {
+      "mode": "0644",
+      "path": ".github/ISSUE_TEMPLATE/provenance-licensing.yml",
+      "sha256": "5561e1df1cbc44fd68b1f3560aa582f8ece0d9227854c797d52b9cd7b68a12f5",
+      "size_bytes": 1964
+    },
+    {
+      "mode": "0644",
+      "path": ".github/ISSUE_TEMPLATE/reproduction-failure.yml",
+      "sha256": "6325073b87606b7ec0df39b35c90fcec54a36e359213719e0a03478d469be8db",
+      "size_bytes": 2855
+    },
+    {
+      "mode": "0644",
+      "path": ".github/workflows/ci.yml",
+      "sha256": "838eb1bcd989ae6fd7e2d98d65cdfde3aed8220f4cf7368b0079649de1aa6398",
+      "size_bytes": 5557
+    },
+    {
+      "mode": "0644",
+      "path": ".gitignore",
+      "sha256": "ddc8d51acf22f5f761efdf40f16ed2a2a7da1fd32ebe5a49ca5249e0bebec83c",
+      "size_bytes": 76
+    },
+    {
+      "mode": "0644",
+      "path": "CHANGELOG.md",
+      "sha256": "a17a6f98c4ec1baf90cd2dcd16508550049b95d465d7bae4d0cc570f181a0a3c",
+      "size_bytes": 2133
+    },
+    {
+      "mode": "0644",
+      "path": "CITATION.cff",
+      "sha256": "c4ede7e7d9d50b8e7348357ec62ff08e1e29588b29a0f31a16a0455a46247080",
+      "size_bytes": 949
+    },
+    {
+      "mode": "0644",
+      "path": "CONTRIBUTING.md",
+      "sha256": "81b3771defff16ee8f610eef6915f450b8edad3aacfe6e5284d293ee8ad4dde1",
+      "size_bytes": 408
+    },
+    {
+      "mode": "0644",
+      "path": "LICENSE",
+      "sha256": "bba3001293375ea874b17b15bd82402110228db2f97011d5139fa565a463cbe2",
+      "size_bytes": 1069
+    },
+    {
+      "mode": "0644",
+      "path": "MANIFEST.in",
+      "sha256": "7d1b9388a409e22dcd638e29a5c0bea05772a65d8fbd9047555149babc3780c8",
+      "size_bytes": 465
+    },
+    {
+      "mode": "0644",
+      "path": "README.md",
+      "sha256": "b80166d3f709d5ca26bd34bf733e9375fbd149d05157e4c0f3869cee71b6e058",
+      "size_bytes": 9981
+    },
+    {
+      "mode": "0644",
+      "path": "SECURITY.md",
+      "sha256": "2386c171517dcf6c944d1319920b6e817a13b06681ef9c5db1b1fa1e53bd46d6",
+      "size_bytes": 1990
+    },
+    {
+      "mode": "0644",
+      "path": "THIRD_PARTY_NOTICES.md",
+      "sha256": "d841c6213b38e2b5f8b24344b23f93761b02953f5e21264c5967a02a6a20e34a",
+      "size_bytes": 1662
+    },
+    {
+      "mode": "0644",
+      "path": "action.yml",
+      "sha256": "47227987dd89d5d322b06df18d1fb259962bfb3299a01bf8018b534a5ef09ff5",
+      "size_bytes": 2433
+    },
+    {
+      "mode": "0644",
+      "path": "docs/community_feedback_guide.md",
+      "sha256": "bfcafb55bf0a259f65465dc4b3dbc1293d678baf82268812dccbf4f9e9002f58",
+      "size_bytes": 3766
+    },
+    {
+      "mode": "0644",
+      "path": "docs/contributor_response_policy.md",
+      "sha256": "725bd95a8bfaf5e46f7c65aa76c4fdf31952e5bd55033026d89b4939b7051a8b",
+      "size_bytes": 3247
+    },
+    {
+      "mode": "0644",
+      "path": "docs/policy_spec.md",
+      "sha256": "4fb86c758e4ad46b05935dc51bb822be32aeea8ee3f843c2779336adff34cd5a",
+      "size_bytes": 10471
+    },
+    {
+      "mode": "0644",
+      "path": "evaluation/README.md",
+      "sha256": "1050b8e6a1941c5999ac96391510a0215dd186b5e9a0eed090a5c9162464ebad",
+      "size_bytes": 11272
+    },
+    {
+      "mode": "0644",
+      "path": "evaluation/pnpm-lock.yaml",
+      "sha256": "8d95209289dd1f2c0f5416e0b469fd95fd19e34119cf9f00a2be5c07211165ab",
+      "size_bytes": 68511
+    },
+    {
+      "mode": "0644",
+      "path": "evaluation/practical_protocol.json",
+      "sha256": "b44ea367ec76f79f98dc4fa54e34e3456bff410c503b480d9af2b3ab1ecb18f0",
+      "size_bytes": 2644
+    },
+    {
+      "mode": "0644",
+      "path": "evaluation/practical_results.json",
+      "sha256": "264673ab516173a958597e0db70f542488e4b0dee7015ee3aea8f0b9b3fbc393",
+      "size_bytes": 34056
+    },
+    {
+      "mode": "0644",
+      "path": "evaluation/practical_sample.json",
+      "sha256": "660d75153ccf381ce0813cb5928f54a869f3432d5b6203d0d630d24fa871df4a",
+      "size_bytes": 17302
+    },
+    {
+      "mode": "0644",
+      "path": "evaluation/review_results.json",
+      "sha256": "e07b674334f054ef71ee855fd4d2265b4f1322c850b358b4dceb9aa2c1e44388",
+      "size_bytes": 9222
+    },
+    {
+      "mode": "0644",
+      "path": "examples/after_descriptor.json",
+      "sha256": "d7cc46dd20d43e53f7e984f5c6cb814c98561397435c651d59c265a4f47151d1",
+      "size_bytes": 415
+    },
+    {
+      "mode": "0644",
+      "path": "examples/before_descriptor.json",
+      "sha256": "250a4016e474f51be9f532e771c199c7aa8cec7035f5fcc2f131184ba41ad2f2",
+      "size_bytes": 346
+    },
+    {
+      "mode": "0644",
+      "path": "paper/BUILD.md",
+      "sha256": "60acc17efbce578b16f46b3170930a45e9e6363fa9cc70cc2955e1548bcf2679",
+      "size_bytes": 1258
+    },
+    {
+      "mode": "0644",
+      "path": "paper/agent-tool-contract-drift.pdf",
+      "sha256": "5c4abfc5ff784dbbf8301f30578ddf5f254535447fe1911b57ed2e4fbd02763f",
+      "size_bytes": 339462
+    },
+    {
+      "mode": "0644",
+      "path": "paper/agent-tool-contract-drift.tex",
+      "sha256": "6161f741e87065d4512ac4c9e76f2b2cff3e5fc1f624aa478274dfb0e30e5bbf",
+      "size_bytes": 51581
+    },
+    {
+      "mode": "0644",
+      "path": "paper/build_identity.json",
+      "sha256": "2d95f71c40710e82d52fd8a529a1b477630c5cf6282a8e56624be638a975dfe8",
+      "size_bytes": 352
+    },
+    {
+      "mode": "0644",
+      "path": "paper/reference_audit.md",
+      "sha256": "a64c550dd63841512f22a68cad4bc75385ffacdff2a828079d403ddd2e264014",
+      "size_bytes": 6950
+    },
+    {
+      "mode": "0644",
+      "path": "policy/example-config.json",
+      "sha256": "f58642150670bd85f3f4c55c3755430f0ee28782d670ce1602ac5f0f603511d2",
+      "size_bytes": 484
+    },
+    {
+      "mode": "0644",
+      "path": "policy/schema/tool-contract-drift-config.schema.json",
+      "sha256": "116eadec8aa28b53128e4435aae4cd696dea2a92a9c1eb30ed2cf51cfc995ec3",
+      "size_bytes": 2390
+    },
+    {
+      "mode": "0644",
+      "path": "policy/schema/tool-contract-drift-policy.schema.json",
+      "sha256": "ce23d2e51802e289ca7570176e0659df07e3aa4af0c2eba250bc6655ce40449a",
+      "size_bytes": 1434
+    },
+    {
+      "mode": "0644",
+      "path": "policy/tool-contract-drift-v1.json",
+      "sha256": "a5af6c5b180424278eb3af588598b13faf9f071d05f1b4a79f3f973d36814e5d",
+      "size_bytes": 5341
+    },
+    {
+      "mode": "0644",
+      "path": "public_tests/test_descriptor_review.py",
+      "sha256": "39dfa0a51fd0a4a18f2f58e8a9ac93099868217865d2f0161cd7e38ab09be3b7",
+      "size_bytes": 5901
+    },
+    {
+      "mode": "0644",
+      "path": "public_tests/test_practical_evaluation.py",
+      "sha256": "b5605b4bb87a35b9d025d59eb1fcccf5d1e4682a603b51f8b6ba01e1e9260536",
+      "size_bytes": 3364
+    },
+    {
+      "mode": "0644",
+      "path": "public_tests/test_public_distribution.py",
+      "sha256": "5c7a4dc1573df66de6062c61435ba67ed5f6f2b0be4c4677b52c43769aeff356",
+      "size_bytes": 5598
+    },
+    {
+      "mode": "0644",
+      "path": "pyproject.toml",
+      "sha256": "4c14ab1c02922a6b754ae17fa3e811fdd4f34492234168c412db25e48ee6264a",
+      "size_bytes": 1150
+    },
+    {
+      "mode": "0644",
+      "path": "release/public_export_policy.json",
+      "sha256": "84e3d4a62921a0612fbcfb53134c0fe310c6bcca8083d5166eab1d6430587537",
+      "size_bytes": 3283
+    },
+    {
+      "mode": "0644",
+      "path": "release/public_release_metadata.json",
+      "sha256": "ec693e39c5b16fd7a48cce09574ee89089fa3555197b2379e957fb7dcddba404",
+      "size_bytes": 4938
+    },
+    {
+      "mode": "0644",
+      "path": "reports/current_linter_report.md",
+      "sha256": "6ee7372323bad94f3a7dd13276cdb94be0704ec744971efa8449872665f33794",
+      "size_bytes": 6172
+    },
+    {
+      "mode": "0644",
+      "path": "reports/current_linter_report.sarif",
+      "sha256": "d9291b7431b6f23e615920860dff361c10b86184e35a3e9201ba682bb6affeea",
+      "size_bytes": 45152
+    },
+    {
+      "mode": "0755",
+      "path": "scripts/check_practical_review.py",
+      "sha256": "5c853666a4b9e3e1b84551c7a6ebad226c5cf38f9856f9c0e5747c997efe9971",
+      "size_bytes": 3578
+    },
+    {
+      "mode": "0755",
+      "path": "scripts/prepare_practical_evaluation.py",
+      "sha256": "26a04ef7ee688420c333456d41693aab5330d831c1f543d93ee6d030d11e48b9",
+      "size_bytes": 5060
+    },
+    {
+      "mode": "0755",
+      "path": "scripts/run_practical_evaluation.py",
+      "sha256": "169668cd72f65b2ede2e0a332333cd54369202985a52afbd4566a45c0282dbce",
+      "size_bytes": 13411
+    },
+    {
+      "mode": "0755",
+      "path": "scripts/verify_built_distributions.py",
+      "sha256": "569d72c585aaf4feef25a391e2346c891bb4e4f635b69ec6b671604677f9f7cb",
+      "size_bytes": 16290
+    },
+    {
+      "mode": "0755",
+      "path": "scripts/verify_public_archive.py",
+      "sha256": "fbcaea1076be53c2a685e4bbdc2505089cabbef74dfbe210396bc1b86e368e8c",
+      "size_bytes": 13302
+    },
+    {
+      "mode": "0755",
+      "path": "scripts/verify_public_export.py",
+      "sha256": "aa1eddd548439ee9a671b991b05b5540b82ba34d20a55e4ebddd40a4b2031132",
+      "size_bytes": 39229
+    },
+    {
+      "mode": "0755",
+      "path": "scripts/verify_public_history.py",
+      "sha256": "30cdef17d168825bfedd73e8b12755ab86610ccd5865305559b1094690213fca",
+      "size_bytes": 6208
+    },
+    {
+      "mode": "0644",
+      "path": "tool_contract_drift/__init__.py",
+      "sha256": "4268d88dd45bfbc3db88b55516a02dbc1aa491b3aabb242954e9240596609be0",
+      "size_bytes": 441
+    },
+    {
+      "mode": "0644",
+      "path": "tool_contract_drift/adapters/__init__.py",
+      "sha256": "2613b223709f0d9fb601edfa6b0aece5386283c7129d424a4928d91468d337df",
+      "size_bytes": 102
+    },
+    {
+      "mode": "0644",
+      "path": "tool_contract_drift/adapters/oasdiff.py",
+      "sha256": "6c4d1324fbe32c80e1d0b9ac302bae307ebac745af482c7bc9c19712bdfe021c",
+      "size_bytes": 19961
+    },
+    {
+      "mode": "0644",
+      "path": "tool_contract_drift/api.py",
+      "sha256": "8214e0063b68349c11085347495b8d543a6fb09b0cefd2ceb94eaeca53241223",
+      "size_bytes": 1584
+    },
+    {
+      "mode": "0644",
+      "path": "tool_contract_drift/baselines/__init__.py",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "size_bytes": 1
+    },
+    {
+      "mode": "0644",
+      "path": "tool_contract_drift/baselines/baseline_probe.py",
+      "sha256": "c644010840624e5ab6538359eac2ccfedc0dee3cb98d8b6b51aca2b562bd683d",
+      "size_bytes": 21992
+    },
+    {
+      "mode": "0644",
+      "path": "tool_contract_drift/baselines/configured_substitutes.py",
+      "sha256": "f5ddba4a62a25423bc96da1c82519d562a70674a86dc052103bdb67c73e2cf83",
+      "size_bytes": 35585
+    },
+    {
+      "mode": "0644",
+      "path": "tool_contract_drift/baselines/oasdiff_adapter_probe.py",
+      "sha256": "ef86cc221140c6a2956c3d255641a0afc3fc0b635e0b61be4c4b8d18bf3c4f81",
+      "size_bytes": 12233
+    },
+    {
+      "mode": "0644",
+      "path": "tool_contract_drift/corpora.py",
+      "sha256": "f64d3a0f80213f9baee6ef2b5d6a73e20451dfb28386e0cd0dfbef861a638e0f",
+      "size_bytes": 5292
+    },
+    {
+      "mode": "0644",
+      "path": "tool_contract_drift/data/public_fixtures.lock.json",
+      "sha256": "6e4532afdeb1fb96665c220f5281147c382c6469a341eab4e64860cd3f3e5481",
+      "size_bytes": 717
+    },
+    {
+      "mode": "0644",
+      "path": "tool_contract_drift/data/release_contract.json",
+      "sha256": "11f26e26f179cfa798128aeff4bc4585bd73decf589c5992f4026615e9caff92",
+      "size_bytes": 4308
+    },
+    {
+      "mode": "0644",
+      "path": "tool_contract_drift/data/source_metadata_inventory.json",
+      "sha256": "63848a1ad80a7e31513cb6e954e35be29ad26d6dcd380bbc59e038e6e74f301d",
+      "size_bytes": 24957
+    },
+    {
+      "mode": "0644",
+      "path": "tool_contract_drift/fixtures/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "mode": "0644",
+      "path": "tool_contract_drift/fixtures/adversarial_descriptor_cases.json",
+      "sha256": "4f304835be28798ff1130b3c825a5b7b011d329bb3aa36f33d8b90a3feb87484",
+      "size_bytes": 21903
+    },
+    {
+      "mode": "0644",
+      "path": "tool_contract_drift/fixtures/heldout_public_descriptor_changes.json",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "size_bytes": 3
+    },
+    {
+      "mode": "0644",
+      "path": "tool_contract_drift/fixtures/ordinary_public_descriptor_controls.json",
+      "sha256": "d2de08583967417ffbd16bbab9553869d45e80255ad85cbdd8c0ac33cb54bb84",
+      "size_bytes": 36860
+    },
+    {
+      "mode": "0644",
+      "path": "tool_contract_drift/fixtures/real_public_descriptor_changes.json",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "size_bytes": 3
+    },
+    {
+      "mode": "0644",
+      "path": "tool_contract_drift/fixtures/schema/tool-descriptor-fixture.schema.json",
+      "sha256": "7c1f7023533d6a267b5f0b6cc5adce9ef33af943dea665db745a1e46f9c224d2",
+      "size_bytes": 2422
+    },
+    {
+      "mode": "0644",
+      "path": "tool_contract_drift/fixtures/second_heldout_public_descriptor_changes.json",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "size_bytes": 3
+    },
+    {
+      "mode": "0644",
+      "path": "tool_contract_drift/fixtures/third_heldout_public_descriptor_changes.json",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "size_bytes": 3
+    },
+    {
+      "mode": "0644",
+      "path": "tool_contract_drift/fixtures/tool_descriptor_fixtures.json",
+      "sha256": "977473db6120e029eb90df1b68365662fbe90fca229d66b106362a53a19c7aa1",
+      "size_bytes": 12113
+    },
+    {
+      "mode": "0644",
+      "path": "tool_contract_drift/linter/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "mode": "0644",
+      "path": "tool_contract_drift/linter/tool_contract_drift.py",
+      "sha256": "0c69bf4f18f3478febf30c87b97f633d8eabbfe57c2488a486acef28585ad1df",
+      "size_bytes": 32142
+    },
+    {
+      "mode": "0644",
+      "path": "tool_contract_drift/policy/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "mode": "0644",
+      "path": "tool_contract_drift/policy/example-config.json",
+      "sha256": "f58642150670bd85f3f4c55c3755430f0ee28782d670ce1602ac5f0f603511d2",
+      "size_bytes": 484
+    },
+    {
+      "mode": "0644",
+      "path": "tool_contract_drift/policy/hash_allowlist_quiet_changes.json",
+      "sha256": "af59b2b30dcb48b9ffd8280c70614e3ad0da035f90ab597004f2133d73c4ff92",
+      "size_bytes": 16004
+    },
+    {
+      "mode": "0644",
+      "path": "tool_contract_drift/policy/schema/tool-contract-drift-config.schema.json",
+      "sha256": "116eadec8aa28b53128e4435aae4cd696dea2a92a9c1eb30ed2cf51cfc995ec3",
+      "size_bytes": 2390
+    },
+    {
+      "mode": "0644",
+      "path": "tool_contract_drift/policy/schema/tool-contract-drift-policy.schema.json",
+      "sha256": "ce23d2e51802e289ca7570176e0659df07e3aa4af0c2eba250bc6655ce40449a",
+      "size_bytes": 1434
+    },
+    {
+      "mode": "0644",
+      "path": "tool_contract_drift/policy/tool-contract-drift-v1.json",
+      "sha256": "a5af6c5b180424278eb3af588598b13faf9f071d05f1b4a79f3f973d36814e5d",
+      "size_bytes": 5341
+    },
+    {
+      "mode": "0644",
+      "path": "tool_contract_drift/review.py",
+      "sha256": "a194ba8be9cfdc887c1f79eeaaf4dd9f757ea3c7750558c604859ac848312ec2",
+      "size_bytes": 5321
+    },
+    {
+      "mode": "0644",
+      "path": "tool_contract_drift/review_cli.py",
+      "sha256": "b929f1992bd100aaa85adc2a3c5012a414689bf5f24b815b37304c0dcbb245c3",
+      "size_bytes": 2296
+    },
+    {
+      "mode": "0644",
+      "path": "tool_contract_drift_cli.py",
+      "sha256": "3a96652f695b97f67261cd1b4d1e528da6825f999d2ba23774a4e9aa2430e90a",
+      "size_bytes": 72712
+    },
+    {
+      "mode": "0644",
+      "path": "uv.lock",
+      "sha256": "90c73b0ab26fd393231204acd7eac4c8c9aef8bdc5db3bc527e6df30856eee30",
+      "size_bytes": 142
+    }
+  ],
+  "paper_build_identity": {
+    "pdf_sha256": "5c4abfc5ff784dbbf8301f30578ddf5f254535447fe1911b57ed2e4fbd02763f",
+    "source_pdf_hashes_verified": true,
+    "source_sha256": "6161f741e87065d4512ac4c9e76f2b2cff3e5fc1f624aa478274dfb0e30e5bbf"
+  },
+  "policy_sha256": "84e3d4a62921a0612fbcfb53134c0fe310c6bcca8083d5166eab1d6430587537",
+  "publication_claims": {
+    "archive_or_doi_exists": false,
+    "external_validation": false,
+    "live_sarif_upload_verified": false,
+    "protocol_or_vendor_endorsement": false,
+    "public_github_repository_or_release_exists": false
+  },
+  "release_metadata_sha256": "ec693e39c5b16fd7a48cce09574ee89089fa3555197b2379e957fb7dcddba404",
+  "schema_version": "tool-contract-drift-public-export-manifest-v1",
+  "source_identity": {
+    "file_set_sha256": "0ddc5faf59774da5c1c1d92ef583283f2e529257f4b515f1e13cf2f4c47da677",
+    "state": "selected_public_file_set"
+  },
+  "status": "public_export_bytes_verified_locally",
+  "study_case_separation": {
+    "content_overlap_count": 0,
+    "frozen_study_case_count": 12,
+    "id_overlap_count": 0,
+    "local_export_case_separation_passed": true,
+    "public_fixture_count": 53
+  },
+  "toolchain": {
+    "archive_builder": "python-stdlib-tarfile-ustar+gzip",
+    "oasdiff": {
+      "module": "github.com/oasdiff/oasdiff",
+      "version": "v1.23.0"
+    },
+    "pdftotext": "pdftotext version 26.10.0",
+    "python_implementation": "CPython",
+    "python_requires": ">=3.11",
+    "python_runtime": "3.12.10",
+    "source_date_epoch": 0,
+    "uv": "uv 0.13.1 (Homebrew 2026-10-14 aarch64-apple-darwin)",
+    "uv_lock_included": true,
+    "zlib_runtime": "1.2.12"
+  },
+  "version": "0.1.0a0"
+}

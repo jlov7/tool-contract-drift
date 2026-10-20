@@ -1,0 +1,52 @@
+name: Provenance or licensing concern
+description: Report an attribution, source-lock, fixture-byte, permission, or redistribution concern.
+title: "[Provenance] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Treat every uncleared byte as a release blocker. Do not post confidential legal advice, private contact data, credentials, or exploit details in this public form. Use the security policy and a separately configured private route for sensitive reports.
+  - type: dropdown
+    id: concern
+    attributes:
+      label: Concern type
+      options:
+        - Wrong source or commit
+        - Hash or line-span mismatch
+        - Missing or incorrect attribution
+        - License identification concern
+        - Redistribution permission concern
+        - Third-party bytes included unexpectedly
+        - Takedown or removal request
+        - Other provenance concern
+    validations:
+      required: true
+  - type: input
+    id: path
+    attributes:
+      label: Artifact path or record ID
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Public evidence
+      description: Link stable source, license, commit, or hash evidence. Do not paste uncleared source bytes.
+    validations:
+      required: true
+  - type: textarea
+    id: action
+    attributes:
+      label: Requested action
+      description: For example, remove bytes, retain hashes only, correct metadata, replace with synthetic data, or seek independent legal review.
+    validations:
+      required: true
+  - type: checkboxes
+    id: boundaries
+    attributes:
+      label: Submission boundaries
+      options:
+        - label: This public report contains no secrets, private personal data, confidential legal advice, or uncleared source excerpts.
+          required: true
+        - label: I understand that repository license metadata and third-party notices are not themselves legal clearance.
+          required: true

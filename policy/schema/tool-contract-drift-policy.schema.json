@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/tool-contract-drift-policy.schema.json",
+  "title": "Agent Tool Contract Drift Policy",
+  "type": "object",
+  "additionalProperties": true,
+  "properties": {
+    "policy_version": {"type": "string", "const": "tool-contract-drift-v1"},
+    "status": {"type": "string"},
+    "scope": {"type": "array", "items": {"type": "string"}},
+    "descriptor_fields": {"type": "array", "items": {"type": "string"}},
+    "output_contract": {"type": "array", "items": {"type": "string"}},
+    "generic_baseline_labels": {"type": "array", "items": {"type": "string"}},
+    "labels": {
+      "type": "array",
+      "minItems": 10,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {"type": "string"},
+          "default_severity": {"type": "string"},
+          "trigger_intent": {"type": "string"},
+          "review_question": {"type": "string"}
+        },
+        "required": ["id", "default_severity", "trigger_intent", "review_question"]
+      }
+    },
+    "config_contract": {"type": "object"},
+    "claim_boundary": {"type": "array", "items": {"type": "string"}}
+  },
+  "required": [
+    "policy_version",
+    "status",
+    "scope",
+    "descriptor_fields",
+    "output_contract",
+    "generic_baseline_labels",
+    "labels",
+    "config_contract",
+    "claim_boundary"
+  ]
+}

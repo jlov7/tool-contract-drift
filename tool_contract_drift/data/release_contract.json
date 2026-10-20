@@ -1,0 +1,102 @@
+{
+  "corpora": {
+    "private_canonical": {
+      "content_manifest_sha256": "0ffac386a43319785fdbd1e6fe8ebdac07d14e3e0abbbc7fb94b04ef6aa218a2",
+      "expected_fixture_count": 65,
+      "fixture_files": [
+        "tool_descriptor_fixtures.json",
+        "real_public_descriptor_changes.json",
+        "heldout_public_descriptor_changes.json",
+        "second_heldout_public_descriptor_changes.json",
+        "third_heldout_public_descriptor_changes.json",
+        "ordinary_public_descriptor_controls.json",
+        "adversarial_descriptor_cases.json"
+      ],
+      "id": "private-canonical-65"
+    },
+    "public_reproduction": {
+      "composition": {
+        "all_fixture_bytes_authored_for_this_project": true,
+        "construction_version": "public-reproduction-corpus-v1",
+        "newly_authored_synthetic_quiet_control_count": 25,
+        "newly_authored_synthetic_quiet_control_ids_sha256": "a20d0c9d4df6c61ee888c0b8d3d71c957a3cf621fa47213ce1dba3a03ec51316",
+        "newly_authored_synthetic_quiet_control_records_sha256": "e55a8b9e49c0418745cce5f55010044052aabba5d55031082101bbcf79559f11",
+        "relationship_to_private_canonical": "separate_manifest_identity_reuses_private_synthetic_records_not_a_private_corpus_subset",
+        "retained_from_private_canonical_descriptor_pairs_sha256": "1050809458224ce7468354bf484a9ad8c2526187db510679f2945c063370783d",
+        "retained_from_private_canonical_synthetic_fixture_count": 28,
+        "retained_from_private_canonical_synthetic_fixture_ids_sha256": "f14b4ca80dd97324bb04afe974adf0f63363eef16fc0bb1b228deaca2d65aed2",
+        "retained_from_private_canonical_synthetic_fixture_records_sha256": "d83bbd5d362c1b26cc7be0f2ef0704ac7813a13a78efb74a1c0b2e62044cd345",
+        "source_derived_descriptor_byte_count": 0,
+        "total_authored_synthetic_fixture_count": 53
+      },
+      "content_manifest_sha256": "330c174becdcc98efee8ef438e389ea4e13af767c89f0e851a2528497e2f3e2e",
+      "expected_fixture_count": 53,
+      "finding_set_sha256": "b92ed6d8123c3b66f73a0e2acfd04c0fd05b13df0d39b8e5ba7171978347e74f",
+      "fixture_files": [
+        "tool_descriptor_fixtures.json",
+        "real_public_descriptor_changes.json",
+        "heldout_public_descriptor_changes.json",
+        "second_heldout_public_descriptor_changes.json",
+        "third_heldout_public_descriptor_changes.json",
+        "ordinary_public_descriptor_controls.json",
+        "adversarial_descriptor_cases.json"
+      ],
+      "id": "public-reproduction-53"
+    }
+  },
+  "expected_counts": {
+    "private_canonical": {
+      "finding_count": 30,
+      "hold_fixture_count": 26,
+      "policy_label_count": 10,
+      "public_fixture_count": 37,
+      "quiet_fixture_count": 39,
+      "synthetic_fixture_count": 28
+    },
+    "public_package": {
+      "candidate_file_reference_count": 0,
+      "finding_count": 25,
+      "hold_fixture_count": 22,
+      "public_fixture_count": 0,
+      "quiet_fixture_count": 31,
+      "source_lock_record_count": 0,
+      "synthetic_fixture_count": 53
+    }
+  },
+  "redistribution": {
+    "allowed_public_status": "permissive_license_metadata_inventory",
+    "blocked_fixture_ids": [
+      "heldout-002-tekla-destructive-reclassification",
+      "heldout-005-suse-registration-annotations",
+      "ordinary-005-lucide-search-icons-readonly-control",
+      "ordinary-012-research-mcp-search-preprints-readonly-tool-control",
+      "real-001-node-red-context-store-tools",
+      "real-004-tekla-readonly-fix-control",
+      "real-005-vicsee-generative-open-world",
+      "second-002-trustbench-readonly-control",
+      "third-003-taiga-delete-story-added",
+      "third-004-taiga-delete-epic-added",
+      "third-005-taiga-create-epic-missing-readonly",
+      "third-006-taiga-capabilities-readonly-control"
+    ]
+  },
+  "schema_version": "tool-contract-drift-release-contract-v1",
+  "semantic_audits": {
+    "mcp_annotation_defaults": {
+      "actual_escalation_tool_change_count": 0,
+      "explicit_default_restatement_tool_change_count": 7,
+      "fixture_record_count": 12,
+      "safer_explicit_declaration_tool_change_count": 9,
+      "tool_change_count": 16
+    }
+  },
+  "toolchain": {
+    "go": {
+      "version": "1.26.5"
+    },
+    "oasdiff": {
+      "module": "github.com/oasdiff/oasdiff",
+      "version": "v1.23.0"
+    }
+  }
+}

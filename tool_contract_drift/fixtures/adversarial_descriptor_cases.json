@@ -1,0 +1,857 @@
+[
+  {
+    "after": {
+      "tools": [
+        {
+          "annotations": {
+            "readOnlyHint": true
+          },
+          "description": "List invoice summaries and payment method tokens.",
+          "input_schema": {
+            "additionalProperties": false,
+            "properties": {
+              "account_id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "account_id"
+            ],
+            "type": "object"
+          },
+          "name": "list_invoices",
+          "output_schema": {
+            "properties": {
+              "amount": {
+                "type": "number"
+              },
+              "invoice_id": {
+                "type": "string"
+              },
+              "payment_token": {
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "output_template": "ui://billing/invoice-with-payment-methods.html"
+        }
+      ]
+    },
+    "before": {
+      "tools": [
+        {
+          "annotations": {
+            "readOnlyHint": true
+          },
+          "description": "List invoice summaries.",
+          "input_schema": {
+            "additionalProperties": false,
+            "properties": {
+              "account_id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "account_id"
+            ],
+            "type": "object"
+          },
+          "name": "list_invoices",
+          "output_schema": {
+            "properties": {
+              "amount": {
+                "type": "number"
+              },
+              "invoice_id": {
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "output_template": "ui://billing/invoice-summary.html"
+        }
+      ]
+    },
+    "expected_risks": [
+      "sensitive_output_template_drift"
+    ],
+    "id": "adversarial-001-sensitive-readonly-disclosure-not-destructive",
+    "label_rationale": "Sensitive read-only disclosure should require review without being mislabeled as destructive.",
+    "label_status": "curated_expected_v1"
+  },
+  {
+    "after": {
+      "tools": [
+        {
+          "description": "Deploy a preview.",
+          "input_schema": {
+            "additionalProperties": false,
+            "properties": {
+              "target": {
+                "additionalProperties": false,
+                "properties": {
+                  "env": {
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              }
+            },
+            "type": "object"
+          },
+          "name": "deploy_preview"
+        }
+      ]
+    },
+    "before": {
+      "tools": [
+        {
+          "description": "Deploy a preview.",
+          "input_schema": {
+            "additionalProperties": false,
+            "properties": {
+              "target": {
+                "additionalProperties": false,
+                "properties": {
+                  "env": {
+                    "enum": [
+                      "staging"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              }
+            },
+            "type": "object"
+          },
+          "name": "deploy_preview"
+        }
+      ]
+    },
+    "expected_risks": [
+      "closed_world_to_open_world_input"
+    ],
+    "id": "adversarial-002-nested-enum-removal",
+    "label_rationale": "Nested enum removal loosens the action space even when the top-level object stays closed.",
+    "label_status": "curated_expected_v1"
+  },
+  {
+    "after": {
+      "tools": [
+        {
+          "description": "Update a record.",
+          "input_schema": {
+            "properties": {
+              "record_id": {
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "name": "update_record"
+        }
+      ]
+    },
+    "before": {
+      "tools": [
+        {
+          "description": "Update a record.",
+          "input_schema": {
+            "additionalProperties": false,
+            "properties": {
+              "record_id": {
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "name": "update_record"
+        }
+      ]
+    },
+    "expected_risks": [
+      "closed_world_to_open_world_input"
+    ],
+    "id": "adversarial-003-additional-properties-removed",
+    "label_rationale": "Removing additionalProperties false makes the schema default-open.",
+    "label_status": "curated_expected_v1"
+  },
+  {
+    "after": {
+      "tools": [
+        {
+          "description": "Process selected actions.",
+          "input_schema": {
+            "properties": {
+              "actions": {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              }
+            },
+            "type": "object"
+          },
+          "name": "process_actions"
+        }
+      ]
+    },
+    "before": {
+      "tools": [
+        {
+          "description": "Process selected actions.",
+          "input_schema": {
+            "properties": {
+              "actions": {
+                "items": {
+                  "enum": [
+                    "read",
+                    "preview"
+                  ],
+                  "type": "string"
+                },
+                "type": "array"
+              }
+            },
+            "type": "object"
+          },
+          "name": "process_actions"
+        }
+      ]
+    },
+    "expected_risks": [
+      "closed_world_to_open_world_input"
+    ],
+    "id": "adversarial-004-array-item-enum-removal",
+    "label_rationale": "Array item enum removal expands possible agent actions.",
+    "label_status": "curated_expected_v1"
+  },
+  {
+    "after": {
+      "tools": [
+        {
+          "annotations": {
+            "openWorldHint": true
+          },
+          "description": "Fetch a configured URL.",
+          "name": "fetch_url"
+        }
+      ]
+    },
+    "before": {
+      "tools": [
+        {
+          "annotations": {
+            "openWorldHint": false
+          },
+          "description": "Fetch a configured URL.",
+          "name": "fetch_url"
+        }
+      ]
+    },
+    "expected_risks": [
+      "closed_world_to_open_world_input"
+    ],
+    "id": "adversarial-005-open-world-hint-escalation",
+    "label_rationale": "openWorldHint false to true changes the tool's external action boundary.",
+    "label_status": "curated_expected_v1"
+  },
+  {
+    "after": {
+      "tools": [
+        {
+          "auth": {
+            "scopes": [
+              "gmail.readonly",
+              "gmail.modify"
+            ]
+          },
+          "description": "Search Gmail.",
+          "name": "gmail_search"
+        }
+      ]
+    },
+    "before": {
+      "tools": [
+        {
+          "auth": {
+            "scopes": [
+              "gmail.readonly"
+            ]
+          },
+          "description": "Search Gmail.",
+          "name": "gmail_search"
+        }
+      ]
+    },
+    "expected_risks": [
+      "auth_scope_expansion"
+    ],
+    "id": "adversarial-006-provider-modify-scope",
+    "label_rationale": "Provider-specific modify scopes are write-capable even without the literal word write.",
+    "label_status": "curated_expected_v1"
+  },
+  {
+    "after": {
+      "tools": [
+        {
+          "annotations": {
+            "readOnlyHint": true
+          },
+          "description": "Read admin guide pages.",
+          "name": "read_admin_guide"
+        }
+      ]
+    },
+    "before": {
+      "tools": []
+    },
+    "expected_risks": [],
+    "id": "adversarial-007-admin-doc-readonly-control",
+    "label_rationale": "The word admin in read-only documentation should not imply admin capability.",
+    "label_status": "curated_expected_v1"
+  },
+  {
+    "after": {
+      "tools": [
+        {
+          "annotations": {
+            "idempotentHint": false
+          },
+          "description": "Read asynchronous job status.",
+          "name": "job_status"
+        }
+      ]
+    },
+    "before": {
+      "tools": [
+        {
+          "description": "Read asynchronous job status.",
+          "name": "job_status"
+        }
+      ]
+    },
+    "expected_risks": [],
+    "id": "adversarial-008-async-status-control",
+    "label_rationale": "The substring sync inside asynchronous should not imply a sync side effect.",
+    "label_status": "curated_expected_v1"
+  },
+  {
+    "after": {
+      "tools": [
+        {
+          "description": "Remove a document from the workspace.",
+          "name": "delete_document"
+        }
+      ]
+    },
+    "before": {
+      "tools": []
+    },
+    "expected_risks": [
+      "risky_tool_added"
+    ],
+    "id": "adversarial-009-name-only-risky-tool-added",
+    "label_rationale": "A new risky tool name should require review even when the description is bland.",
+    "label_status": "curated_expected_v1"
+  },
+  {
+    "after": {
+      "tools": [
+        {
+          "annotations": {
+            "readOnlyHint": true
+          },
+          "description": "Delete archived invoices.",
+          "name": "invoice_lookup"
+        }
+      ]
+    },
+    "before": {
+      "tools": [
+        {
+          "annotations": {
+            "readOnlyHint": true
+          },
+          "description": "Read archived invoices.",
+          "name": "invoice_lookup"
+        }
+      ]
+    },
+    "expected_risks": [
+      "readonly_to_destructive"
+    ],
+    "id": "adversarial-010-readonly-description-becomes-delete-with-stale-readonly",
+    "label_rationale": "Stale readOnlyHint true should not suppress a semantic drift from read to delete.",
+    "label_status": "curated_expected_v1"
+  },
+  {
+    "after": {
+      "tools": [
+        {
+          "auth": {
+            "scopes": [
+              "drive.readonly",
+              "drive"
+            ]
+          },
+          "description": "Search Drive files.",
+          "name": "drive_search"
+        }
+      ]
+    },
+    "before": {
+      "tools": [
+        {
+          "auth": {
+            "scopes": [
+              "drive.readonly"
+            ]
+          },
+          "description": "Search Drive files.",
+          "name": "drive_search"
+        }
+      ]
+    },
+    "expected_risks": [
+      "auth_scope_expansion"
+    ],
+    "id": "adversarial-011-provider-broad-drive-scope-expansion",
+    "label_rationale": "A broad provider scope can be write-capable even when it lacks write/modify/delete text.",
+    "label_status": "curated_expected_v1"
+  },
+  {
+    "after": {
+      "tools": [
+        {
+          "auth": {
+            "scopes": [
+              "admin.directory.user.readonly"
+            ]
+          },
+          "description": "Read directory users.",
+          "name": "directory_user_read"
+        }
+      ]
+    },
+    "before": {
+      "tools": [
+        {
+          "auth": {
+            "scopes": []
+          },
+          "description": "Read directory users.",
+          "name": "directory_user_read"
+        }
+      ]
+    },
+    "expected_risks": [],
+    "id": "adversarial-012-admin-directory-readonly-scope-control",
+    "label_rationale": "A read-only admin-directory noun scope should not be treated as write/admin capability.",
+    "label_status": "curated_expected_v1"
+  },
+  {
+    "after": {
+      "tools": [
+        {
+          "description": "Summarize usage.",
+          "name": "usage_summary",
+          "output_schema": {
+            "properties": {
+              "token_count": {
+                "type": "integer"
+              }
+            },
+            "type": "object"
+          },
+          "output_template": "ui://usage/summary-v2.html"
+        }
+      ]
+    },
+    "before": {
+      "tools": [
+        {
+          "description": "Summarize usage.",
+          "name": "usage_summary",
+          "output_schema": {
+            "properties": {
+              "request_count": {
+                "type": "integer"
+              }
+            },
+            "type": "object"
+          },
+          "output_template": "ui://usage/summary.html"
+        }
+      ]
+    },
+    "expected_risks": [],
+    "id": "adversarial-013-token-count-output-control",
+    "label_rationale": "A token usage counter is not a sensitive credential/token disclosure.",
+    "label_status": "curated_expected_v1"
+  },
+  {
+    "after": {
+      "tools": [
+        {
+          "description": "Read session status.",
+          "name": "session_status",
+          "output_schema": {
+            "properties": {
+              "session": {
+                "properties": {
+                  "access_token": {
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              }
+            },
+            "type": "object"
+          },
+          "output_template": "ui://sessions/status-with-token.html"
+        }
+      ]
+    },
+    "before": {
+      "tools": [
+        {
+          "description": "Read session status.",
+          "name": "session_status",
+          "output_schema": {
+            "properties": {
+              "session": {
+                "properties": {
+                  "expires_at": {
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              }
+            },
+            "type": "object"
+          },
+          "output_template": "ui://sessions/status.html"
+        }
+      ]
+    },
+    "expected_risks": [
+      "sensitive_output_template_drift"
+    ],
+    "id": "adversarial-014-nested-sensitive-output-template-drift",
+    "label_rationale": "Nested sensitive output additions should require review when the template changes.",
+    "label_status": "curated_expected_v1"
+  },
+  {
+    "after": {
+      "tools": [
+        {
+          "description": "Read OAuth session state.",
+          "name": "oauth_session",
+          "output_schema": {
+            "properties": {
+              "access_token": {
+                "type": "string"
+              },
+              "expires_at": {
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "output_template": "ui://oauth/session-with-access_token.html"
+        }
+      ]
+    },
+    "before": {
+      "tools": [
+        {
+          "description": "Read OAuth session state.",
+          "name": "oauth_session",
+          "output_schema": {
+            "properties": {
+              "access_token": {
+                "type": "string"
+              },
+              "expires_at": {
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "output_template": "ui://oauth/session.html"
+        }
+      ]
+    },
+    "expected_risks": [
+      "sensitive_output_template_drift"
+    ],
+    "id": "adversarial-015-sensitive-template-existing-field-rendered",
+    "label_rationale": "A template drift that starts rendering an existing sensitive field should require review.",
+    "label_status": "curated_expected_v1"
+  },
+  {
+    "after": {
+      "tools": [
+        {
+          "description": "Update a scheduled export.",
+          "input_schema": {
+            "additionalProperties": false,
+            "properties": {
+              "export_id": {
+                "type": "string"
+              },
+              "overrides": {
+                "type": "object"
+              }
+            },
+            "required": [
+              "export_id"
+            ],
+            "type": "object"
+          },
+          "name": "update_export"
+        }
+      ]
+    },
+    "before": {
+      "tools": [
+        {
+          "description": "Update a scheduled export.",
+          "input_schema": {
+            "additionalProperties": false,
+            "properties": {
+              "export_id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "export_id"
+            ],
+            "type": "object"
+          },
+          "name": "update_export"
+        }
+      ]
+    },
+    "expected_risks": [
+      "closed_world_to_open_world_input"
+    ],
+    "id": "adversarial-016-new-open-object-property-expansion",
+    "label_rationale": "Adding a new open object property to a closed schema expands the action space.",
+    "label_status": "curated_expected_v1"
+  },
+  {
+    "after": {
+      "tools": [
+        {
+          "description": "Read a scheduled export.",
+          "input_schema": {
+            "additionalProperties": false,
+            "properties": {
+              "export_id": {
+                "type": "string"
+              },
+              "format": {
+                "enum": [
+                  "csv",
+                  "json"
+                ],
+                "type": "string"
+              }
+            },
+            "required": [
+              "export_id"
+            ],
+            "type": "object"
+          },
+          "name": "read_export"
+        }
+      ]
+    },
+    "before": {
+      "tools": [
+        {
+          "description": "Read a scheduled export.",
+          "input_schema": {
+            "additionalProperties": false,
+            "properties": {
+              "export_id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "export_id"
+            ],
+            "type": "object"
+          },
+          "name": "read_export"
+        }
+      ]
+    },
+    "expected_risks": [
+      "closed_world_to_open_world_input"
+    ],
+    "id": "adversarial-017-bounded-optional-property-control",
+    "label_rationale": "Adding an optional property to a closed schema admits inputs that the prior schema rejected, even when the property itself is bounded.",
+    "label_status": "curated_expected_v1"
+  },
+  {
+    "after": {
+      "tools": [
+        {
+          "auth": {
+            "scopes": [
+              "vault.metadata.read",
+              "vault.secrets.read"
+            ]
+          },
+          "description": "Read vault secret material.",
+          "name": "vault_secret_read"
+        }
+      ]
+    },
+    "before": {
+      "tools": [
+        {
+          "auth": {
+            "scopes": [
+              "vault.metadata.read"
+            ]
+          },
+          "description": "Read vault metadata.",
+          "name": "vault_secret_read"
+        }
+      ]
+    },
+    "expected_risks": [
+      "auth_scope_expansion"
+    ],
+    "id": "adversarial-018-sensitive-readonly-scope-expansion",
+    "label_rationale": "A newly granted read scope over secrets can still expand the sensitive disclosure boundary.",
+    "label_status": "curated_expected_v1"
+  },
+  {
+    "after": {
+      "tools": [
+        {
+          "description": "Read a payment session.",
+          "name": "payment_session",
+          "output_schema": {
+            "properties": {
+              "payment_secret": {
+                "type": "string"
+              },
+              "session_id": {
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "output_template": "ui://payments/session.html"
+        }
+      ]
+    },
+    "before": {
+      "tools": [
+        {
+          "description": "Read a payment session.",
+          "name": "payment_session",
+          "output_schema": {
+            "properties": {
+              "session_id": {
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "output_template": "ui://payments/session.html"
+        }
+      ]
+    },
+    "expected_risks": [
+      "sensitive_output_schema_expansion"
+    ],
+    "id": "adversarial-019-sensitive-output-schema-expansion-no-template-change",
+    "label_rationale": "Adding a sensitive output field without a template change should not be mislabeled as template drift.",
+    "label_status": "curated_expected_v1"
+  },
+  {
+    "after": {
+      "tools": [
+        {
+          "description": "Charge a saved customer card.",
+          "name": "charge_card"
+        }
+      ]
+    },
+    "before": {
+      "tools": []
+    },
+    "expected_risks": [
+      "risky_tool_added"
+    ],
+    "id": "adversarial-020-money-movement-tool-added",
+    "label_rationale": "A new money-movement verb should require review even when it does not use the word payment.",
+    "label_status": "curated_expected_v1"
+  },
+  {
+    "after": {
+      "tools": [
+        {
+          "annotations": {
+            "destructiveHint": false,
+            "readOnlyHint": false
+          },
+          "description": "Delete queued export jobs.",
+          "name": "delete_export_jobs"
+        }
+      ]
+    },
+    "before": {
+      "tools": [
+        {
+          "annotations": {
+            "destructiveHint": true,
+            "readOnlyHint": false
+          },
+          "description": "Delete queued export jobs.",
+          "name": "delete_export_jobs"
+        }
+      ]
+    },
+    "expected_risks": [
+      "destructive_hint_downgrade"
+    ],
+    "id": "adversarial-021-destructive-hint-downgrade-with-delete-text",
+    "label_rationale": "A destructiveHint downgrade on a still-destructive tool should be reviewed as an annotation trust-boundary change.",
+    "label_status": "curated_expected_v1"
+  },
+  {
+    "after": {
+      "tools": [
+        {
+          "annotations": {
+            "idempotentHint": false
+          },
+          "description": "Read appointment records by start date and stop time.",
+          "name": "appointment_window"
+        }
+      ]
+    },
+    "before": {
+      "tools": [
+        {
+          "description": "Read appointment records by date.",
+          "name": "appointment_window"
+        }
+      ]
+    },
+    "expected_risks": [],
+    "id": "adversarial-022-start-date-nonidempotent-read-control",
+    "label_rationale": "Temporal nouns like start date and stop time should not imply start/stop side effects.",
+    "label_status": "curated_expected_v1"
+  }
+]

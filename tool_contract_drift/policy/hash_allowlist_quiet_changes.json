@@ -1,0 +1,259 @@
+{
+  "claim_boundary": "This generated allowlist contains only current fully synthetic public-package quiet/control transitions. It is a corpus-specific substitute control, not a general safety or approval policy.",
+  "corpus_id": "public-reproduction-53",
+  "corpus_manifest_sha256": "330c174becdcc98efee8ef438e389ea4e13af767c89f0e851a2528497e2f3e2e",
+  "entries": [
+    {
+      "after_risk_field_sha256": "cacee6dee5e75eb5624c1ea8a831599edf951f50fa511f39e976c0d9ae77bb3c",
+      "before_risk_field_sha256": null,
+      "fixture_id": "adversarial-007-admin-doc-readonly-control",
+      "reason": "Synthetic quiet/control transition in the fully synthetic public corpus.",
+      "source_file": "tool_contract_drift/fixtures/adversarial_descriptor_cases.json",
+      "tool_name": "read_admin_guide"
+    },
+    {
+      "after_risk_field_sha256": "9f068ca473fbaf994020fc5a42eeaafa8bb4e0fe406f50ec511c16d3811c4fe7",
+      "before_risk_field_sha256": "2a7bf0902eadcbb43a6c7776bafe93c29ceebb63bef40e0bfff0baf41636b179",
+      "fixture_id": "adversarial-008-async-status-control",
+      "reason": "Synthetic quiet/control transition in the fully synthetic public corpus.",
+      "source_file": "tool_contract_drift/fixtures/adversarial_descriptor_cases.json",
+      "tool_name": "job_status"
+    },
+    {
+      "after_risk_field_sha256": "76a553b2841216bdb970dc34a7b70b53d44c267f004e99af59026371f37a7ca9",
+      "before_risk_field_sha256": "0abec264685285081917ce47a602396f88f5fdf6c825ccca6805478017c52a18",
+      "fixture_id": "adversarial-012-admin-directory-readonly-scope-control",
+      "reason": "Synthetic quiet/control transition in the fully synthetic public corpus.",
+      "source_file": "tool_contract_drift/fixtures/adversarial_descriptor_cases.json",
+      "tool_name": "directory_user_read"
+    },
+    {
+      "after_risk_field_sha256": "6043086d546c5015705a062529e88bb38d2547e413a90d38fa8f7dc09ddc7de5",
+      "before_risk_field_sha256": "323dd03461502214d01551a5a644d97fed988e7d4c696fec46fa4efda52c8d53",
+      "fixture_id": "adversarial-013-token-count-output-control",
+      "reason": "Synthetic quiet/control transition in the fully synthetic public corpus.",
+      "source_file": "tool_contract_drift/fixtures/adversarial_descriptor_cases.json",
+      "tool_name": "usage_summary"
+    },
+    {
+      "after_risk_field_sha256": "ad021cdae0c7682be39b57ae69a1ecd45c1560289977482338e84a41387d6be2",
+      "before_risk_field_sha256": "a86046000a44f671f9399863d55a3546fa3d25ff613a1ab52026c4f94f617be3",
+      "fixture_id": "adversarial-022-start-date-nonidempotent-read-control",
+      "reason": "Synthetic quiet/control transition in the fully synthetic public corpus.",
+      "source_file": "tool_contract_drift/fixtures/adversarial_descriptor_cases.json",
+      "tool_name": "appointment_window"
+    },
+    {
+      "after_risk_field_sha256": "4568e36fc5b05cfeda6fbd73f12f96dd2be506516c509b145477a7644993388d",
+      "before_risk_field_sha256": "93d91da34e1ddc13e104143a11042c04eca4ed063e76798705fe738b61375b4f",
+      "fixture_id": "public-synthetic-quiet-001",
+      "reason": "Synthetic quiet/control transition in the fully synthetic public corpus.",
+      "source_file": "tool_contract_drift/fixtures/ordinary_public_descriptor_controls.json",
+      "tool_name": "read_synthetic_catalogue_001"
+    },
+    {
+      "after_risk_field_sha256": "140f527bee48e8f78cc7e8dd7cc12c3a238fd91d8e3127f3880cea0d46640c74",
+      "before_risk_field_sha256": "388e884d4525435a753dc0a0e1ee188c7a851b3fe778fbaab89d039eabb1ac2f",
+      "fixture_id": "public-synthetic-quiet-002",
+      "reason": "Synthetic quiet/control transition in the fully synthetic public corpus.",
+      "source_file": "tool_contract_drift/fixtures/ordinary_public_descriptor_controls.json",
+      "tool_name": "read_synthetic_catalogue_002"
+    },
+    {
+      "after_risk_field_sha256": "f3d67d47125d00c43faa29093ecc2b7ec4f9d24bd4d2bbb40975e47d0cee837b",
+      "before_risk_field_sha256": "3d53d1859a9fd447cdadbaff74c2d07750a75ec4c5671093f1dad3eb945f9565",
+      "fixture_id": "public-synthetic-quiet-003",
+      "reason": "Synthetic quiet/control transition in the fully synthetic public corpus.",
+      "source_file": "tool_contract_drift/fixtures/ordinary_public_descriptor_controls.json",
+      "tool_name": "read_synthetic_catalogue_003"
+    },
+    {
+      "after_risk_field_sha256": "b6fd83e28c942f77e10f9a89c0ac8affcadbe7cedc0da0e15a21153c07b7049c",
+      "before_risk_field_sha256": "916373be1630d2defe99a3daf9ea84acd4479e49f25173e263c9c82207ae44a6",
+      "fixture_id": "public-synthetic-quiet-004",
+      "reason": "Synthetic quiet/control transition in the fully synthetic public corpus.",
+      "source_file": "tool_contract_drift/fixtures/ordinary_public_descriptor_controls.json",
+      "tool_name": "read_synthetic_catalogue_004"
+    },
+    {
+      "after_risk_field_sha256": "16785d9568f243fd56c042c6312970490ab0af77fa3b485811c2719d861b1806",
+      "before_risk_field_sha256": "8807e98b57d78d1739fb5d3f3d318118d91553c277b8efcacdd1985d921d80f3",
+      "fixture_id": "public-synthetic-quiet-005",
+      "reason": "Synthetic quiet/control transition in the fully synthetic public corpus.",
+      "source_file": "tool_contract_drift/fixtures/ordinary_public_descriptor_controls.json",
+      "tool_name": "read_synthetic_catalogue_005"
+    },
+    {
+      "after_risk_field_sha256": "b9f80f8be4d0f123bb519500d95aab8e4cb77d3ee8184a5e3e7c6ac642968268",
+      "before_risk_field_sha256": "3eb492e69d318f411098873f8e436d3cf299d3bff3382264f8eb52f276880799",
+      "fixture_id": "public-synthetic-quiet-006",
+      "reason": "Synthetic quiet/control transition in the fully synthetic public corpus.",
+      "source_file": "tool_contract_drift/fixtures/ordinary_public_descriptor_controls.json",
+      "tool_name": "read_synthetic_catalogue_006"
+    },
+    {
+      "after_risk_field_sha256": "f1a0ee79e3e2a3ecfb661528f9c981572c0bb66b27370bf485b89930c3b8608c",
+      "before_risk_field_sha256": "139d9178cbae8a4fdd5afc2dad32021c7aefe27f113c1327222b3b3bcee6fe8f",
+      "fixture_id": "public-synthetic-quiet-007",
+      "reason": "Synthetic quiet/control transition in the fully synthetic public corpus.",
+      "source_file": "tool_contract_drift/fixtures/ordinary_public_descriptor_controls.json",
+      "tool_name": "read_synthetic_catalogue_007"
+    },
+    {
+      "after_risk_field_sha256": "d1f437653e9975afc30ed47b6afbf8549823a641a844567f5e638acb2c82ff6d",
+      "before_risk_field_sha256": "91b8c34051d9ceabbef3c4d39a3acd3b1cc6a43de5d2da2eaca17b88cf18185f",
+      "fixture_id": "public-synthetic-quiet-008",
+      "reason": "Synthetic quiet/control transition in the fully synthetic public corpus.",
+      "source_file": "tool_contract_drift/fixtures/ordinary_public_descriptor_controls.json",
+      "tool_name": "read_synthetic_catalogue_008"
+    },
+    {
+      "after_risk_field_sha256": "3adc6f78e91a317695ed53c0044eba1579b11d3a78f208489030474131d3e618",
+      "before_risk_field_sha256": "e957677a14fee540c929f1a4624686b3edee6fd559705e0e6f85e0980db98fb0",
+      "fixture_id": "public-synthetic-quiet-009",
+      "reason": "Synthetic quiet/control transition in the fully synthetic public corpus.",
+      "source_file": "tool_contract_drift/fixtures/ordinary_public_descriptor_controls.json",
+      "tool_name": "read_synthetic_catalogue_009"
+    },
+    {
+      "after_risk_field_sha256": "6bc38d1304cab914d933b54aa33f6234dc8a878ed7675b9eb29d6810810ab3df",
+      "before_risk_field_sha256": "84e66419369c7b006dc02f12f0ced6fcbfce65c50cca5cd1a5c94713c756512b",
+      "fixture_id": "public-synthetic-quiet-010",
+      "reason": "Synthetic quiet/control transition in the fully synthetic public corpus.",
+      "source_file": "tool_contract_drift/fixtures/ordinary_public_descriptor_controls.json",
+      "tool_name": "read_synthetic_catalogue_010"
+    },
+    {
+      "after_risk_field_sha256": "839f5fb6c040c904f6912e22e67e4ad964128f4052ef322f4f0006878ca6b93d",
+      "before_risk_field_sha256": "1914e51b4f64265be28ce781efb06019a05decbb8f1780cb2132f5abd6c817b1",
+      "fixture_id": "public-synthetic-quiet-011",
+      "reason": "Synthetic quiet/control transition in the fully synthetic public corpus.",
+      "source_file": "tool_contract_drift/fixtures/ordinary_public_descriptor_controls.json",
+      "tool_name": "read_synthetic_catalogue_011"
+    },
+    {
+      "after_risk_field_sha256": "72e45a8b7baea06d6e5abda51982674a4ed0a3524b713ab404b47ebe1adb35d9",
+      "before_risk_field_sha256": "c826d626192dd02e57cc4c64b52482f10ada78616ad89772b5ee0a0fcf77da93",
+      "fixture_id": "public-synthetic-quiet-012",
+      "reason": "Synthetic quiet/control transition in the fully synthetic public corpus.",
+      "source_file": "tool_contract_drift/fixtures/ordinary_public_descriptor_controls.json",
+      "tool_name": "read_synthetic_catalogue_012"
+    },
+    {
+      "after_risk_field_sha256": "9520d9ae16edd4c072948402e1de2933cb4048445a24be210e3780d13649ab5c",
+      "before_risk_field_sha256": "a467545d5102d58dbff56f4ebd8ae477a85616319343d166d630395e487919e0",
+      "fixture_id": "public-synthetic-quiet-013",
+      "reason": "Synthetic quiet/control transition in the fully synthetic public corpus.",
+      "source_file": "tool_contract_drift/fixtures/ordinary_public_descriptor_controls.json",
+      "tool_name": "read_synthetic_catalogue_013"
+    },
+    {
+      "after_risk_field_sha256": "bd66687946c2cae9ee3765cd1f65df0375373a32927a420a584fd058cbc6ce6c",
+      "before_risk_field_sha256": "2e661eb146be26f762ea5b69857ccb98450e28081d76da5f5b770cb54e8781a4",
+      "fixture_id": "public-synthetic-quiet-014",
+      "reason": "Synthetic quiet/control transition in the fully synthetic public corpus.",
+      "source_file": "tool_contract_drift/fixtures/ordinary_public_descriptor_controls.json",
+      "tool_name": "read_synthetic_catalogue_014"
+    },
+    {
+      "after_risk_field_sha256": "8f45c1235414f5d107f78f058002595ed65acd9eab29881bff77b000e275f25e",
+      "before_risk_field_sha256": "f79333b987af0fe3d726e840d1c71654f20e0f47f913b532f2187113c4380056",
+      "fixture_id": "public-synthetic-quiet-015",
+      "reason": "Synthetic quiet/control transition in the fully synthetic public corpus.",
+      "source_file": "tool_contract_drift/fixtures/ordinary_public_descriptor_controls.json",
+      "tool_name": "read_synthetic_catalogue_015"
+    },
+    {
+      "after_risk_field_sha256": "d02f346457e8dce2a389be89d3b3b07462c91f6969e221960001289d621eec7b",
+      "before_risk_field_sha256": "5e68e043fa84d7d5c6e65e12a1ad4d58ccf81d3a9e7cf3d5e4ac3191acdd0a74",
+      "fixture_id": "public-synthetic-quiet-016",
+      "reason": "Synthetic quiet/control transition in the fully synthetic public corpus.",
+      "source_file": "tool_contract_drift/fixtures/ordinary_public_descriptor_controls.json",
+      "tool_name": "read_synthetic_catalogue_016"
+    },
+    {
+      "after_risk_field_sha256": "6715acc6c1b2b6e8f4f305c0073b1589c49704734fdc08235a7c39e97dfcbd1d",
+      "before_risk_field_sha256": "53c1dd0b1a9c2b5616b25ee95c4445e3e9b3fac3361e40a00a7950b6e5592c5c",
+      "fixture_id": "public-synthetic-quiet-017",
+      "reason": "Synthetic quiet/control transition in the fully synthetic public corpus.",
+      "source_file": "tool_contract_drift/fixtures/ordinary_public_descriptor_controls.json",
+      "tool_name": "read_synthetic_catalogue_017"
+    },
+    {
+      "after_risk_field_sha256": "ae101b55a69f7aacc382236ecfde566c0a4cf6656f8f97393915f8bd47dbf1a8",
+      "before_risk_field_sha256": "449decbb2cd057d26adc4865c67bff2f031d436728bb09ca1dfa0bb7610037d2",
+      "fixture_id": "public-synthetic-quiet-018",
+      "reason": "Synthetic quiet/control transition in the fully synthetic public corpus.",
+      "source_file": "tool_contract_drift/fixtures/ordinary_public_descriptor_controls.json",
+      "tool_name": "read_synthetic_catalogue_018"
+    },
+    {
+      "after_risk_field_sha256": "d5a5290f53fa275373c240e4e14888dbd099037892a2949df2739a8bc754d536",
+      "before_risk_field_sha256": "279403beabec9b3f156ce0626be10af833069e2b264474ef2b2e24faae1e3261",
+      "fixture_id": "public-synthetic-quiet-019",
+      "reason": "Synthetic quiet/control transition in the fully synthetic public corpus.",
+      "source_file": "tool_contract_drift/fixtures/ordinary_public_descriptor_controls.json",
+      "tool_name": "read_synthetic_catalogue_019"
+    },
+    {
+      "after_risk_field_sha256": "d2e32fa0bff6a16e7a380a18c03df8d697521061fd66cf2191cba32e2ae48c31",
+      "before_risk_field_sha256": "b8c72212b2afb0a78d5ecceb7fc71f59fdd495ee16b93eb9363d8905b6952c41",
+      "fixture_id": "public-synthetic-quiet-020",
+      "reason": "Synthetic quiet/control transition in the fully synthetic public corpus.",
+      "source_file": "tool_contract_drift/fixtures/ordinary_public_descriptor_controls.json",
+      "tool_name": "read_synthetic_catalogue_020"
+    },
+    {
+      "after_risk_field_sha256": "83cbff09331985e8b7d6f2a0c1c73642f2822477aa884f9c51ac8684ed38f680",
+      "before_risk_field_sha256": "2ddbf563e30ca19a5f9661705d3f2d60dfb249c50e77d3a586e31b8e4644562a",
+      "fixture_id": "public-synthetic-quiet-021",
+      "reason": "Synthetic quiet/control transition in the fully synthetic public corpus.",
+      "source_file": "tool_contract_drift/fixtures/ordinary_public_descriptor_controls.json",
+      "tool_name": "read_synthetic_catalogue_021"
+    },
+    {
+      "after_risk_field_sha256": "87a09176c1daec18bc08d298e25b5dc3f775002390b09038b0f0bdef5e580a6e",
+      "before_risk_field_sha256": "c5edc4752cb49f745e65fc56a78a278d0055dda0358a4f4da349a3ffc3a9c630",
+      "fixture_id": "public-synthetic-quiet-022",
+      "reason": "Synthetic quiet/control transition in the fully synthetic public corpus.",
+      "source_file": "tool_contract_drift/fixtures/ordinary_public_descriptor_controls.json",
+      "tool_name": "read_synthetic_catalogue_022"
+    },
+    {
+      "after_risk_field_sha256": "9755788b8f9737a6b8fefbe4816c632fa313dd357fae1a912a3651bf2da5a49b",
+      "before_risk_field_sha256": "dfe519db55075829bfb5e61ea0882b220395978f42977ef172e2a44e3cf79bf4",
+      "fixture_id": "public-synthetic-quiet-023",
+      "reason": "Synthetic quiet/control transition in the fully synthetic public corpus.",
+      "source_file": "tool_contract_drift/fixtures/ordinary_public_descriptor_controls.json",
+      "tool_name": "read_synthetic_catalogue_023"
+    },
+    {
+      "after_risk_field_sha256": "46c71dcf8f518b64bf60831107a507cc7d2eb36b395257bedc97de6491e316c2",
+      "before_risk_field_sha256": "797a1f3cbf710d563ffec792635a07b457cea9eeec11a6c76792e635af083601",
+      "fixture_id": "public-synthetic-quiet-024",
+      "reason": "Synthetic quiet/control transition in the fully synthetic public corpus.",
+      "source_file": "tool_contract_drift/fixtures/ordinary_public_descriptor_controls.json",
+      "tool_name": "read_synthetic_catalogue_024"
+    },
+    {
+      "after_risk_field_sha256": "a4b5e06c09ea3164d9cff30b1dbcfe078d1e8797d8a5b27e70b2606a0879456c",
+      "before_risk_field_sha256": "dd2ca804131b0b6b5e44bd35d02544c03c946fd969b6e137d5676e03b3c40973",
+      "fixture_id": "public-synthetic-quiet-025",
+      "reason": "Synthetic quiet/control transition in the fully synthetic public corpus.",
+      "source_file": "tool_contract_drift/fixtures/ordinary_public_descriptor_controls.json",
+      "tool_name": "read_synthetic_catalogue_025"
+    },
+    {
+      "after_risk_field_sha256": "eb203dda324d98dd49ff5e729dd4773a0295dc72c3c6c38758c1d9b9e1999f06",
+      "before_risk_field_sha256": "9d7847cf9b6ed5453b50e84b10a25d72d2fd4bb8493ab4f1fe6ea6cfef1bcca4",
+      "fixture_id": "fixture-006-benign-description-cleanup",
+      "reason": "Synthetic quiet/control transition in the fully synthetic public corpus.",
+      "source_file": "tool_contract_drift/fixtures/tool_descriptor_fixtures.json",
+      "tool_name": "summarize_docs"
+    }
+  ],
+  "entry_count": 31,
+  "quiet_fixture_count": 31,
+  "schema_version": 1,
+  "status": "generated_fully_synthetic_public_package_quiet_transitions"
+}

@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools==80.9.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tool-contract-drift"
+version = "0.1.0a0"
+description = "Saved MCP tool-object change review with supplemental reapproval policy labels."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = []
+authors = [{name = "Jason M. Lovell"}]
+license = "MIT"
+license-files = ["LICENSE", "THIRD_PARTY_NOTICES.md"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Software Development :: Quality Assurance",
+]
+
+[project.scripts]
+tool-contract-drift = "tool_contract_drift_cli:main"
+tool-descriptor-review = "tool_contract_drift.review_cli:main"
+
+[tool.setuptools]
+py-modules = ["tool_contract_drift_cli"]
+
+[tool.setuptools.packages.find]
+include = ["tool_contract_drift*"]
+
+[tool.setuptools.package-data]
+tool_contract_drift = ["data/*.json"]
+"tool_contract_drift.fixtures" = ["*.json", "schema/*.json"]
+"tool_contract_drift.policy" = ["*.json", "schema/*.json"]

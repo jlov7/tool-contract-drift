@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use this experimental descriptor-review utility or case study, cite it as below and note the exact commit or archive hash."
+title: "Agent Tool Contract Drift: A Reapproval Vocabulary and Evaluation Harness for Model-Invoked Tools"
+version: "0.1.0a0"
+type: software
+repository-code: "https://github.com/jlov7/tool-contract-drift"
+authors:
+  - family-names: Lovell
+    given-names: "Jason M."
+    orcid: "https://orcid.org/0009-0001-6300-9155"
+abstract: "An experimental saved-MCP-descriptor review utility with a released-version case study, supplemental reapproval vocabulary and separate all-synthetic regression corpus. Structural changes remain visible alongside incomplete policy findings. The case study reports local observations, not detection accuracy or reviewer benefit; external usefulness is not established."
+keywords:
+  - agent tools
+  - descriptor drift
+  - MCP
+  - Apps SDK
+  - SARIF
+license: MIT

@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/tool-descriptor-fixture.schema.json",
+  "title": "Agent Tool Contract Drift Tool Descriptor Fixture",
+  "type": "object",
+  "additionalProperties": true,
+  "properties": {
+    "id": {"type": "string", "minLength": 1},
+    "before": {"$ref": "#/$defs/descriptor"},
+    "after": {"$ref": "#/$defs/descriptor"},
+    "expected_risks": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/rule_id"},
+      "uniqueItems": true
+    },
+    "label_status": {"type": "string", "minLength": 1},
+    "label_rationale": {"type": "string", "minLength": 1},
+    "source": {"type": "string"},
+    "url": {"type": "string"}
+  },
+  "required": ["id", "before", "after", "expected_risks", "label_status", "label_rationale"],
+  "$defs": {
+    "descriptor": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "tools": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/tool"}
+        }
+      },
+      "required": ["tools"]
+    },
+    "tool": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "name": {"type": "string", "minLength": 1},
+        "description": {"type": "string"},
+        "input_schema": {"type": "object"},
+        "output_schema": {"type": "object"},
+        "output_template": {"type": "string"},
+        "annotations": {"type": "object"},
+        "security_schemes": {"type": "array", "items": {"type": "object"}},
+        "execution": {"type": "object"},
+        "icons": {"type": "array", "items": {"type": "object"}},
+        "_meta": {"type": "object"},
+        "extensions": {"type": "object"},
+        "auth": {
+          "type": "object",
+          "additionalProperties": true,
+          "properties": {
+            "scopes": {
+              "type": "array",
+              "items": {"type": "string"}
+            }
+          }
+        }
+      },
+      "required": ["name"]
+    },
+    "rule_id": {
+      "enum": [
+        "readonly_to_destructive",
+        "destructive_hint_escalation",
+        "destructive_hint_downgrade",
+        "auth_scope_expansion",
+        "closed_world_to_open_world_input",
+        "schema_containment_unresolved",
+        "sensitive_output_template_drift",
+        "sensitive_output_schema_expansion",
+        "description_injection_drift",
+        "risky_tool_added"
+      ]
+    }
+  }
+}

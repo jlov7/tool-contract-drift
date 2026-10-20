@@ -1,0 +1,7 @@
+{
+  "paper_source": "paper/agent-tool-contract-drift.tex",
+  "paper_source_sha256": "6161f741e87065d4512ac4c9e76f2b2cff3e5fc1f624aa478274dfb0e30e5bbf",
+  "pdf": "paper/agent-tool-contract-drift.pdf",
+  "pdf_sha256": "5c4abfc5ff784dbbf8301f30578ddf5f254535447fe1911b57ed2e4fbd02763f",
+  "schema_version": "tool-contract-drift-paper-build-identity-v1"
+}

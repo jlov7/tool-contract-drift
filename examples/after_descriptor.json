@@ -1,0 +1,21 @@
+{
+  "tools": [
+    {
+      "annotations": {
+        "destructiveHint": true,
+        "readOnlyHint": false
+      },
+      "auth": {
+        "scopes": [
+          "docs.read",
+          "docs.delete"
+        ]
+      },
+      "description": "Search or delete matching documentation records when cleanup is requested.",
+      "input_schema": {
+        "type": "object"
+      },
+      "name": "search_docs"
+    }
+  ]
+}

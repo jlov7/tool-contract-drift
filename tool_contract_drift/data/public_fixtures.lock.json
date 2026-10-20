@@ -1,0 +1,9 @@
+{
+  "claim_boundary": "Candidate files strengthen source traceability but do not prove extraction correctness, license posture, maintainer intent, runtime behavior, or reviewer labels.",
+  "generated_at": "2026-06-23",
+  "generation_method": "GitHub commit API changed-file metadata snapshot keyed by fixture source repo and commit.; scripts/enrich_public_fixture_provenance.py records live GitHub API parent, content-hash, and repository license evidence",
+  "records": [],
+  "release_surface": "fully-synthetic-public-package-no-source-derived-case-bytes",
+  "schema_version": "tool-contract-drift-public-fixtures-lock-v1",
+  "source_metadata_inventory": "tool_contract_drift/data/source_metadata_inventory.json"
+}

@@ -1,0 +1,231 @@
+{
+  "boundary": "Software regression against the same observed sample, not a new holdout, semantic adjudication, accuracy comparison, or evidence of reviewer benefit.",
+  "linter_module_sha256": "0c69bf4f18f3478febf30c87b97f633d8eabbfe57c2488a486acef28585ad1df",
+  "node": "v24.15.0",
+  "original_results_sha256": "264673ab516173a958597e0db70f542488e4b0dee7015ee3aea8f0b9b3fbc393",
+  "python": "3.12.10",
+  "review_module_sha256": "a194ba8be9cfdc887c1f79eeaaf4dd9f757ea3c7750558c604859ac848312ec2",
+  "schema_version": "practical-review-check-v1",
+  "transitions": [
+    {
+      "after": "2026.7.4",
+      "after_sha256": "9005c4c45609c602d95ea38c36a1f616092a0af130d0028f7e2d4952da6555ea",
+      "before": "2026.1.14",
+      "before_sha256": "8973be486d3c44c571c27df18c3e2d7dc1643056994cf3b70dbf772f7987a115",
+      "change_count": 1,
+      "changed_without_policy_findings": false,
+      "package": "@modelcontextprotocol/server-filesystem",
+      "policy_finding_count": 1,
+      "status": "changed"
+    },
+    {
+      "after": "2026.7.10",
+      "after_sha256": "b09c12887c7d62491e81be9c556f240691368ea6744d3a299de242aeb96d5d61",
+      "before": "2026.7.4",
+      "before_sha256": "9005c4c45609c602d95ea38c36a1f616092a0af130d0028f7e2d4952da6555ea",
+      "change_count": 20,
+      "changed_without_policy_findings": true,
+      "package": "@modelcontextprotocol/server-filesystem",
+      "policy_finding_count": 0,
+      "status": "changed"
+    },
+    {
+      "after": "2026.8.31",
+      "after_sha256": "b09c12887c7d62491e81be9c556f240691368ea6744d3a299de242aeb96d5d61",
+      "before": "2026.7.10",
+      "before_sha256": "b09c12887c7d62491e81be9c556f240691368ea6744d3a299de242aeb96d5d61",
+      "change_count": 0,
+      "changed_without_policy_findings": false,
+      "package": "@modelcontextprotocol/server-filesystem",
+      "policy_finding_count": 0,
+      "status": "unchanged"
+    },
+    {
+      "after": "1.0.0",
+      "after_sha256": "562d7ff0ca2e115ccd00d9b4da18cf3eeea90c8931e8f43a1e61b35c2103d082",
+      "before": "2026.8.31",
+      "before_sha256": "b09c12887c7d62491e81be9c556f240691368ea6744d3a299de242aeb96d5d61",
+      "change_count": 28,
+      "changed_without_policy_findings": false,
+      "package": "@modelcontextprotocol/server-filesystem",
+      "policy_finding_count": 14,
+      "status": "changed"
+    },
+    {
+      "after": "2026.1.26",
+      "after_sha256": "45ca82db991d734a9f3f05ed487c0cb57df25b72b1f0de327550c386bd4b9440",
+      "before": "2025.11.25",
+      "before_sha256": "45ca82db991d734a9f3f05ed487c0cb57df25b72b1f0de327550c386bd4b9440",
+      "change_count": 0,
+      "changed_without_policy_findings": false,
+      "package": "@modelcontextprotocol/server-memory",
+      "policy_finding_count": 0,
+      "status": "unchanged"
+    },
+    {
+      "after": "2026.7.4",
+      "after_sha256": "0ac9fd6c89478a86e697054307ad6e9510e809e7560b3b81f093f26565f244ac",
+      "before": "2026.1.26",
+      "before_sha256": "45ca82db991d734a9f3f05ed487c0cb57df25b72b1f0de327550c386bd4b9440",
+      "change_count": 9,
+      "changed_without_policy_findings": true,
+      "package": "@modelcontextprotocol/server-memory",
+      "policy_finding_count": 0,
+      "status": "changed"
+    },
+    {
+      "after": "2026.8.31",
+      "after_sha256": "0ac9fd6c89478a86e697054307ad6e9510e809e7560b3b81f093f26565f244ac",
+      "before": "2026.7.4",
+      "before_sha256": "0ac9fd6c89478a86e697054307ad6e9510e809e7560b3b81f093f26565f244ac",
+      "change_count": 0,
+      "changed_without_policy_findings": false,
+      "package": "@modelcontextprotocol/server-memory",
+      "policy_finding_count": 0,
+      "status": "unchanged"
+    },
+    {
+      "after": "1.0.0",
+      "after_sha256": "7d4af2f6fe262139f23f45edded10bc4d3b2f55280307b76809267a5dd280894",
+      "before": "2026.8.31",
+      "before_sha256": "0ac9fd6c89478a86e697054307ad6e9510e809e7560b3b81f093f26565f244ac",
+      "change_count": 3,
+      "changed_without_policy_findings": true,
+      "package": "@modelcontextprotocol/server-memory",
+      "policy_finding_count": 0,
+      "status": "changed"
+    },
+    {
+      "after": "2025.12.18",
+      "after_sha256": "1b81f9b51489e3af0e2ea8837b9f252420ada078b7f094135cee2ee0f5741744",
+      "before": "2025.11.25",
+      "before_sha256": "da119a4c3d399fb6698ab82cb5dde7876da96e6dfd358cea513f66d05444f2c0",
+      "change_count": 1,
+      "changed_without_policy_findings": true,
+      "package": "@modelcontextprotocol/server-sequential-thinking",
+      "policy_finding_count": 0,
+      "status": "changed"
+    },
+    {
+      "after": "2026.7.4",
+      "after_sha256": "fe47ef5c13ce556d5726934051fbcdd6f929e6702770eb6d0b68923dad4195cd",
+      "before": "2025.12.18",
+      "before_sha256": "1b81f9b51489e3af0e2ea8837b9f252420ada078b7f094135cee2ee0f5741744",
+      "change_count": 1,
+      "changed_without_policy_findings": true,
+      "package": "@modelcontextprotocol/server-sequential-thinking",
+      "policy_finding_count": 0,
+      "status": "changed"
+    },
+    {
+      "after": "2026.8.31",
+      "after_sha256": "44ea9ba181302c867418297ed32d49224afc29c5ecdc66613f0ee87f2b308507",
+      "before": "2026.7.4",
+      "before_sha256": "fe47ef5c13ce556d5726934051fbcdd6f929e6702770eb6d0b68923dad4195cd",
+      "change_count": 3,
+      "changed_without_policy_findings": false,
+      "package": "@modelcontextprotocol/server-sequential-thinking",
+      "policy_finding_count": 1,
+      "status": "changed"
+    },
+    {
+      "after": "1.0.0",
+      "after_sha256": "0a9b82d8713f9093eea97d56c62c3a4ce598bf64c470f08877f47217327dea56",
+      "before": "2026.8.31",
+      "before_sha256": "44ea9ba181302c867418297ed32d49224afc29c5ecdc66613f0ee87f2b308507",
+      "change_count": 2,
+      "changed_without_policy_findings": false,
+      "package": "@modelcontextprotocol/server-sequential-thinking",
+      "policy_finding_count": 1,
+      "status": "changed"
+    },
+    {
+      "after": "0.0.80",
+      "after_sha256": "cfc422f2db6c297ade5647e451e839f881c51d484be22476384c8269f9f57a9d",
+      "before": "0.0.79",
+      "before_sha256": "cfc422f2db6c297ade5647e451e839f881c51d484be22476384c8269f9f57a9d",
+      "change_count": 0,
+      "changed_without_policy_findings": false,
+      "package": "@playwright/mcp",
+      "policy_finding_count": 0,
+      "status": "unchanged"
+    },
+    {
+      "after": "0.0.81",
+      "after_sha256": "f56cdfe2e2e97612eee361f3ce52a10d1f512759384d3a61fef29eefc9ac11c2",
+      "before": "0.0.80",
+      "before_sha256": "cfc422f2db6c297ade5647e451e839f881c51d484be22476384c8269f9f57a9d",
+      "change_count": 9,
+      "changed_without_policy_findings": false,
+      "package": "@playwright/mcp",
+      "policy_finding_count": 1,
+      "status": "changed"
+    },
+    {
+      "after": "0.0.82",
+      "after_sha256": "26cff8c196796e7905d6b520d8aa1373e804374d8bbaddc905b21342825d23fe",
+      "before": "0.0.81",
+      "before_sha256": "f56cdfe2e2e97612eee361f3ce52a10d1f512759384d3a61fef29eefc9ac11c2",
+      "change_count": 3,
+      "changed_without_policy_findings": false,
+      "package": "@playwright/mcp",
+      "policy_finding_count": 1,
+      "status": "changed"
+    },
+    {
+      "after": "0.0.83",
+      "after_sha256": "4b893d3fad6320ec48d3d80ab7d56fd0281ea187d707f0c206fd1b3253b2f3f8",
+      "before": "0.0.82",
+      "before_sha256": "26cff8c196796e7905d6b520d8aa1373e804374d8bbaddc905b21342825d23fe",
+      "change_count": 2,
+      "changed_without_policy_findings": false,
+      "package": "@playwright/mcp",
+      "policy_finding_count": 1,
+      "status": "changed"
+    },
+    {
+      "after": "4.3.0",
+      "after_sha256": "bcaf61e5ed2dfc6c1073555421c673642e3f1ea84b2228fe8247e23d144236e2",
+      "before": "4.2.1",
+      "before_sha256": "f30eb8a5ad69d3baa097af713e643955f4c53bdb81a7459db2d6ad189471c582",
+      "change_count": 2,
+      "changed_without_policy_findings": true,
+      "package": "@upstash/context7-mcp",
+      "policy_finding_count": 0,
+      "status": "changed"
+    },
+    {
+      "after": "4.4.0",
+      "after_sha256": "1db73de55ebef056ac1b9ab502916db52a7715085936611bad24a82fb5b6ef47",
+      "before": "4.3.0",
+      "before_sha256": "bcaf61e5ed2dfc6c1073555421c673642e3f1ea84b2228fe8247e23d144236e2",
+      "change_count": 1,
+      "changed_without_policy_findings": true,
+      "package": "@upstash/context7-mcp",
+      "policy_finding_count": 0,
+      "status": "changed"
+    },
+    {
+      "after": "4.4.1",
+      "after_sha256": "1db73de55ebef056ac1b9ab502916db52a7715085936611bad24a82fb5b6ef47",
+      "before": "4.4.0",
+      "before_sha256": "1db73de55ebef056ac1b9ab502916db52a7715085936611bad24a82fb5b6ef47",
+      "change_count": 0,
+      "changed_without_policy_findings": false,
+      "package": "@upstash/context7-mcp",
+      "policy_finding_count": 0,
+      "status": "unchanged"
+    },
+    {
+      "after": "4.4.2",
+      "after_sha256": "1db73de55ebef056ac1b9ab502916db52a7715085936611bad24a82fb5b6ef47",
+      "before": "4.4.1",
+      "before_sha256": "1db73de55ebef056ac1b9ab502916db52a7715085936611bad24a82fb5b6ef47",
+      "change_count": 0,
+      "changed_without_policy_findings": false,
+      "package": "@upstash/context7-mcp",
+      "policy_finding_count": 0,
+      "status": "unchanged"
+    }
+  ]
+}

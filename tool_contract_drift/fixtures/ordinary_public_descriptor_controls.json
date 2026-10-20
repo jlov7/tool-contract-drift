@@ -1,0 +1,1352 @@
+[
+  {
+    "after": {
+      "tools": [
+        {
+          "annotations": {
+            "destructiveHint": false,
+            "readOnlyHint": true
+          },
+          "description": "Read demonstration catalogue item 1.",
+          "input_schema": {
+            "additionalProperties": false,
+            "properties": {
+              "item_id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "item_id"
+            ],
+            "type": "object"
+          },
+          "name": "read_synthetic_catalogue_001"
+        }
+      ]
+    },
+    "before": {
+      "tools": [
+        {
+          "annotations": {
+            "destructiveHint": false,
+            "readOnlyHint": true
+          },
+          "description": "Read synthetic catalogue item 1.",
+          "input_schema": {
+            "additionalProperties": false,
+            "properties": {
+              "item_id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "item_id"
+            ],
+            "type": "object"
+          },
+          "name": "read_synthetic_catalogue_001"
+        }
+      ]
+    },
+    "expected_risks": [],
+    "id": "public-synthetic-quiet-001",
+    "label_rationale": "Authored synthetic quiet-control expectation for public-package reproducibility; not an independent reviewer or gold label.",
+    "label_status": "synthetic_regression_expectation_not_external_gold"
+  },
+  {
+    "after": {
+      "tools": [
+        {
+          "annotations": {
+            "destructiveHint": false,
+            "readOnlyHint": true
+          },
+          "description": "Read demonstration catalogue item 2.",
+          "input_schema": {
+            "additionalProperties": false,
+            "properties": {
+              "item_id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "item_id"
+            ],
+            "type": "object"
+          },
+          "name": "read_synthetic_catalogue_002"
+        }
+      ]
+    },
+    "before": {
+      "tools": [
+        {
+          "annotations": {
+            "destructiveHint": false,
+            "readOnlyHint": true
+          },
+          "description": "Read synthetic catalogue item 2.",
+          "input_schema": {
+            "additionalProperties": false,
+            "properties": {
+              "item_id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "item_id"
+            ],
+            "type": "object"
+          },
+          "name": "read_synthetic_catalogue_002"
+        }
+      ]
+    },
+    "expected_risks": [],
+    "id": "public-synthetic-quiet-002",
+    "label_rationale": "Authored synthetic quiet-control expectation for public-package reproducibility; not an independent reviewer or gold label.",
+    "label_status": "synthetic_regression_expectation_not_external_gold"
+  },
+  {
+    "after": {
+      "tools": [
+        {
+          "annotations": {
+            "destructiveHint": false,
+            "readOnlyHint": true
+          },
+          "description": "Read demonstration catalogue item 3.",
+          "input_schema": {
+            "additionalProperties": false,
+            "properties": {
+              "item_id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "item_id"
+            ],
+            "type": "object"
+          },
+          "name": "read_synthetic_catalogue_003"
+        }
+      ]
+    },
+    "before": {
+      "tools": [
+        {
+          "annotations": {
+            "destructiveHint": false,
+            "readOnlyHint": true
+          },
+          "description": "Read synthetic catalogue item 3.",
+          "input_schema": {
+            "additionalProperties": false,
+            "properties": {
+              "item_id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "item_id"
+            ],
+            "type": "object"
+          },
+          "name": "read_synthetic_catalogue_003"
+        }
+      ]
+    },
+    "expected_risks": [],
+    "id": "public-synthetic-quiet-003",
+    "label_rationale": "Authored synthetic quiet-control expectation for public-package reproducibility; not an independent reviewer or gold label.",
+    "label_status": "synthetic_regression_expectation_not_external_gold"
+  },
+  {
+    "after": {
+      "tools": [
+        {
+          "annotations": {
+            "destructiveHint": false,
+            "readOnlyHint": true
+          },
+          "description": "Read demonstration catalogue item 4.",
+          "input_schema": {
+            "additionalProperties": false,
+            "properties": {
+              "item_id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "item_id"
+            ],
+            "type": "object"
+          },
+          "name": "read_synthetic_catalogue_004"
+        }
+      ]
+    },
+    "before": {
+      "tools": [
+        {
+          "annotations": {
+            "destructiveHint": false,
+            "readOnlyHint": true
+          },
+          "description": "Read synthetic catalogue item 4.",
+          "input_schema": {
+            "additionalProperties": false,
+            "properties": {
+              "item_id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "item_id"
+            ],
+            "type": "object"
+          },
+          "name": "read_synthetic_catalogue_004"
+        }
+      ]
+    },
+    "expected_risks": [],
+    "id": "public-synthetic-quiet-004",
+    "label_rationale": "Authored synthetic quiet-control expectation for public-package reproducibility; not an independent reviewer or gold label.",
+    "label_status": "synthetic_regression_expectation_not_external_gold"
+  },
+  {
+    "after": {
+      "tools": [
+        {
+          "annotations": {
+            "destructiveHint": false,
+            "readOnlyHint": true
+          },
+          "description": "Read demonstration catalogue item 5.",
+          "input_schema": {
+            "additionalProperties": false,
+            "properties": {
+              "item_id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "item_id"
+            ],
+            "type": "object"
+          },
+          "name": "read_synthetic_catalogue_005"
+        }
+      ]
+    },
+    "before": {
+      "tools": [
+        {
+          "annotations": {
+            "destructiveHint": false,
+            "readOnlyHint": true
+          },
+          "description": "Read synthetic catalogue item 5.",
+          "input_schema": {
+            "additionalProperties": false,
+            "properties": {
+              "item_id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "item_id"
+            ],
+            "type": "object"
+          },
+          "name": "read_synthetic_catalogue_005"
+        }
+      ]
+    },
+    "expected_risks": [],
+    "id": "public-synthetic-quiet-005",
+    "label_rationale": "Authored synthetic quiet-control expectation for public-package reproducibility; not an independent reviewer or gold label.",
+    "label_status": "synthetic_regression_expectation_not_external_gold"
+  },
+  {
+    "after": {
+      "tools": [
+        {
+          "annotations": {
+            "destructiveHint": false,
+            "readOnlyHint": true
+          },
+          "description": "Read demonstration catalogue item 6.",
+          "input_schema": {
+            "additionalProperties": false,
+            "properties": {
+              "item_id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "item_id"
+            ],
+            "type": "object"
+          },
+          "name": "read_synthetic_catalogue_006"
+        }
+      ]
+    },
+    "before": {
+      "tools": [
+        {
+          "annotations": {
+            "destructiveHint": false,
+            "readOnlyHint": true
+          },
+          "description": "Read synthetic catalogue item 6.",
+          "input_schema": {
+            "additionalProperties": false,
+            "properties": {
+              "item_id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "item_id"
+            ],
+            "type": "object"
+          },
+          "name": "read_synthetic_catalogue_006"
+        }
+      ]
+    },
+    "expected_risks": [],
+    "id": "public-synthetic-quiet-006",
+    "label_rationale": "Authored synthetic quiet-control expectation for public-package reproducibility; not an independent reviewer or gold label.",
+    "label_status": "synthetic_regression_expectation_not_external_gold"
+  },
+  {
+    "after": {
+      "tools": [
+        {
+          "annotations": {
+            "destructiveHint": false,
+            "readOnlyHint": true
+          },
+          "description": "Read demonstration catalogue item 7.",
+          "input_schema": {
+            "additionalProperties": false,
+            "properties": {
+              "item_id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "item_id"
+            ],
+            "type": "object"
+          },
+          "name": "read_synthetic_catalogue_007"
+        }
+      ]
+    },
+    "before": {
+      "tools": [
+        {
+          "annotations": {
+            "destructiveHint": false,
+            "readOnlyHint": true
+          },
+          "description": "Read synthetic catalogue item 7.",
+          "input_schema": {
+            "additionalProperties": false,
+            "properties": {
+              "item_id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "item_id"
+            ],
+            "type": "object"
+          },
+          "name": "read_synthetic_catalogue_007"
+        }
+      ]
+    },
+    "expected_risks": [],
+    "id": "public-synthetic-quiet-007",
+    "label_rationale": "Authored synthetic quiet-control expectation for public-package reproducibility; not an independent reviewer or gold label.",
+    "label_status": "synthetic_regression_expectation_not_external_gold"
+  },
+  {
+    "after": {
+      "tools": [
+        {
+          "annotations": {
+            "destructiveHint": false,
+            "readOnlyHint": true
+          },
+          "description": "Read demonstration catalogue item 8.",
+          "input_schema": {
+            "additionalProperties": false,
+            "properties": {
+              "item_id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "item_id"
+            ],
+            "type": "object"
+          },
+          "name": "read_synthetic_catalogue_008"
+        }
+      ]
+    },
+    "before": {
+      "tools": [
+        {
+          "annotations": {
+            "destructiveHint": false,
+            "readOnlyHint": true
+          },
+          "description": "Read synthetic catalogue item 8.",
+          "input_schema": {
+            "additionalProperties": false,
+            "properties": {
+              "item_id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "item_id"
+            ],
+            "type": "object"
+          },
+          "name": "read_synthetic_catalogue_008"
+        }
+      ]
+    },
+    "expected_risks": [],
+    "id": "public-synthetic-quiet-008",
+    "label_rationale": "Authored synthetic quiet-control expectation for public-package reproducibility; not an independent reviewer or gold label.",
+    "label_status": "synthetic_regression_expectation_not_external_gold"
+  },
+  {
+    "after": {
+      "tools": [
+        {
+          "annotations": {
+            "destructiveHint": false,
+            "readOnlyHint": true
+          },
+          "description": "Read demonstration catalogue item 9.",
+          "input_schema": {
+            "additionalProperties": false,
+            "properties": {
+              "item_id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "item_id"
+            ],
+            "type": "object"
+          },
+          "name": "read_synthetic_catalogue_009"
+        }
+      ]
+    },
+    "before": {
+      "tools": [
+        {
+          "annotations": {
+            "destructiveHint": false,
+            "readOnlyHint": true
+          },
+          "description": "Read synthetic catalogue item 9.",
+          "input_schema": {
+            "additionalProperties": false,
+            "properties": {
+              "item_id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "item_id"
+            ],
+            "type": "object"
+          },
+          "name": "read_synthetic_catalogue_009"
+        }
+      ]
+    },
+    "expected_risks": [],
+    "id": "public-synthetic-quiet-009",
+    "label_rationale": "Authored synthetic quiet-control expectation for public-package reproducibility; not an independent reviewer or gold label.",
+    "label_status": "synthetic_regression_expectation_not_external_gold"
+  },
+  {
+    "after": {
+      "tools": [
+        {
+          "annotations": {
+            "destructiveHint": false,
+            "readOnlyHint": true
+          },
+          "description": "Read demonstration catalogue item 10.",
+          "input_schema": {
+            "additionalProperties": false,
+            "properties": {
+              "item_id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "item_id"
+            ],
+            "type": "object"
+          },
+          "name": "read_synthetic_catalogue_010"
+        }
+      ]
+    },
+    "before": {
+      "tools": [
+        {
+          "annotations": {
+            "destructiveHint": false,
+            "readOnlyHint": true
+          },
+          "description": "Read synthetic catalogue item 10.",
+          "input_schema": {
+            "additionalProperties": false,
+            "properties": {
+              "item_id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "item_id"
+            ],
+            "type": "object"
+          },
+          "name": "read_synthetic_catalogue_010"
+        }
+      ]
+    },
+    "expected_risks": [],
+    "id": "public-synthetic-quiet-010",
+    "label_rationale": "Authored synthetic quiet-control expectation for public-package reproducibility; not an independent reviewer or gold label.",
+    "label_status": "synthetic_regression_expectation_not_external_gold"
+  },
+  {
+    "after": {
+      "tools": [
+        {
+          "annotations": {
+            "destructiveHint": false,
+            "readOnlyHint": true
+          },
+          "description": "Read demonstration catalogue item 11.",
+          "input_schema": {
+            "additionalProperties": false,
+            "properties": {
+              "item_id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "item_id"
+            ],
+            "type": "object"
+          },
+          "name": "read_synthetic_catalogue_011"
+        }
+      ]
+    },
+    "before": {
+      "tools": [
+        {
+          "annotations": {
+            "destructiveHint": false,
+            "readOnlyHint": true
+          },
+          "description": "Read synthetic catalogue item 11.",
+          "input_schema": {
+            "additionalProperties": false,
+            "properties": {
+              "item_id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "item_id"
+            ],
+            "type": "object"
+          },
+          "name": "read_synthetic_catalogue_011"
+        }
+      ]
+    },
+    "expected_risks": [],
+    "id": "public-synthetic-quiet-011",
+    "label_rationale": "Authored synthetic quiet-control expectation for public-package reproducibility; not an independent reviewer or gold label.",
+    "label_status": "synthetic_regression_expectation_not_external_gold"
+  },
+  {
+    "after": {
+      "tools": [
+        {
+          "annotations": {
+            "destructiveHint": false,
+            "readOnlyHint": true
+          },
+          "description": "Read demonstration catalogue item 12.",
+          "input_schema": {
+            "additionalProperties": false,
+            "properties": {
+              "item_id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "item_id"
+            ],
+            "type": "object"
+          },
+          "name": "read_synthetic_catalogue_012"
+        }
+      ]
+    },
+    "before": {
+      "tools": [
+        {
+          "annotations": {
+            "destructiveHint": false,
+            "readOnlyHint": true
+          },
+          "description": "Read synthetic catalogue item 12.",
+          "input_schema": {
+            "additionalProperties": false,
+            "properties": {
+              "item_id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "item_id"
+            ],
+            "type": "object"
+          },
+          "name": "read_synthetic_catalogue_012"
+        }
+      ]
+    },
+    "expected_risks": [],
+    "id": "public-synthetic-quiet-012",
+    "label_rationale": "Authored synthetic quiet-control expectation for public-package reproducibility; not an independent reviewer or gold label.",
+    "label_status": "synthetic_regression_expectation_not_external_gold"
+  },
+  {
+    "after": {
+      "tools": [
+        {
+          "annotations": {
+            "destructiveHint": false,
+            "readOnlyHint": true
+          },
+          "description": "Read demonstration catalogue item 13.",
+          "input_schema": {
+            "additionalProperties": false,
+            "properties": {
+              "item_id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "item_id"
+            ],
+            "type": "object"
+          },
+          "name": "read_synthetic_catalogue_013"
+        }
+      ]
+    },
+    "before": {
+      "tools": [
+        {
+          "annotations": {
+            "destructiveHint": false,
+            "readOnlyHint": true
+          },
+          "description": "Read synthetic catalogue item 13.",
+          "input_schema": {
+            "additionalProperties": false,
+            "properties": {
+              "item_id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "item_id"
+            ],
+            "type": "object"
+          },
+          "name": "read_synthetic_catalogue_013"
+        }
+      ]
+    },
+    "expected_risks": [],
+    "id": "public-synthetic-quiet-013",
+    "label_rationale": "Authored synthetic quiet-control expectation for public-package reproducibility; not an independent reviewer or gold label.",
+    "label_status": "synthetic_regression_expectation_not_external_gold"
+  },
+  {
+    "after": {
+      "tools": [
+        {
+          "annotations": {
+            "destructiveHint": false,
+            "readOnlyHint": true
+          },
+          "description": "Read demonstration catalogue item 14.",
+          "input_schema": {
+            "additionalProperties": false,
+            "properties": {
+              "item_id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "item_id"
+            ],
+            "type": "object"
+          },
+          "name": "read_synthetic_catalogue_014"
+        }
+      ]
+    },
+    "before": {
+      "tools": [
+        {
+          "annotations": {
+            "destructiveHint": false,
+            "readOnlyHint": true
+          },
+          "description": "Read synthetic catalogue item 14.",
+          "input_schema": {
+            "additionalProperties": false,
+            "properties": {
+              "item_id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "item_id"
+            ],
+            "type": "object"
+          },
+          "name": "read_synthetic_catalogue_014"
+        }
+      ]
+    },
+    "expected_risks": [],
+    "id": "public-synthetic-quiet-014",
+    "label_rationale": "Authored synthetic quiet-control expectation for public-package reproducibility; not an independent reviewer or gold label.",
+    "label_status": "synthetic_regression_expectation_not_external_gold"
+  },
+  {
+    "after": {
+      "tools": [
+        {
+          "annotations": {
+            "destructiveHint": false,
+            "readOnlyHint": true
+          },
+          "description": "Read demonstration catalogue item 15.",
+          "input_schema": {
+            "additionalProperties": false,
+            "properties": {
+              "item_id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "item_id"
+            ],
+            "type": "object"
+          },
+          "name": "read_synthetic_catalogue_015"
+        }
+      ]
+    },
+    "before": {
+      "tools": [
+        {
+          "annotations": {
+            "destructiveHint": false,
+            "readOnlyHint": true
+          },
+          "description": "Read synthetic catalogue item 15.",
+          "input_schema": {
+            "additionalProperties": false,
+            "properties": {
+              "item_id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "item_id"
+            ],
+            "type": "object"
+          },
+          "name": "read_synthetic_catalogue_015"
+        }
+      ]
+    },
+    "expected_risks": [],
+    "id": "public-synthetic-quiet-015",
+    "label_rationale": "Authored synthetic quiet-control expectation for public-package reproducibility; not an independent reviewer or gold label.",
+    "label_status": "synthetic_regression_expectation_not_external_gold"
+  },
+  {
+    "after": {
+      "tools": [
+        {
+          "annotations": {
+            "destructiveHint": false,
+            "readOnlyHint": true
+          },
+          "description": "Read demonstration catalogue item 16.",
+          "input_schema": {
+            "additionalProperties": false,
+            "properties": {
+              "item_id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "item_id"
+            ],
+            "type": "object"
+          },
+          "name": "read_synthetic_catalogue_016"
+        }
+      ]
+    },
+    "before": {
+      "tools": [
+        {
+          "annotations": {
+            "destructiveHint": false,
+            "readOnlyHint": true
+          },
+          "description": "Read synthetic catalogue item 16.",
+          "input_schema": {
+            "additionalProperties": false,
+            "properties": {
+              "item_id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "item_id"
+            ],
+            "type": "object"
+          },
+          "name": "read_synthetic_catalogue_016"
+        }
+      ]
+    },
+    "expected_risks": [],
+    "id": "public-synthetic-quiet-016",
+    "label_rationale": "Authored synthetic quiet-control expectation for public-package reproducibility; not an independent reviewer or gold label.",
+    "label_status": "synthetic_regression_expectation_not_external_gold"
+  },
+  {
+    "after": {
+      "tools": [
+        {
+          "annotations": {
+            "destructiveHint": false,
+            "readOnlyHint": true
+          },
+          "description": "Read demonstration catalogue item 17.",
+          "input_schema": {
+            "additionalProperties": false,
+            "properties": {
+              "item_id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "item_id"
+            ],
+            "type": "object"
+          },
+          "name": "read_synthetic_catalogue_017"
+        }
+      ]
+    },
+    "before": {
+      "tools": [
+        {
+          "annotations": {
+            "destructiveHint": false,
+            "readOnlyHint": true
+          },
+          "description": "Read synthetic catalogue item 17.",
+          "input_schema": {
+            "additionalProperties": false,
+            "properties": {
+              "item_id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "item_id"
+            ],
+            "type": "object"
+          },
+          "name": "read_synthetic_catalogue_017"
+        }
+      ]
+    },
+    "expected_risks": [],
+    "id": "public-synthetic-quiet-017",
+    "label_rationale": "Authored synthetic quiet-control expectation for public-package reproducibility; not an independent reviewer or gold label.",
+    "label_status": "synthetic_regression_expectation_not_external_gold"
+  },
+  {
+    "after": {
+      "tools": [
+        {
+          "annotations": {
+            "destructiveHint": false,
+            "readOnlyHint": true
+          },
+          "description": "Read demonstration catalogue item 18.",
+          "input_schema": {
+            "additionalProperties": false,
+            "properties": {
+              "item_id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "item_id"
+            ],
+            "type": "object"
+          },
+          "name": "read_synthetic_catalogue_018"
+        }
+      ]
+    },
+    "before": {
+      "tools": [
+        {
+          "annotations": {
+            "destructiveHint": false,
+            "readOnlyHint": true
+          },
+          "description": "Read synthetic catalogue item 18.",
+          "input_schema": {
+            "additionalProperties": false,
+            "properties": {
+              "item_id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "item_id"
+            ],
+            "type": "object"
+          },
+          "name": "read_synthetic_catalogue_018"
+        }
+      ]
+    },
+    "expected_risks": [],
+    "id": "public-synthetic-quiet-018",
+    "label_rationale": "Authored synthetic quiet-control expectation for public-package reproducibility; not an independent reviewer or gold label.",
+    "label_status": "synthetic_regression_expectation_not_external_gold"
+  },
+  {
+    "after": {
+      "tools": [
+        {
+          "annotations": {
+            "destructiveHint": false,
+            "readOnlyHint": true
+          },
+          "description": "Read demonstration catalogue item 19.",
+          "input_schema": {
+            "additionalProperties": false,
+            "properties": {
+              "item_id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "item_id"
+            ],
+            "type": "object"
+          },
+          "name": "read_synthetic_catalogue_019"
+        }
+      ]
+    },
+    "before": {
+      "tools": [
+        {
+          "annotations": {
+            "destructiveHint": false,
+            "readOnlyHint": true
+          },
+          "description": "Read synthetic catalogue item 19.",
+          "input_schema": {
+            "additionalProperties": false,
+            "properties": {
+              "item_id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "item_id"
+            ],
+            "type": "object"
+          },
+          "name": "read_synthetic_catalogue_019"
+        }
+      ]
+    },
+    "expected_risks": [],
+    "id": "public-synthetic-quiet-019",
+    "label_rationale": "Authored synthetic quiet-control expectation for public-package reproducibility; not an independent reviewer or gold label.",
+    "label_status": "synthetic_regression_expectation_not_external_gold"
+  },
+  {
+    "after": {
+      "tools": [
+        {
+          "annotations": {
+            "destructiveHint": false,
+            "readOnlyHint": true
+          },
+          "description": "Read demonstration catalogue item 20.",
+          "input_schema": {
+            "additionalProperties": false,
+            "properties": {
+              "item_id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "item_id"
+            ],
+            "type": "object"
+          },
+          "name": "read_synthetic_catalogue_020"
+        }
+      ]
+    },
+    "before": {
+      "tools": [
+        {
+          "annotations": {
+            "destructiveHint": false,
+            "readOnlyHint": true
+          },
+          "description": "Read synthetic catalogue item 20.",
+          "input_schema": {
+            "additionalProperties": false,
+            "properties": {
+              "item_id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "item_id"
+            ],
+            "type": "object"
+          },
+          "name": "read_synthetic_catalogue_020"
+        }
+      ]
+    },
+    "expected_risks": [],
+    "id": "public-synthetic-quiet-020",
+    "label_rationale": "Authored synthetic quiet-control expectation for public-package reproducibility; not an independent reviewer or gold label.",
+    "label_status": "synthetic_regression_expectation_not_external_gold"
+  },
+  {
+    "after": {
+      "tools": [
+        {
+          "annotations": {
+            "destructiveHint": false,
+            "readOnlyHint": true
+          },
+          "description": "Read demonstration catalogue item 21.",
+          "input_schema": {
+            "additionalProperties": false,
+            "properties": {
+              "item_id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "item_id"
+            ],
+            "type": "object"
+          },
+          "name": "read_synthetic_catalogue_021"
+        }
+      ]
+    },
+    "before": {
+      "tools": [
+        {
+          "annotations": {
+            "destructiveHint": false,
+            "readOnlyHint": true
+          },
+          "description": "Read synthetic catalogue item 21.",
+          "input_schema": {
+            "additionalProperties": false,
+            "properties": {
+              "item_id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "item_id"
+            ],
+            "type": "object"
+          },
+          "name": "read_synthetic_catalogue_021"
+        }
+      ]
+    },
+    "expected_risks": [],
+    "id": "public-synthetic-quiet-021",
+    "label_rationale": "Authored synthetic quiet-control expectation for public-package reproducibility; not an independent reviewer or gold label.",
+    "label_status": "synthetic_regression_expectation_not_external_gold"
+  },
+  {
+    "after": {
+      "tools": [
+        {
+          "annotations": {
+            "destructiveHint": false,
+            "readOnlyHint": true
+          },
+          "description": "Read demonstration catalogue item 22.",
+          "input_schema": {
+            "additionalProperties": false,
+            "properties": {
+              "item_id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "item_id"
+            ],
+            "type": "object"
+          },
+          "name": "read_synthetic_catalogue_022"
+        }
+      ]
+    },
+    "before": {
+      "tools": [
+        {
+          "annotations": {
+            "destructiveHint": false,
+            "readOnlyHint": true
+          },
+          "description": "Read synthetic catalogue item 22.",
+          "input_schema": {
+            "additionalProperties": false,
+            "properties": {
+              "item_id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "item_id"
+            ],
+            "type": "object"
+          },
+          "name": "read_synthetic_catalogue_022"
+        }
+      ]
+    },
+    "expected_risks": [],
+    "id": "public-synthetic-quiet-022",
+    "label_rationale": "Authored synthetic quiet-control expectation for public-package reproducibility; not an independent reviewer or gold label.",
+    "label_status": "synthetic_regression_expectation_not_external_gold"
+  },
+  {
+    "after": {
+      "tools": [
+        {
+          "annotations": {
+            "destructiveHint": false,
+            "readOnlyHint": true
+          },
+          "description": "Read demonstration catalogue item 23.",
+          "input_schema": {
+            "additionalProperties": false,
+            "properties": {
+              "item_id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "item_id"
+            ],
+            "type": "object"
+          },
+          "name": "read_synthetic_catalogue_023"
+        }
+      ]
+    },
+    "before": {
+      "tools": [
+        {
+          "annotations": {
+            "destructiveHint": false,
+            "readOnlyHint": true
+          },
+          "description": "Read synthetic catalogue item 23.",
+          "input_schema": {
+            "additionalProperties": false,
+            "properties": {
+              "item_id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "item_id"
+            ],
+            "type": "object"
+          },
+          "name": "read_synthetic_catalogue_023"
+        }
+      ]
+    },
+    "expected_risks": [],
+    "id": "public-synthetic-quiet-023",
+    "label_rationale": "Authored synthetic quiet-control expectation for public-package reproducibility; not an independent reviewer or gold label.",
+    "label_status": "synthetic_regression_expectation_not_external_gold"
+  },
+  {
+    "after": {
+      "tools": [
+        {
+          "annotations": {
+            "destructiveHint": false,
+            "readOnlyHint": true
+          },
+          "description": "Read demonstration catalogue item 24.",
+          "input_schema": {
+            "additionalProperties": false,
+            "properties": {
+              "item_id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "item_id"
+            ],
+            "type": "object"
+          },
+          "name": "read_synthetic_catalogue_024"
+        }
+      ]
+    },
+    "before": {
+      "tools": [
+        {
+          "annotations": {
+            "destructiveHint": false,
+            "readOnlyHint": true
+          },
+          "description": "Read synthetic catalogue item 24.",
+          "input_schema": {
+            "additionalProperties": false,
+            "properties": {
+              "item_id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "item_id"
+            ],
+            "type": "object"
+          },
+          "name": "read_synthetic_catalogue_024"
+        }
+      ]
+    },
+    "expected_risks": [],
+    "id": "public-synthetic-quiet-024",
+    "label_rationale": "Authored synthetic quiet-control expectation for public-package reproducibility; not an independent reviewer or gold label.",
+    "label_status": "synthetic_regression_expectation_not_external_gold"
+  },
+  {
+    "after": {
+      "tools": [
+        {
+          "annotations": {
+            "destructiveHint": false,
+            "readOnlyHint": true
+          },
+          "description": "Read demonstration catalogue item 25.",
+          "input_schema": {
+            "additionalProperties": false,
+            "properties": {
+              "item_id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "item_id"
+            ],
+            "type": "object"
+          },
+          "name": "read_synthetic_catalogue_025"
+        }
+      ]
+    },
+    "before": {
+      "tools": [
+        {
+          "annotations": {
+            "destructiveHint": false,
+            "readOnlyHint": true
+          },
+          "description": "Read synthetic catalogue item 25.",
+          "input_schema": {
+            "additionalProperties": false,
+            "properties": {
+              "item_id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "item_id"
+            ],
+            "type": "object"
+          },
+          "name": "read_synthetic_catalogue_025"
+        }
+      ]
+    },
+    "expected_risks": [],
+    "id": "public-synthetic-quiet-025",
+    "label_rationale": "Authored synthetic quiet-control expectation for public-package reproducibility; not an independent reviewer or gold label.",
+    "label_status": "synthetic_regression_expectation_not_external_gold"
+  }
+]

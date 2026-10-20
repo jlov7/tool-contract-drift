@@ -1,0 +1,1079 @@
+{
+  "$schema": "https://json.schemastore.org/sarif-2.1.0.json",
+  "runs": [
+    {
+      "automationDetails": {
+        "id": "tool-contract-drift/v1"
+      },
+      "results": [
+        {
+          "level": "error",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tool_contract_drift/fixtures/tool_descriptor_fixtures.json"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "search_docs: Tool moved from read-only semantics toward destructive or write-capable behavior. (fixture=fixture-001-readonly-to-destructive, severity=high; Review signal only; not a vulnerability finding or proof of runtime safety.)"
+          },
+          "partialFingerprints": {
+            "primaryLocationLineHash": "d548b9e5f4d86f04e2eae178a042325e142168cf6812901dfc271947854801dd",
+            "toolContractDrift/v1": "d548b9e5f4d86f04e2eae178a042325e142168cf6812901dfc271947854801dd"
+          },
+          "properties": {
+            "evidence": [
+              "scopes=docs.read; annotations={'destructiveHint': False, 'readOnlyHint': True}; description=Search approved documentation.",
+              "scopes=docs.delete,docs.read; annotations={'destructiveHint': True, 'readOnlyHint': False}; description=Search or delete matching documentation records when cleanup is requested."
+            ],
+            "fixture_id": "fixture-001-readonly-to-destructive",
+            "generic_baseline_labels": [
+              "description_changed",
+              "auth_changed",
+              "annotations_changed",
+              "annotation_actual_escalation"
+            ],
+            "reapproval_required": true,
+            "severity": "high",
+            "tool_name": "search_docs"
+          },
+          "ruleId": "readonly_to_destructive",
+          "ruleIndex": 4
+        },
+        {
+          "level": "error",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tool_contract_drift/fixtures/tool_descriptor_fixtures.json"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "search_docs: Existing tool changed from explicitly non-destructive to destructive. (fixture=fixture-001-readonly-to-destructive, severity=high; Review signal only; not a vulnerability finding or proof of runtime safety.)"
+          },
+          "partialFingerprints": {
+            "primaryLocationLineHash": "aa68ba6a7e03915407a61f0ce820838f97bf6396b240b86ba79267935ec87f95",
+            "toolContractDrift/v1": "aa68ba6a7e03915407a61f0ce820838f97bf6396b240b86ba79267935ec87f95"
+          },
+          "properties": {
+            "evidence": [
+              "scopes=docs.read; annotations={'destructiveHint': False, 'readOnlyHint': True}; description=Search approved documentation.",
+              "scopes=docs.delete,docs.read; annotations={'destructiveHint': True, 'readOnlyHint': False}; description=Search or delete matching documentation records when cleanup is requested."
+            ],
+            "fixture_id": "fixture-001-readonly-to-destructive",
+            "generic_baseline_labels": [
+              "description_changed",
+              "auth_changed",
+              "annotations_changed",
+              "annotation_actual_escalation"
+            ],
+            "reapproval_required": true,
+            "severity": "high",
+            "tool_name": "search_docs"
+          },
+          "ruleId": "destructive_hint_escalation",
+          "ruleIndex": 3
+        },
+        {
+          "level": "error",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tool_contract_drift/fixtures/tool_descriptor_fixtures.json"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "search_docs: New auth scopes increase write, delete, admin, payment, deploy, or secret capability. (fixture=fixture-001-readonly-to-destructive, severity=high; Review signal only; not a vulnerability finding or proof of runtime safety.)"
+          },
+          "partialFingerprints": {
+            "primaryLocationLineHash": "a9d44c6732123df34ca00eb58604dbd51da7947326cc1be55587944a9fd8c0ce",
+            "toolContractDrift/v1": "a9d44c6732123df34ca00eb58604dbd51da7947326cc1be55587944a9fd8c0ce"
+          },
+          "properties": {
+            "evidence": [
+              "docs.delete"
+            ],
+            "fixture_id": "fixture-001-readonly-to-destructive",
+            "generic_baseline_labels": [
+              "description_changed",
+              "auth_changed",
+              "annotations_changed",
+              "annotation_actual_escalation"
+            ],
+            "reapproval_required": true,
+            "severity": "high",
+            "tool_name": "search_docs"
+          },
+          "ruleId": "auth_scope_expansion",
+          "ruleIndex": 0
+        },
+        {
+          "level": "error",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tool_contract_drift/fixtures/tool_descriptor_fixtures.json"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "crm_lookup: Tool moved from read-only semantics toward destructive or write-capable behavior. (fixture=fixture-002-auth-scope-expansion, severity=high; Review signal only; not a vulnerability finding or proof of runtime safety.)"
+          },
+          "partialFingerprints": {
+            "primaryLocationLineHash": "b5cd7ad4ecfde6d97ebea38240a2798431d98c9ac7cdc1475d587497d0182cf8",
+            "toolContractDrift/v1": "b5cd7ad4ecfde6d97ebea38240a2798431d98c9ac7cdc1475d587497d0182cf8"
+          },
+          "properties": {
+            "evidence": [
+              "scopes=crm.customer.read; annotations={'readOnlyHint': True}; description=Read customer account metadata.",
+              "scopes=crm.customer.read,crm.customer.write; annotations={'readOnlyHint': True}; description=Read customer account metadata and update account tags."
+            ],
+            "fixture_id": "fixture-002-auth-scope-expansion",
+            "generic_baseline_labels": [
+              "description_changed",
+              "auth_changed"
+            ],
+            "reapproval_required": true,
+            "severity": "high",
+            "tool_name": "crm_lookup"
+          },
+          "ruleId": "readonly_to_destructive",
+          "ruleIndex": 4
+        },
+        {
+          "level": "error",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tool_contract_drift/fixtures/tool_descriptor_fixtures.json"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "crm_lookup: New auth scopes increase write, delete, admin, payment, deploy, or secret capability. (fixture=fixture-002-auth-scope-expansion, severity=high; Review signal only; not a vulnerability finding or proof of runtime safety.)"
+          },
+          "partialFingerprints": {
+            "primaryLocationLineHash": "a216d8ba6714af2ff76dada22e748a24f15f444c958a8e32dbdc28214ac509b0",
+            "toolContractDrift/v1": "a216d8ba6714af2ff76dada22e748a24f15f444c958a8e32dbdc28214ac509b0"
+          },
+          "properties": {
+            "evidence": [
+              "crm.customer.write"
+            ],
+            "fixture_id": "fixture-002-auth-scope-expansion",
+            "generic_baseline_labels": [
+              "description_changed",
+              "auth_changed"
+            ],
+            "reapproval_required": true,
+            "severity": "high",
+            "tool_name": "crm_lookup"
+          },
+          "ruleId": "auth_scope_expansion",
+          "ruleIndex": 0
+        },
+        {
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tool_contract_drift/fixtures/tool_descriptor_fixtures.json"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "deploy_preview: Input schema or open-world annotation loosened bounds on the agent action space. (fixture=fixture-003-closed-to-open-world, severity=medium; Review signal only; not a vulnerability finding or proof of runtime safety.)"
+          },
+          "partialFingerprints": {
+            "primaryLocationLineHash": "c8d9a92342cc0e688f0ca83aadf1f21402d95fb27b8be7d727e2afaecf004eed",
+            "toolContractDrift/v1": "c8d9a92342cc0e688f0ca83aadf1f21402d95fb27b8be7d727e2afaecf004eed"
+          },
+          "properties": {
+            "evidence": [
+              "input_schema/openWorldHint"
+            ],
+            "fixture_id": "fixture-003-closed-to-open-world",
+            "generic_baseline_labels": [
+              "description_changed",
+              "input_schema_changed"
+            ],
+            "reapproval_required": true,
+            "severity": "medium",
+            "tool_name": "deploy_preview"
+          },
+          "ruleId": "closed_world_to_open_world_input",
+          "ruleIndex": 1
+        },
+        {
+          "level": "error",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tool_contract_drift/fixtures/tool_descriptor_fixtures.json"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "list_invoices: Output template changed while sensitive output fields appeared or became rendered. (fixture=fixture-004-sensitive-output-template-drift, severity=high; Review signal only; not a vulnerability finding or proof of runtime safety.)"
+          },
+          "partialFingerprints": {
+            "primaryLocationLineHash": "d2f21a47bfcc5cb63b6c2009e9eb48c6810578a2f2915df77ae267e328c371c2",
+            "toolContractDrift/v1": "d2f21a47bfcc5cb63b6c2009e9eb48c6810578a2f2915df77ae267e328c371c2"
+          },
+          "properties": {
+            "evidence": [
+              "payment_token"
+            ],
+            "fixture_id": "fixture-004-sensitive-output-template-drift",
+            "generic_baseline_labels": [
+              "description_changed",
+              "output_template_changed",
+              "output_schema_changed"
+            ],
+            "reapproval_required": true,
+            "severity": "high",
+            "tool_name": "list_invoices"
+          },
+          "ruleId": "sensitive_output_template_drift",
+          "ruleIndex": 7
+        },
+        {
+          "level": "error",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tool_contract_drift/fixtures/tool_descriptor_fixtures.json"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "run_shell: New tool introduces write, admin, shell, deploy, payment, or destructive capability. (fixture=fixture-005-risky-tool-count-expansion, severity=high; Review signal only; not a vulnerability finding or proof of runtime safety.)"
+          },
+          "partialFingerprints": {
+            "primaryLocationLineHash": "32e357c6e0d021a3c1a50a891da52335ce06079c50fae92e8c7e747619dc0871",
+            "toolContractDrift/v1": "32e357c6e0d021a3c1a50a891da52335ce06079c50fae92e8c7e747619dc0871"
+          },
+          "properties": {
+            "evidence": [
+              "scopes=actions.admin,repo.write; annotations={'destructiveHint': True, 'readOnlyHint': False}; description=Run shell commands in the repository and write files."
+            ],
+            "fixture_id": "fixture-005-risky-tool-count-expansion",
+            "generic_baseline_labels": [
+              "tool_added"
+            ],
+            "reapproval_required": true,
+            "severity": "high",
+            "tool_name": "run_shell"
+          },
+          "ruleId": "risky_tool_added",
+          "ruleIndex": 5
+        },
+        {
+          "level": "error",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tool_contract_drift/fixtures/adversarial_descriptor_cases.json"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "list_invoices: Output template changed while sensitive output fields appeared or became rendered. (fixture=adversarial-001-sensitive-readonly-disclosure-not-destructive, severity=high; Review signal only; not a vulnerability finding or proof of runtime safety.)"
+          },
+          "partialFingerprints": {
+            "primaryLocationLineHash": "681e02ac82a0ed675abcf77aa77313daab4f6048df42357cb778cc1cd8aac72d",
+            "toolContractDrift/v1": "681e02ac82a0ed675abcf77aa77313daab4f6048df42357cb778cc1cd8aac72d"
+          },
+          "properties": {
+            "evidence": [
+              "payment_token"
+            ],
+            "fixture_id": "adversarial-001-sensitive-readonly-disclosure-not-destructive",
+            "generic_baseline_labels": [
+              "description_changed",
+              "output_template_changed",
+              "output_schema_changed"
+            ],
+            "reapproval_required": true,
+            "severity": "high",
+            "tool_name": "list_invoices"
+          },
+          "ruleId": "sensitive_output_template_drift",
+          "ruleIndex": 7
+        },
+        {
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tool_contract_drift/fixtures/adversarial_descriptor_cases.json"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "deploy_preview: Input schema or open-world annotation loosened bounds on the agent action space. (fixture=adversarial-002-nested-enum-removal, severity=medium; Review signal only; not a vulnerability finding or proof of runtime safety.)"
+          },
+          "partialFingerprints": {
+            "primaryLocationLineHash": "0e96bcee251a9a9d6d920986a0ea6788fe6ea972e3843622d858bdd8314e9724",
+            "toolContractDrift/v1": "0e96bcee251a9a9d6d920986a0ea6788fe6ea972e3843622d858bdd8314e9724"
+          },
+          "properties": {
+            "evidence": [
+              "input_schema/openWorldHint"
+            ],
+            "fixture_id": "adversarial-002-nested-enum-removal",
+            "generic_baseline_labels": [
+              "input_schema_changed"
+            ],
+            "reapproval_required": true,
+            "severity": "medium",
+            "tool_name": "deploy_preview"
+          },
+          "ruleId": "closed_world_to_open_world_input",
+          "ruleIndex": 1
+        },
+        {
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tool_contract_drift/fixtures/adversarial_descriptor_cases.json"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "update_record: Input schema or open-world annotation loosened bounds on the agent action space. (fixture=adversarial-003-additional-properties-removed, severity=medium; Review signal only; not a vulnerability finding or proof of runtime safety.)"
+          },
+          "partialFingerprints": {
+            "primaryLocationLineHash": "e3e5aa093756f093c1f4de710e52b45f0fe0d8a1e0d77b6c1acfb7f04f6db5aa",
+            "toolContractDrift/v1": "e3e5aa093756f093c1f4de710e52b45f0fe0d8a1e0d77b6c1acfb7f04f6db5aa"
+          },
+          "properties": {
+            "evidence": [
+              "input_schema/openWorldHint"
+            ],
+            "fixture_id": "adversarial-003-additional-properties-removed",
+            "generic_baseline_labels": [
+              "input_schema_changed"
+            ],
+            "reapproval_required": true,
+            "severity": "medium",
+            "tool_name": "update_record"
+          },
+          "ruleId": "closed_world_to_open_world_input",
+          "ruleIndex": 1
+        },
+        {
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tool_contract_drift/fixtures/adversarial_descriptor_cases.json"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "process_actions: Input schema or open-world annotation loosened bounds on the agent action space. (fixture=adversarial-004-array-item-enum-removal, severity=medium; Review signal only; not a vulnerability finding or proof of runtime safety.)"
+          },
+          "partialFingerprints": {
+            "primaryLocationLineHash": "81f63f5ec138e0e210f5852a3572227557a7b2068f77356d9c9c9b57a86b1fff",
+            "toolContractDrift/v1": "81f63f5ec138e0e210f5852a3572227557a7b2068f77356d9c9c9b57a86b1fff"
+          },
+          "properties": {
+            "evidence": [
+              "input_schema/openWorldHint"
+            ],
+            "fixture_id": "adversarial-004-array-item-enum-removal",
+            "generic_baseline_labels": [
+              "input_schema_changed"
+            ],
+            "reapproval_required": true,
+            "severity": "medium",
+            "tool_name": "process_actions"
+          },
+          "ruleId": "closed_world_to_open_world_input",
+          "ruleIndex": 1
+        },
+        {
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tool_contract_drift/fixtures/adversarial_descriptor_cases.json"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "fetch_url: Input schema or open-world annotation loosened bounds on the agent action space. (fixture=adversarial-005-open-world-hint-escalation, severity=medium; Review signal only; not a vulnerability finding or proof of runtime safety.)"
+          },
+          "partialFingerprints": {
+            "primaryLocationLineHash": "8fc92f65dbc218e961cba4c4e9d4bc57ecb9763136ea2a30f31f372e322e52cf",
+            "toolContractDrift/v1": "8fc92f65dbc218e961cba4c4e9d4bc57ecb9763136ea2a30f31f372e322e52cf"
+          },
+          "properties": {
+            "evidence": [
+              "input_schema/openWorldHint"
+            ],
+            "fixture_id": "adversarial-005-open-world-hint-escalation",
+            "generic_baseline_labels": [
+              "annotations_changed",
+              "annotation_actual_escalation"
+            ],
+            "reapproval_required": true,
+            "severity": "medium",
+            "tool_name": "fetch_url"
+          },
+          "ruleId": "closed_world_to_open_world_input",
+          "ruleIndex": 1
+        },
+        {
+          "level": "error",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tool_contract_drift/fixtures/adversarial_descriptor_cases.json"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "gmail_search: New auth scopes increase write, delete, admin, payment, deploy, or secret capability. (fixture=adversarial-006-provider-modify-scope, severity=high; Review signal only; not a vulnerability finding or proof of runtime safety.)"
+          },
+          "partialFingerprints": {
+            "primaryLocationLineHash": "691b000cbad9d2eb72add8a6a8a448abb9278ef3905a61d241800f55c3e65411",
+            "toolContractDrift/v1": "691b000cbad9d2eb72add8a6a8a448abb9278ef3905a61d241800f55c3e65411"
+          },
+          "properties": {
+            "evidence": [
+              "gmail.modify"
+            ],
+            "fixture_id": "adversarial-006-provider-modify-scope",
+            "generic_baseline_labels": [
+              "auth_changed"
+            ],
+            "reapproval_required": true,
+            "severity": "high",
+            "tool_name": "gmail_search"
+          },
+          "ruleId": "auth_scope_expansion",
+          "ruleIndex": 0
+        },
+        {
+          "level": "error",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tool_contract_drift/fixtures/adversarial_descriptor_cases.json"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "delete_document: New tool introduces write, admin, shell, deploy, payment, or destructive capability. (fixture=adversarial-009-name-only-risky-tool-added, severity=high; Review signal only; not a vulnerability finding or proof of runtime safety.)"
+          },
+          "partialFingerprints": {
+            "primaryLocationLineHash": "7816cc8f947e643fa5d999482a13a6ebbe29672f2825f7affdad13a8db9bb490",
+            "toolContractDrift/v1": "7816cc8f947e643fa5d999482a13a6ebbe29672f2825f7affdad13a8db9bb490"
+          },
+          "properties": {
+            "evidence": [
+              "scopes=no-scopes; annotations={}; description=Remove a document from the workspace."
+            ],
+            "fixture_id": "adversarial-009-name-only-risky-tool-added",
+            "generic_baseline_labels": [
+              "tool_added"
+            ],
+            "reapproval_required": true,
+            "severity": "high",
+            "tool_name": "delete_document"
+          },
+          "ruleId": "risky_tool_added",
+          "ruleIndex": 5
+        },
+        {
+          "level": "error",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tool_contract_drift/fixtures/adversarial_descriptor_cases.json"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "invoice_lookup: Tool moved from read-only semantics toward destructive or write-capable behavior. (fixture=adversarial-010-readonly-description-becomes-delete-with-stale-readonly, severity=high; Review signal only; not a vulnerability finding or proof of runtime safety.)"
+          },
+          "partialFingerprints": {
+            "primaryLocationLineHash": "fed43bb3b2a07809f61c823ea8a367a0ddf56f72f47a6117020f374639696093",
+            "toolContractDrift/v1": "fed43bb3b2a07809f61c823ea8a367a0ddf56f72f47a6117020f374639696093"
+          },
+          "properties": {
+            "evidence": [
+              "scopes=no-scopes; annotations={'readOnlyHint': True}; description=Read archived invoices.",
+              "scopes=no-scopes; annotations={'readOnlyHint': True}; description=Delete archived invoices."
+            ],
+            "fixture_id": "adversarial-010-readonly-description-becomes-delete-with-stale-readonly",
+            "generic_baseline_labels": [
+              "description_changed"
+            ],
+            "reapproval_required": true,
+            "severity": "high",
+            "tool_name": "invoice_lookup"
+          },
+          "ruleId": "readonly_to_destructive",
+          "ruleIndex": 4
+        },
+        {
+          "level": "error",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tool_contract_drift/fixtures/adversarial_descriptor_cases.json"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "drive_search: New auth scopes increase write, delete, admin, payment, deploy, or secret capability. (fixture=adversarial-011-provider-broad-drive-scope-expansion, severity=high; Review signal only; not a vulnerability finding or proof of runtime safety.)"
+          },
+          "partialFingerprints": {
+            "primaryLocationLineHash": "48dc6313b1ce1e3828a744f8aa95955adde1234b38954ae91aefb0d515ccb9a6",
+            "toolContractDrift/v1": "48dc6313b1ce1e3828a744f8aa95955adde1234b38954ae91aefb0d515ccb9a6"
+          },
+          "properties": {
+            "evidence": [
+              "drive"
+            ],
+            "fixture_id": "adversarial-011-provider-broad-drive-scope-expansion",
+            "generic_baseline_labels": [
+              "auth_changed"
+            ],
+            "reapproval_required": true,
+            "severity": "high",
+            "tool_name": "drive_search"
+          },
+          "ruleId": "auth_scope_expansion",
+          "ruleIndex": 0
+        },
+        {
+          "level": "error",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tool_contract_drift/fixtures/adversarial_descriptor_cases.json"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "session_status: Output template changed while sensitive output fields appeared or became rendered. (fixture=adversarial-014-nested-sensitive-output-template-drift, severity=high; Review signal only; not a vulnerability finding or proof of runtime safety.)"
+          },
+          "partialFingerprints": {
+            "primaryLocationLineHash": "90803d990a1a4e5b38f689abefd8c5b42dbe21901080267fc100408e62faa989",
+            "toolContractDrift/v1": "90803d990a1a4e5b38f689abefd8c5b42dbe21901080267fc100408e62faa989"
+          },
+          "properties": {
+            "evidence": [
+              "session.access_token"
+            ],
+            "fixture_id": "adversarial-014-nested-sensitive-output-template-drift",
+            "generic_baseline_labels": [
+              "output_template_changed",
+              "output_schema_changed"
+            ],
+            "reapproval_required": true,
+            "severity": "high",
+            "tool_name": "session_status"
+          },
+          "ruleId": "sensitive_output_template_drift",
+          "ruleIndex": 7
+        },
+        {
+          "level": "error",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tool_contract_drift/fixtures/adversarial_descriptor_cases.json"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "oauth_session: Output template changed while sensitive output fields appeared or became rendered. (fixture=adversarial-015-sensitive-template-existing-field-rendered, severity=high; Review signal only; not a vulnerability finding or proof of runtime safety.)"
+          },
+          "partialFingerprints": {
+            "primaryLocationLineHash": "f1d8a011514662b36942b68803aaac2c7028d5c2ab7782483adfc90fc0d766c6",
+            "toolContractDrift/v1": "f1d8a011514662b36942b68803aaac2c7028d5c2ab7782483adfc90fc0d766c6"
+          },
+          "properties": {
+            "evidence": [
+              "access_token"
+            ],
+            "fixture_id": "adversarial-015-sensitive-template-existing-field-rendered",
+            "generic_baseline_labels": [
+              "output_template_changed"
+            ],
+            "reapproval_required": true,
+            "severity": "high",
+            "tool_name": "oauth_session"
+          },
+          "ruleId": "sensitive_output_template_drift",
+          "ruleIndex": 7
+        },
+        {
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tool_contract_drift/fixtures/adversarial_descriptor_cases.json"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "update_export: Input schema or open-world annotation loosened bounds on the agent action space. (fixture=adversarial-016-new-open-object-property-expansion, severity=medium; Review signal only; not a vulnerability finding or proof of runtime safety.)"
+          },
+          "partialFingerprints": {
+            "primaryLocationLineHash": "9b50f0070d436f0f217cb0d31685af26a5fddf9bac6cfe8da9e3a0d819b17a5c",
+            "toolContractDrift/v1": "9b50f0070d436f0f217cb0d31685af26a5fddf9bac6cfe8da9e3a0d819b17a5c"
+          },
+          "properties": {
+            "evidence": [
+              "input_schema/openWorldHint"
+            ],
+            "fixture_id": "adversarial-016-new-open-object-property-expansion",
+            "generic_baseline_labels": [
+              "input_schema_changed"
+            ],
+            "reapproval_required": true,
+            "severity": "medium",
+            "tool_name": "update_export"
+          },
+          "ruleId": "closed_world_to_open_world_input",
+          "ruleIndex": 1
+        },
+        {
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tool_contract_drift/fixtures/adversarial_descriptor_cases.json"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "read_export: Input schema or open-world annotation loosened bounds on the agent action space. (fixture=adversarial-017-bounded-optional-property-control, severity=medium; Review signal only; not a vulnerability finding or proof of runtime safety.)"
+          },
+          "partialFingerprints": {
+            "primaryLocationLineHash": "c1673330be836dff17b64e8e6b67bfa260ad7c6fba0ada3449732e182469373d",
+            "toolContractDrift/v1": "c1673330be836dff17b64e8e6b67bfa260ad7c6fba0ada3449732e182469373d"
+          },
+          "properties": {
+            "evidence": [
+              "input_schema/openWorldHint"
+            ],
+            "fixture_id": "adversarial-017-bounded-optional-property-control",
+            "generic_baseline_labels": [
+              "input_schema_changed"
+            ],
+            "reapproval_required": true,
+            "severity": "medium",
+            "tool_name": "read_export"
+          },
+          "ruleId": "closed_world_to_open_world_input",
+          "ruleIndex": 1
+        },
+        {
+          "level": "error",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tool_contract_drift/fixtures/adversarial_descriptor_cases.json"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "vault_secret_read: New auth scopes increase write, delete, admin, payment, deploy, or secret capability. (fixture=adversarial-018-sensitive-readonly-scope-expansion, severity=high; Review signal only; not a vulnerability finding or proof of runtime safety.)"
+          },
+          "partialFingerprints": {
+            "primaryLocationLineHash": "3ce2ae64ecb9564d65482507bb2f618853dee5144667f31b605edaf61c3fdc6c",
+            "toolContractDrift/v1": "3ce2ae64ecb9564d65482507bb2f618853dee5144667f31b605edaf61c3fdc6c"
+          },
+          "properties": {
+            "evidence": [
+              "vault.secrets.read"
+            ],
+            "fixture_id": "adversarial-018-sensitive-readonly-scope-expansion",
+            "generic_baseline_labels": [
+              "description_changed",
+              "auth_changed"
+            ],
+            "reapproval_required": true,
+            "severity": "high",
+            "tool_name": "vault_secret_read"
+          },
+          "ruleId": "auth_scope_expansion",
+          "ruleIndex": 0
+        },
+        {
+          "level": "error",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tool_contract_drift/fixtures/adversarial_descriptor_cases.json"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "payment_session: Output schema added sensitive fields without an output-template change to make the disclosure boundary obvious. (fixture=adversarial-019-sensitive-output-schema-expansion-no-template-change, severity=high; Review signal only; not a vulnerability finding or proof of runtime safety.)"
+          },
+          "partialFingerprints": {
+            "primaryLocationLineHash": "1f723d68f8690b8d94d3903089d159b6aebb9581f7a0ec1d17327a70f6278638",
+            "toolContractDrift/v1": "1f723d68f8690b8d94d3903089d159b6aebb9581f7a0ec1d17327a70f6278638"
+          },
+          "properties": {
+            "evidence": [
+              "payment_secret"
+            ],
+            "fixture_id": "adversarial-019-sensitive-output-schema-expansion-no-template-change",
+            "generic_baseline_labels": [
+              "output_schema_changed"
+            ],
+            "reapproval_required": true,
+            "severity": "high",
+            "tool_name": "payment_session"
+          },
+          "ruleId": "sensitive_output_schema_expansion",
+          "ruleIndex": 6
+        },
+        {
+          "level": "error",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tool_contract_drift/fixtures/adversarial_descriptor_cases.json"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "charge_card: New tool introduces write, admin, shell, deploy, payment, or destructive capability. (fixture=adversarial-020-money-movement-tool-added, severity=high; Review signal only; not a vulnerability finding or proof of runtime safety.)"
+          },
+          "partialFingerprints": {
+            "primaryLocationLineHash": "d5278d53dab2e231edbe7f9218eb4600babb5eb8a8a8c9de4e32ba45bc730fb9",
+            "toolContractDrift/v1": "d5278d53dab2e231edbe7f9218eb4600babb5eb8a8a8c9de4e32ba45bc730fb9"
+          },
+          "properties": {
+            "evidence": [
+              "scopes=no-scopes; annotations={}; description=Charge a saved customer card."
+            ],
+            "fixture_id": "adversarial-020-money-movement-tool-added",
+            "generic_baseline_labels": [
+              "tool_added"
+            ],
+            "reapproval_required": true,
+            "severity": "high",
+            "tool_name": "charge_card"
+          },
+          "ruleId": "risky_tool_added",
+          "ruleIndex": 5
+        },
+        {
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tool_contract_drift/fixtures/adversarial_descriptor_cases.json"
+                },
+                "region": {
+                  "startLine": 1
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "delete_export_jobs: Existing non-read-only tool changed from the destructive default or an explicit destructive hint to non-destructive. (fixture=adversarial-021-destructive-hint-downgrade-with-delete-text, severity=medium; Review signal only; not a vulnerability finding or proof of runtime safety.)"
+          },
+          "partialFingerprints": {
+            "primaryLocationLineHash": "c8dd2a44a4817ba11689dec678d3bb6b05bc5e9ccf6e46299e62c0ff8b3658c1",
+            "toolContractDrift/v1": "c8dd2a44a4817ba11689dec678d3bb6b05bc5e9ccf6e46299e62c0ff8b3658c1"
+          },
+          "properties": {
+            "evidence": [
+              "scopes=no-scopes; annotations={'destructiveHint': True, 'readOnlyHint': False}; description=Delete queued export jobs.",
+              "scopes=no-scopes; annotations={'destructiveHint': False, 'readOnlyHint': False}; description=Delete queued export jobs."
+            ],
+            "fixture_id": "adversarial-021-destructive-hint-downgrade-with-delete-text",
+            "generic_baseline_labels": [
+              "annotations_changed",
+              "annotation_safer_explicit"
+            ],
+            "reapproval_required": true,
+            "severity": "medium",
+            "tool_name": "delete_export_jobs"
+          },
+          "ruleId": "destructive_hint_downgrade",
+          "ruleIndex": 2
+        }
+      ],
+      "tool": {
+        "driver": {
+          "name": "tool-contract-drift",
+          "properties": {
+            "corpus_id": "public-reproduction-53",
+            "corpus_manifest_sha256": "330c174becdcc98efee8ef438e389ea4e13af767c89f0e851a2528497e2f3e2e",
+            "policy_version": "tool-contract-drift-v1"
+          },
+          "rules": [
+            {
+              "defaultConfiguration": {
+                "level": "error"
+              },
+              "fullDescription": {
+                "text": "Agent-facing tool descriptor drift label requiring review or reapproval. Review signal only; not a vulnerability finding or proof of runtime safety."
+              },
+              "help": {
+                "text": "Use this as a descriptor-review cue. Confirm actual tool behavior, authorization, and reviewer policy before acting. Review signal only; not a vulnerability finding or proof of runtime safety."
+              },
+              "id": "auth_scope_expansion",
+              "name": "auth_scope_expansion",
+              "shortDescription": {
+                "text": "auth scope expansion"
+              }
+            },
+            {
+              "defaultConfiguration": {
+                "level": "warning"
+              },
+              "fullDescription": {
+                "text": "Agent-facing tool descriptor drift label requiring review or reapproval. Review signal only; not a vulnerability finding or proof of runtime safety."
+              },
+              "help": {
+                "text": "Use this as a descriptor-review cue. Confirm actual tool behavior, authorization, and reviewer policy before acting. Review signal only; not a vulnerability finding or proof of runtime safety."
+              },
+              "id": "closed_world_to_open_world_input",
+              "name": "closed_world_to_open_world_input",
+              "shortDescription": {
+                "text": "closed world to open world input"
+              }
+            },
+            {
+              "defaultConfiguration": {
+                "level": "error"
+              },
+              "fullDescription": {
+                "text": "Agent-facing tool descriptor drift label requiring review or reapproval. Review signal only; not a vulnerability finding or proof of runtime safety."
+              },
+              "help": {
+                "text": "Use this as a descriptor-review cue. Confirm actual tool behavior, authorization, and reviewer policy before acting. Review signal only; not a vulnerability finding or proof of runtime safety."
+              },
+              "id": "destructive_hint_downgrade",
+              "name": "destructive_hint_downgrade",
+              "shortDescription": {
+                "text": "destructive hint downgrade"
+              }
+            },
+            {
+              "defaultConfiguration": {
+                "level": "error"
+              },
+              "fullDescription": {
+                "text": "Agent-facing tool descriptor drift label requiring review or reapproval. Review signal only; not a vulnerability finding or proof of runtime safety."
+              },
+              "help": {
+                "text": "Use this as a descriptor-review cue. Confirm actual tool behavior, authorization, and reviewer policy before acting. Review signal only; not a vulnerability finding or proof of runtime safety."
+              },
+              "id": "destructive_hint_escalation",
+              "name": "destructive_hint_escalation",
+              "shortDescription": {
+                "text": "destructive hint escalation"
+              }
+            },
+            {
+              "defaultConfiguration": {
+                "level": "error"
+              },
+              "fullDescription": {
+                "text": "Agent-facing tool descriptor drift label requiring review or reapproval. Review signal only; not a vulnerability finding or proof of runtime safety."
+              },
+              "help": {
+                "text": "Use this as a descriptor-review cue. Confirm actual tool behavior, authorization, and reviewer policy before acting. Review signal only; not a vulnerability finding or proof of runtime safety."
+              },
+              "id": "readonly_to_destructive",
+              "name": "readonly_to_destructive",
+              "shortDescription": {
+                "text": "readonly to destructive"
+              }
+            },
+            {
+              "defaultConfiguration": {
+                "level": "warning"
+              },
+              "fullDescription": {
+                "text": "Agent-facing tool descriptor drift label requiring review or reapproval. Review signal only; not a vulnerability finding or proof of runtime safety."
+              },
+              "help": {
+                "text": "Use this as a descriptor-review cue. Confirm actual tool behavior, authorization, and reviewer policy before acting. Review signal only; not a vulnerability finding or proof of runtime safety."
+              },
+              "id": "risky_tool_added",
+              "name": "risky_tool_added",
+              "shortDescription": {
+                "text": "risky tool added"
+              }
+            },
+            {
+              "defaultConfiguration": {
+                "level": "warning"
+              },
+              "fullDescription": {
+                "text": "Agent-facing tool descriptor drift label requiring review or reapproval. Review signal only; not a vulnerability finding or proof of runtime safety."
+              },
+              "help": {
+                "text": "Use this as a descriptor-review cue. Confirm actual tool behavior, authorization, and reviewer policy before acting. Review signal only; not a vulnerability finding or proof of runtime safety."
+              },
+              "id": "sensitive_output_schema_expansion",
+              "name": "sensitive_output_schema_expansion",
+              "shortDescription": {
+                "text": "sensitive output schema expansion"
+              }
+            },
+            {
+              "defaultConfiguration": {
+                "level": "warning"
+              },
+              "fullDescription": {
+                "text": "Agent-facing tool descriptor drift label requiring review or reapproval. Review signal only; not a vulnerability finding or proof of runtime safety."
+              },
+              "help": {
+                "text": "Use this as a descriptor-review cue. Confirm actual tool behavior, authorization, and reviewer policy before acting. Review signal only; not a vulnerability finding or proof of runtime safety."
+              },
+              "id": "sensitive_output_template_drift",
+              "name": "sensitive_output_template_drift",
+              "shortDescription": {
+                "text": "sensitive output template drift"
+              }
+            }
+          ],
+          "semanticVersion": "0.1.0a0"
+        }
+      }
+    }
+  ],
+  "version": "2.1.0"
+}

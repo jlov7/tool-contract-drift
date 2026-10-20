@@ -1,0 +1,458 @@
+[
+  {
+    "after": {
+      "tools": [
+        {
+          "annotations": {
+            "destructiveHint": true,
+            "readOnlyHint": false
+          },
+          "auth": {
+            "scopes": [
+              "docs.read",
+              "docs.delete"
+            ]
+          },
+          "description": "Search or delete matching documentation records when cleanup is requested.",
+          "input_schema": {
+            "additionalProperties": false,
+            "properties": {
+              "query": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "query"
+            ],
+            "type": "object"
+          },
+          "name": "search_docs",
+          "output_template": "ui://docs/search-results.html"
+        }
+      ]
+    },
+    "before": {
+      "tools": [
+        {
+          "annotations": {
+            "destructiveHint": false,
+            "readOnlyHint": true
+          },
+          "auth": {
+            "scopes": [
+              "docs.read"
+            ]
+          },
+          "description": "Search approved documentation.",
+          "input_schema": {
+            "additionalProperties": false,
+            "properties": {
+              "query": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "query"
+            ],
+            "type": "object"
+          },
+          "name": "search_docs",
+          "output_template": "ui://docs/search-results.html"
+        }
+      ]
+    },
+    "expected_risks": [
+      "auth_scope_expansion",
+      "destructive_hint_escalation",
+      "readonly_to_destructive"
+    ],
+    "id": "fixture-001-readonly-to-destructive",
+    "label_rationale": "Expected labels are curated from the Agent Tool Contract Drift proof-spike review and regression corpus; they are not independent external reviewer labels.",
+    "label_status": "curated_expected_v1"
+  },
+  {
+    "after": {
+      "tools": [
+        {
+          "annotations": {
+            "readOnlyHint": true
+          },
+          "auth": {
+            "scopes": [
+              "crm.customer.read",
+              "crm.customer.write"
+            ]
+          },
+          "description": "Read customer account metadata and update account tags.",
+          "input_schema": {
+            "additionalProperties": false,
+            "properties": {
+              "customer_id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "customer_id"
+            ],
+            "type": "object"
+          },
+          "name": "crm_lookup",
+          "output_template": "ui://crm/customer.html"
+        }
+      ]
+    },
+    "before": {
+      "tools": [
+        {
+          "annotations": {
+            "readOnlyHint": true
+          },
+          "auth": {
+            "scopes": [
+              "crm.customer.read"
+            ]
+          },
+          "description": "Read customer account metadata.",
+          "input_schema": {
+            "additionalProperties": false,
+            "properties": {
+              "customer_id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "customer_id"
+            ],
+            "type": "object"
+          },
+          "name": "crm_lookup",
+          "output_template": "ui://crm/customer.html"
+        }
+      ]
+    },
+    "expected_risks": [
+      "auth_scope_expansion",
+      "readonly_to_destructive"
+    ],
+    "id": "fixture-002-auth-scope-expansion",
+    "label_rationale": "Expected labels are curated from the Agent Tool Contract Drift proof-spike review and regression corpus; they are not independent external reviewer labels.",
+    "label_status": "curated_expected_v1"
+  },
+  {
+    "after": {
+      "tools": [
+        {
+          "annotations": {
+            "readOnlyHint": false
+          },
+          "auth": {
+            "scopes": [
+              "deploy.preview"
+            ]
+          },
+          "description": "Deploy to any named environment.",
+          "input_schema": {
+            "additionalProperties": true,
+            "properties": {
+              "environment": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "environment"
+            ],
+            "type": "object"
+          },
+          "name": "deploy_preview",
+          "output_template": "ui://deploy/status.html"
+        }
+      ]
+    },
+    "before": {
+      "tools": [
+        {
+          "annotations": {
+            "readOnlyHint": false
+          },
+          "auth": {
+            "scopes": [
+              "deploy.preview"
+            ]
+          },
+          "description": "Deploy to an approved preview environment.",
+          "input_schema": {
+            "additionalProperties": false,
+            "properties": {
+              "environment": {
+                "enum": [
+                  "staging"
+                ],
+                "type": "string"
+              }
+            },
+            "required": [
+              "environment"
+            ],
+            "type": "object"
+          },
+          "name": "deploy_preview",
+          "output_template": "ui://deploy/status.html"
+        }
+      ]
+    },
+    "expected_risks": [
+      "closed_world_to_open_world_input"
+    ],
+    "id": "fixture-003-closed-to-open-world",
+    "label_rationale": "Expected labels are curated from the Agent Tool Contract Drift proof-spike review and regression corpus; they are not independent external reviewer labels.",
+    "label_status": "curated_expected_v1"
+  },
+  {
+    "after": {
+      "tools": [
+        {
+          "annotations": {
+            "readOnlyHint": true
+          },
+          "auth": {
+            "scopes": [
+              "billing.invoice.read"
+            ]
+          },
+          "description": "List invoice summaries and payment method tokens.",
+          "input_schema": {
+            "additionalProperties": false,
+            "properties": {
+              "account_id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "account_id"
+            ],
+            "type": "object"
+          },
+          "name": "list_invoices",
+          "output_schema": {
+            "properties": {
+              "amount": {
+                "type": "number"
+              },
+              "invoice_id": {
+                "type": "string"
+              },
+              "payment_token": {
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "output_template": "ui://billing/invoice-with-payment-methods.html"
+        }
+      ]
+    },
+    "before": {
+      "tools": [
+        {
+          "annotations": {
+            "readOnlyHint": true
+          },
+          "auth": {
+            "scopes": [
+              "billing.invoice.read"
+            ]
+          },
+          "description": "List invoice summaries.",
+          "input_schema": {
+            "additionalProperties": false,
+            "properties": {
+              "account_id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "account_id"
+            ],
+            "type": "object"
+          },
+          "name": "list_invoices",
+          "output_schema": {
+            "properties": {
+              "amount": {
+                "type": "number"
+              },
+              "invoice_id": {
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "output_template": "ui://billing/invoice-summary.html"
+        }
+      ]
+    },
+    "expected_risks": [
+      "sensitive_output_template_drift"
+    ],
+    "id": "fixture-004-sensitive-output-template-drift",
+    "label_rationale": "Expected labels are curated from the Agent Tool Contract Drift proof-spike review and regression corpus; they are not independent external reviewer labels.",
+    "label_status": "curated_expected_v1"
+  },
+  {
+    "after": {
+      "tools": [
+        {
+          "annotations": {
+            "readOnlyHint": true
+          },
+          "auth": {
+            "scopes": [
+              "repo.read"
+            ]
+          },
+          "description": "Read repository status.",
+          "input_schema": {
+            "additionalProperties": false,
+            "properties": {
+              "repo": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "repo"
+            ],
+            "type": "object"
+          },
+          "name": "repo_status",
+          "output_template": "ui://repo/status.html"
+        },
+        {
+          "annotations": {
+            "destructiveHint": true,
+            "readOnlyHint": false
+          },
+          "auth": {
+            "scopes": [
+              "repo.write",
+              "actions.admin"
+            ]
+          },
+          "description": "Run shell commands in the repository and write files.",
+          "input_schema": {
+            "additionalProperties": false,
+            "properties": {
+              "command": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "command"
+            ],
+            "type": "object"
+          },
+          "name": "run_shell",
+          "output_template": "ui://repo/shell-output.html"
+        }
+      ]
+    },
+    "before": {
+      "tools": [
+        {
+          "annotations": {
+            "readOnlyHint": true
+          },
+          "auth": {
+            "scopes": [
+              "repo.read"
+            ]
+          },
+          "description": "Read repository status.",
+          "input_schema": {
+            "additionalProperties": false,
+            "properties": {
+              "repo": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "repo"
+            ],
+            "type": "object"
+          },
+          "name": "repo_status",
+          "output_template": "ui://repo/status.html"
+        }
+      ]
+    },
+    "expected_risks": [
+      "risky_tool_added"
+    ],
+    "id": "fixture-005-risky-tool-count-expansion",
+    "label_rationale": "Expected labels are curated from the Agent Tool Contract Drift proof-spike review and regression corpus; they are not independent external reviewer labels.",
+    "label_status": "curated_expected_v1"
+  },
+  {
+    "after": {
+      "tools": [
+        {
+          "annotations": {
+            "readOnlyHint": true
+          },
+          "auth": {
+            "scopes": [
+              "docs.read"
+            ]
+          },
+          "description": "Summarize public documentation pages for a reviewer.",
+          "input_schema": {
+            "additionalProperties": false,
+            "properties": {
+              "url": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "url"
+            ],
+            "type": "object"
+          },
+          "name": "summarize_docs",
+          "output_template": "ui://docs/summary.html"
+        }
+      ]
+    },
+    "before": {
+      "tools": [
+        {
+          "annotations": {
+            "readOnlyHint": true
+          },
+          "auth": {
+            "scopes": [
+              "docs.read"
+            ]
+          },
+          "description": "Summarize public documentation pages.",
+          "input_schema": {
+            "additionalProperties": false,
+            "properties": {
+              "url": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "url"
+            ],
+            "type": "object"
+          },
+          "name": "summarize_docs",
+          "output_template": "ui://docs/summary.html"
+        }
+      ]
+    },
+    "expected_risks": [],
+    "id": "fixture-006-benign-description-cleanup",
+    "label_rationale": "Expected labels are curated from the Agent Tool Contract Drift proof-spike review and regression corpus; they are not independent external reviewer labels.",
+    "label_status": "curated_expected_v1"
+  }
+]

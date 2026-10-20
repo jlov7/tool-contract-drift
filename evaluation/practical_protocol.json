@@ -1,0 +1,42 @@
+{
+  "schema_version": "practical-review-evaluation-v1",
+  "baseline_commit": "b32da072264089492acb294e39f3e4e94bb2567a",
+  "registry": "https://registry.npmjs.org",
+  "publication_cutoff": "2026-10-18T00:00:00Z",
+  "selection": "The five most recently published stable versions of each named package before the cutoff, ordered by npm publication timestamp; evaluate all four adjacent transitions, including unchanged descriptors and acquisition failures.",
+  "versions_per_package": 5,
+  "packages": [
+    "@modelcontextprotocol/server-filesystem",
+    "@modelcontextprotocol/server-memory",
+    "@modelcontextprotocol/server-sequential-thinking",
+    "@playwright/mcp",
+    "@upstash/context7-mcp"
+  ],
+  "independent_comparator": {
+    "package": "mcpdiff",
+    "version": "0.1.0",
+    "endpoint": "All reported descriptor changes, with severity preserved. A compatibility-breaking decision is not equated with a reapproval decision."
+  },
+  "capture": {
+    "operations": ["initialize or server/discover when needed", "tools/list"],
+    "tool_calls": false,
+    "timeout_seconds": 30,
+    "max_pages": 20,
+    "repeat_count": 2,
+    "environment": "Explicit non-secret environment allowlist; no browser launch, account, credentials or production data. Runtime package installation disables lifecycle scripts."
+  },
+  "questions": [
+    "Can an ordinary local tools/list capture and offline comparison be reproduced from pinned released packages?",
+    "Which actual changed fields receive policy findings, and which changes are absent from the baseline lint report?",
+    "Does an independently implemented current comparator already expose the same review evidence?",
+    "What useful scope remains for a compact public artifact?"
+  ],
+  "decision": "Prepare a small experimental artifact only if the results support a clear practical use. Do not expand standalone-product or human-study infrastructure. A useful casebook or honest limitations result is an acceptable outcome; no useful difference is an acceptable stop outcome.",
+  "limits": [
+    "No independent approval labels or human review measurements; no accuracy or review-time claims.",
+    "Five packages from three publisher families, including three correlated packages from one repository; no ecosystem prevalence inference.",
+    "Capture dependencies are frozen at acquisition, not necessarily identical to the dependencies resolved on the original publication date.",
+    "tools/list is metadata evidence, not evidence of runtime tool behavior.",
+    "Any later policy fixes are evaluated separately; this sample cannot subsequently be called an untouched holdout."
+  ]
+}

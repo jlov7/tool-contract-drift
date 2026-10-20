@@ -1,0 +1,19 @@
+{
+  "policy_version": "tool-contract-drift-v1",
+  "enabled_rules": null,
+  "disabled_rules": [],
+  "severity_overrides": {
+    "schema_containment_unresolved": "medium"
+  },
+  "suppressions": [
+    {
+      "fixture_id": "descriptor-pair",
+      "tool_name": "example_tool",
+      "risk": "closed_world_to_open_world_input",
+      "reason": "Example suppression. Replace with a repository-specific review justification."
+    }
+  ],
+  "sarif": {
+    "semantic_version": "0.1.0a0"
+  }
+}

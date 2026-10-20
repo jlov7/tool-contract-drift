@@ -1,0 +1,94 @@
+{
+  "archive_root": "tool-contract-drift-0.1.0a0",
+  "content_scans": {
+    "forbidden_regex_patterns": [
+      "/Users/[j]asonlovell/",
+      "/[p]rivate/var/[f]olders/",
+      "https://github.com/[j]asonlovell/tool-contract-drift"
+    ],
+    "secret_patterns": [
+      "\\bsk-[A-Za-z0-9_-]{20,}",
+      "\\bsk-proj-[A-Za-z0-9_-]{20,}",
+      "\\bgh[pousr]_[A-Za-z0-9_]{20,}",
+      "-----BEGIN (?:RSA |EC |OPENSSH |)PRIVATE KEY-----",
+      "\\b(?:OPENAI_API_KEY|ANTHROPIC_API_KEY|GITHUB_TOKEN)\\s*="
+    ],
+    "text_suffixes": [
+      ".cff",
+      ".in",
+      ".json",
+      ".lock",
+      ".md",
+      ".py",
+      ".sarif",
+      ".tex",
+      ".toml",
+      ".txt",
+      ".yaml",
+      ".yml"
+    ]
+  },
+  "corpus_contract": {
+    "blocked_private_fixture_count": 12,
+    "private_corpus_id": "private-canonical-65",
+    "private_corpus_selectable_surface_included": false,
+    "private_source_derived_fixture_bytes_included": false,
+    "public_corpus_id": "public-reproduction-53",
+    "public_expected_finding_count": 25,
+    "public_expected_fixture_count": 53,
+    "retained_private_synthetic_fixture_count": 28
+  },
+  "deny_path_components": [
+    "__pycache__"
+  ],
+  "deny_path_names": [
+    ".DS_Store"
+  ],
+  "deny_path_prefixes": [
+    ".codex/",
+    ".git/",
+    ".venv/",
+    "artifacts/",
+    "coordinator/",
+    "dist/",
+    "fixtures/",
+    "paper/build/",
+    "provenance/",
+    "reports/baseline_probe_artifacts/",
+    "reports/reviewer_",
+    "reports/sealed_",
+    "reviewer_packet.md"
+  ],
+  "deny_path_suffixes": [
+    ".pyc",
+    ".pyo"
+  ],
+  "manifest_path": "PUBLIC_EXPORT_MANIFEST.json",
+  "manifest_contract": {
+    "boundary": "Deterministic public pre-review source export with a separate manifest-bound 53-case all-synthetic reproduction corpus and zero source-derived descriptor bytes. It retains 28 project-authored synthetic regression records from the private corpus and adds 25 new synthetic quiet controls. It excludes the selectable private 65-case corpus surface, all 37 private source-derived records, coordinator and blinded-study materials, gold/answer artifacts, identity/custody data, and private provenance working files; source-record metadata is inventory only and is not permission.",
+    "excluded_surfaces": [
+      "selectable private-canonical-65 corpus/file surface",
+      "coordinator and internal planning directories",
+      "reviewer assignments, packets, returns, identities, and custody records",
+      "gold labels, answer keys, and sealed adjudication materials",
+      "private provenance/source-replay working files",
+      "all source-derived private descriptor bytes, including the 12 blocker-marked records",
+      "AI audit and local agent state"
+    ],
+    "publication_claims": {
+      "archive_or_doi_exists": false,
+      "external_validation": false,
+      "public_github_repository_or_release_exists": false,
+      "live_sarif_upload_verified": false,
+      "protocol_or_vendor_endorsement": false
+    },
+    "status": "public_export_bytes_verified_locally"
+  },
+  "max_file_size_bytes": 20000000,
+  "schema_version": "tool-contract-drift-public-export-policy-v1",
+  "status": "exact_public_export_verification_policy",
+  "verification_ignored_prefixes": [
+    ".git/"
+  ],
+  "version": "0.1.0a0"
+}

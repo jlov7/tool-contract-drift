@@ -1,0 +1,1156 @@
+{
+  "baseline_commit": "b32da072264089492acb294e39f3e4e94bb2567a",
+  "captures": [
+    {
+      "alias": "server-0-0",
+      "attempts": [
+        {
+          "mode": "initialize",
+          "repeat": 0,
+          "status": "captured"
+        },
+        {
+          "mode": "initialize",
+          "repeat": 1,
+          "status": "captured"
+        }
+      ],
+      "status": "stable",
+      "tool_count": 14,
+      "tool_set_sha256": [
+        "8973be486d3c44c571c27df18c3e2d7dc1643056994cf3b70dbf772f7987a115",
+        "8973be486d3c44c571c27df18c3e2d7dc1643056994cf3b70dbf772f7987a115"
+      ]
+    },
+    {
+      "alias": "server-0-1",
+      "attempts": [
+        {
+          "mode": "initialize",
+          "repeat": 0,
+          "status": "captured"
+        },
+        {
+          "mode": "initialize",
+          "repeat": 1,
+          "status": "captured"
+        }
+      ],
+      "status": "stable",
+      "tool_count": 14,
+      "tool_set_sha256": [
+        "9005c4c45609c602d95ea38c36a1f616092a0af130d0028f7e2d4952da6555ea",
+        "9005c4c45609c602d95ea38c36a1f616092a0af130d0028f7e2d4952da6555ea"
+      ]
+    },
+    {
+      "alias": "server-0-2",
+      "attempts": [
+        {
+          "mode": "initialize",
+          "repeat": 0,
+          "status": "captured"
+        },
+        {
+          "mode": "initialize",
+          "repeat": 1,
+          "status": "captured"
+        }
+      ],
+      "status": "stable",
+      "tool_count": 14,
+      "tool_set_sha256": [
+        "b09c12887c7d62491e81be9c556f240691368ea6744d3a299de242aeb96d5d61",
+        "b09c12887c7d62491e81be9c556f240691368ea6744d3a299de242aeb96d5d61"
+      ]
+    },
+    {
+      "alias": "server-0-3",
+      "attempts": [
+        {
+          "mode": "initialize",
+          "repeat": 0,
+          "status": "captured"
+        },
+        {
+          "mode": "initialize",
+          "repeat": 1,
+          "status": "captured"
+        }
+      ],
+      "status": "stable",
+      "tool_count": 14,
+      "tool_set_sha256": [
+        "b09c12887c7d62491e81be9c556f240691368ea6744d3a299de242aeb96d5d61",
+        "b09c12887c7d62491e81be9c556f240691368ea6744d3a299de242aeb96d5d61"
+      ]
+    },
+    {
+      "alias": "server-0-4",
+      "attempts": [
+        {
+          "mode": "initialize",
+          "repeat": 0,
+          "status": "captured"
+        },
+        {
+          "mode": "initialize",
+          "repeat": 1,
+          "status": "captured"
+        }
+      ],
+      "status": "stable",
+      "tool_count": 14,
+      "tool_set_sha256": [
+        "562d7ff0ca2e115ccd00d9b4da18cf3eeea90c8931e8f43a1e61b35c2103d082",
+        "562d7ff0ca2e115ccd00d9b4da18cf3eeea90c8931e8f43a1e61b35c2103d082"
+      ]
+    },
+    {
+      "alias": "server-1-0",
+      "attempts": [
+        {
+          "mode": "initialize",
+          "repeat": 0,
+          "status": "captured"
+        },
+        {
+          "mode": "initialize",
+          "repeat": 1,
+          "status": "captured"
+        }
+      ],
+      "status": "stable",
+      "tool_count": 9,
+      "tool_set_sha256": [
+        "45ca82db991d734a9f3f05ed487c0cb57df25b72b1f0de327550c386bd4b9440",
+        "45ca82db991d734a9f3f05ed487c0cb57df25b72b1f0de327550c386bd4b9440"
+      ]
+    },
+    {
+      "alias": "server-1-1",
+      "attempts": [
+        {
+          "mode": "initialize",
+          "repeat": 0,
+          "status": "captured"
+        },
+        {
+          "mode": "initialize",
+          "repeat": 1,
+          "status": "captured"
+        }
+      ],
+      "status": "stable",
+      "tool_count": 9,
+      "tool_set_sha256": [
+        "45ca82db991d734a9f3f05ed487c0cb57df25b72b1f0de327550c386bd4b9440",
+        "45ca82db991d734a9f3f05ed487c0cb57df25b72b1f0de327550c386bd4b9440"
+      ]
+    },
+    {
+      "alias": "server-1-2",
+      "attempts": [
+        {
+          "mode": "initialize",
+          "repeat": 0,
+          "status": "captured"
+        },
+        {
+          "mode": "initialize",
+          "repeat": 1,
+          "status": "captured"
+        }
+      ],
+      "status": "stable",
+      "tool_count": 9,
+      "tool_set_sha256": [
+        "0ac9fd6c89478a86e697054307ad6e9510e809e7560b3b81f093f26565f244ac",
+        "0ac9fd6c89478a86e697054307ad6e9510e809e7560b3b81f093f26565f244ac"
+      ]
+    },
+    {
+      "alias": "server-1-3",
+      "attempts": [
+        {
+          "mode": "initialize",
+          "repeat": 0,
+          "status": "captured"
+        },
+        {
+          "mode": "initialize",
+          "repeat": 1,
+          "status": "captured"
+        }
+      ],
+      "status": "stable",
+      "tool_count": 9,
+      "tool_set_sha256": [
+        "0ac9fd6c89478a86e697054307ad6e9510e809e7560b3b81f093f26565f244ac",
+        "0ac9fd6c89478a86e697054307ad6e9510e809e7560b3b81f093f26565f244ac"
+      ]
+    },
+    {
+      "alias": "server-1-4",
+      "attempts": [
+        {
+          "mode": "initialize",
+          "repeat": 0,
+          "status": "captured"
+        },
+        {
+          "mode": "initialize",
+          "repeat": 1,
+          "status": "captured"
+        }
+      ],
+      "status": "stable",
+      "tool_count": 9,
+      "tool_set_sha256": [
+        "7d4af2f6fe262139f23f45edded10bc4d3b2f55280307b76809267a5dd280894",
+        "7d4af2f6fe262139f23f45edded10bc4d3b2f55280307b76809267a5dd280894"
+      ]
+    },
+    {
+      "alias": "server-2-0",
+      "attempts": [
+        {
+          "mode": "initialize",
+          "repeat": 0,
+          "status": "captured"
+        },
+        {
+          "mode": "initialize",
+          "repeat": 1,
+          "status": "captured"
+        }
+      ],
+      "status": "stable",
+      "tool_count": 1,
+      "tool_set_sha256": [
+        "da119a4c3d399fb6698ab82cb5dde7876da96e6dfd358cea513f66d05444f2c0",
+        "da119a4c3d399fb6698ab82cb5dde7876da96e6dfd358cea513f66d05444f2c0"
+      ]
+    },
+    {
+      "alias": "server-2-1",
+      "attempts": [
+        {
+          "mode": "initialize",
+          "repeat": 0,
+          "status": "captured"
+        },
+        {
+          "mode": "initialize",
+          "repeat": 1,
+          "status": "captured"
+        }
+      ],
+      "status": "stable",
+      "tool_count": 1,
+      "tool_set_sha256": [
+        "1b81f9b51489e3af0e2ea8837b9f252420ada078b7f094135cee2ee0f5741744",
+        "1b81f9b51489e3af0e2ea8837b9f252420ada078b7f094135cee2ee0f5741744"
+      ]
+    },
+    {
+      "alias": "server-2-2",
+      "attempts": [
+        {
+          "mode": "initialize",
+          "repeat": 0,
+          "status": "captured"
+        },
+        {
+          "mode": "initialize",
+          "repeat": 1,
+          "status": "captured"
+        }
+      ],
+      "status": "stable",
+      "tool_count": 1,
+      "tool_set_sha256": [
+        "fe47ef5c13ce556d5726934051fbcdd6f929e6702770eb6d0b68923dad4195cd",
+        "fe47ef5c13ce556d5726934051fbcdd6f929e6702770eb6d0b68923dad4195cd"
+      ]
+    },
+    {
+      "alias": "server-2-3",
+      "attempts": [
+        {
+          "mode": "initialize",
+          "repeat": 0,
+          "status": "captured"
+        },
+        {
+          "mode": "initialize",
+          "repeat": 1,
+          "status": "captured"
+        }
+      ],
+      "status": "stable",
+      "tool_count": 1,
+      "tool_set_sha256": [
+        "44ea9ba181302c867418297ed32d49224afc29c5ecdc66613f0ee87f2b308507",
+        "44ea9ba181302c867418297ed32d49224afc29c5ecdc66613f0ee87f2b308507"
+      ]
+    },
+    {
+      "alias": "server-2-4",
+      "attempts": [
+        {
+          "mode": "initialize",
+          "repeat": 0,
+          "status": "captured"
+        },
+        {
+          "mode": "initialize",
+          "repeat": 1,
+          "status": "captured"
+        }
+      ],
+      "status": "stable",
+      "tool_count": 1,
+      "tool_set_sha256": [
+        "0a9b82d8713f9093eea97d56c62c3a4ce598bf64c470f08877f47217327dea56",
+        "0a9b82d8713f9093eea97d56c62c3a4ce598bf64c470f08877f47217327dea56"
+      ]
+    },
+    {
+      "alias": "server-3-0",
+      "attempts": [
+        {
+          "mode": "initialize",
+          "repeat": 0,
+          "status": "captured"
+        },
+        {
+          "mode": "initialize",
+          "repeat": 1,
+          "status": "captured"
+        }
+      ],
+      "status": "stable",
+      "tool_count": 24,
+      "tool_set_sha256": [
+        "cfc422f2db6c297ade5647e451e839f881c51d484be22476384c8269f9f57a9d",
+        "cfc422f2db6c297ade5647e451e839f881c51d484be22476384c8269f9f57a9d"
+      ]
+    },
+    {
+      "alias": "server-3-1",
+      "attempts": [
+        {
+          "mode": "initialize",
+          "repeat": 0,
+          "status": "captured"
+        },
+        {
+          "mode": "initialize",
+          "repeat": 1,
+          "status": "captured"
+        }
+      ],
+      "status": "stable",
+      "tool_count": 24,
+      "tool_set_sha256": [
+        "cfc422f2db6c297ade5647e451e839f881c51d484be22476384c8269f9f57a9d",
+        "cfc422f2db6c297ade5647e451e839f881c51d484be22476384c8269f9f57a9d"
+      ]
+    },
+    {
+      "alias": "server-3-2",
+      "attempts": [
+        {
+          "mode": "initialize",
+          "repeat": 0,
+          "status": "captured"
+        },
+        {
+          "mode": "initialize",
+          "repeat": 1,
+          "status": "captured"
+        }
+      ],
+      "status": "stable",
+      "tool_count": 26,
+      "tool_set_sha256": [
+        "f56cdfe2e2e97612eee361f3ce52a10d1f512759384d3a61fef29eefc9ac11c2",
+        "f56cdfe2e2e97612eee361f3ce52a10d1f512759384d3a61fef29eefc9ac11c2"
+      ]
+    },
+    {
+      "alias": "server-3-3",
+      "attempts": [
+        {
+          "mode": "initialize",
+          "repeat": 0,
+          "status": "captured"
+        },
+        {
+          "mode": "initialize",
+          "repeat": 1,
+          "status": "captured"
+        }
+      ],
+      "status": "stable",
+      "tool_count": 25,
+      "tool_set_sha256": [
+        "26cff8c196796e7905d6b520d8aa1373e804374d8bbaddc905b21342825d23fe",
+        "26cff8c196796e7905d6b520d8aa1373e804374d8bbaddc905b21342825d23fe"
+      ]
+    },
+    {
+      "alias": "server-3-4",
+      "attempts": [
+        {
+          "mode": "initialize",
+          "repeat": 0,
+          "status": "captured"
+        },
+        {
+          "mode": "initialize",
+          "repeat": 1,
+          "status": "captured"
+        }
+      ],
+      "status": "stable",
+      "tool_count": 25,
+      "tool_set_sha256": [
+        "4b893d3fad6320ec48d3d80ab7d56fd0281ea187d707f0c206fd1b3253b2f3f8",
+        "4b893d3fad6320ec48d3d80ab7d56fd0281ea187d707f0c206fd1b3253b2f3f8"
+      ]
+    },
+    {
+      "alias": "server-4-0",
+      "attempts": [
+        {
+          "mode": "initialize",
+          "repeat": 0,
+          "status": "captured"
+        },
+        {
+          "mode": "initialize",
+          "repeat": 1,
+          "status": "captured"
+        }
+      ],
+      "status": "stable",
+      "tool_count": 2,
+      "tool_set_sha256": [
+        "f30eb8a5ad69d3baa097af713e643955f4c53bdb81a7459db2d6ad189471c582",
+        "f30eb8a5ad69d3baa097af713e643955f4c53bdb81a7459db2d6ad189471c582"
+      ]
+    },
+    {
+      "alias": "server-4-1",
+      "attempts": [
+        {
+          "mode": "initialize",
+          "repeat": 0,
+          "status": "captured"
+        },
+        {
+          "mode": "initialize",
+          "repeat": 1,
+          "status": "captured"
+        }
+      ],
+      "status": "stable",
+      "tool_count": 2,
+      "tool_set_sha256": [
+        "bcaf61e5ed2dfc6c1073555421c673642e3f1ea84b2228fe8247e23d144236e2",
+        "bcaf61e5ed2dfc6c1073555421c673642e3f1ea84b2228fe8247e23d144236e2"
+      ]
+    },
+    {
+      "alias": "server-4-2",
+      "attempts": [
+        {
+          "mode": "initialize",
+          "repeat": 0,
+          "status": "captured"
+        },
+        {
+          "mode": "initialize",
+          "repeat": 1,
+          "status": "captured"
+        }
+      ],
+      "status": "stable",
+      "tool_count": 2,
+      "tool_set_sha256": [
+        "1db73de55ebef056ac1b9ab502916db52a7715085936611bad24a82fb5b6ef47",
+        "1db73de55ebef056ac1b9ab502916db52a7715085936611bad24a82fb5b6ef47"
+      ]
+    },
+    {
+      "alias": "server-4-3",
+      "attempts": [
+        {
+          "mode": "initialize",
+          "repeat": 0,
+          "status": "captured"
+        },
+        {
+          "mode": "initialize",
+          "repeat": 1,
+          "status": "captured"
+        }
+      ],
+      "status": "stable",
+      "tool_count": 2,
+      "tool_set_sha256": [
+        "1db73de55ebef056ac1b9ab502916db52a7715085936611bad24a82fb5b6ef47",
+        "1db73de55ebef056ac1b9ab502916db52a7715085936611bad24a82fb5b6ef47"
+      ]
+    },
+    {
+      "alias": "server-4-4",
+      "attempts": [
+        {
+          "mode": "initialize",
+          "repeat": 0,
+          "status": "captured"
+        },
+        {
+          "mode": "initialize",
+          "repeat": 1,
+          "status": "captured"
+        }
+      ],
+      "status": "stable",
+      "tool_count": 2,
+      "tool_set_sha256": [
+        "1db73de55ebef056ac1b9ab502916db52a7715085936611bad24a82fb5b6ef47",
+        "1db73de55ebef056ac1b9ab502916db52a7715085936611bad24a82fb5b6ef47"
+      ]
+    }
+  ],
+  "linter_sha256": "0c69bf4f18f3478febf30c87b97f633d8eabbfe57c2488a486acef28585ad1df",
+  "lock_sha256": "8d95209289dd1f2c0f5416e0b469fd95fd19e34119cf9f00a2be5c07211165ab",
+  "runner_sha256": "169668cd72f65b2ede2e0a332333cd54369202985a52afbd4566a45c0282dbce",
+  "runtime": {
+    "node": "v24.15.0",
+    "pnpm": "11.22.0",
+    "python": "3.12.10"
+  },
+  "sample_sha256": "660d75153ccf381ce0813cb5928f54a869f3432d5b6203d0d630d24fa871df4a",
+  "schema_version": "practical-review-results-v1",
+  "transitions": [
+    {
+      "after": "2026.7.4",
+      "baseline_finding_count": 1,
+      "baseline_rules": {
+        "destructive_hint_escalation": 1
+      },
+      "before": "2026.1.14",
+      "comparator_changes": [
+        {
+          "breaking": true,
+          "path": "tools/move_file/annotations.destructiveHint",
+          "ruleId": "T-ANN-WEAKEN"
+        }
+      ],
+      "comparator_output_sha256": "f30a152e3b6ffc768965d33bb8878fa910044dbcbefd89fb37ebba6b00c7ed3f",
+      "package": "@modelcontextprotocol/server-filesystem",
+      "status": "compared",
+      "structural_paths": [
+        "/move_file/annotations/destructiveHint"
+      ]
+    },
+    {
+      "after": "2026.7.10",
+      "baseline_finding_count": 0,
+      "baseline_rules": {},
+      "before": "2026.7.4",
+      "comparator_changes": [
+        {
+          "breaking": true,
+          "path": "tools/read_media_file/output.content[]",
+          "ruleId": "T-OUT-TYPE-CHANGE"
+        },
+        {
+          "breaking": true,
+          "path": "tools/read_media_file/output.content[].data",
+          "ruleId": "T-OUT-PROP-REMOVE"
+        },
+        {
+          "breaking": true,
+          "path": "tools/read_media_file/output.content[].mimeType",
+          "ruleId": "T-OUT-PROP-REMOVE"
+        },
+        {
+          "breaking": true,
+          "path": "tools/read_media_file/output.content[].type",
+          "ruleId": "T-OUT-PROP-REMOVE"
+        },
+        {
+          "breaking": false,
+          "drift": "high",
+          "path": "tools/read_media_file/description",
+          "ruleId": "T-DESC-DRIFT"
+        }
+      ],
+      "comparator_output_sha256": "fd674e8b9b3fa1174d7e3729aea3ad6e7f05fb17f0b70ab840c429bd05f8550b",
+      "package": "@modelcontextprotocol/server-filesystem",
+      "status": "compared",
+      "structural_paths": [
+        "/create_directory/annotations/openWorldHint",
+        "/directory_tree/annotations/openWorldHint",
+        "/edit_file/annotations/openWorldHint",
+        "/get_file_info/annotations/openWorldHint",
+        "/list_allowed_directories/annotations/openWorldHint",
+        "/list_directory/annotations/openWorldHint",
+        "/list_directory_with_sizes/annotations/openWorldHint",
+        "/move_file/annotations/openWorldHint",
+        "/read_file/annotations/openWorldHint",
+        "/read_media_file/annotations/openWorldHint",
+        "/read_media_file/description",
+        "/read_media_file/outputSchema/properties/content/items/additionalProperties",
+        "/read_media_file/outputSchema/properties/content/items/anyOf",
+        "/read_media_file/outputSchema/properties/content/items/properties",
+        "/read_media_file/outputSchema/properties/content/items/required",
+        "/read_media_file/outputSchema/properties/content/items/type",
+        "/read_multiple_files/annotations/openWorldHint",
+        "/read_text_file/annotations/openWorldHint",
+        "/search_files/annotations/openWorldHint",
+        "/write_file/annotations/openWorldHint"
+      ]
+    },
+    {
+      "after": "2026.8.31",
+      "baseline_finding_count": 0,
+      "baseline_rules": {},
+      "before": "2026.7.10",
+      "comparator_changes": [],
+      "comparator_output_sha256": "c5ebb070a2f8ff0036fa625278ab6142b3e31c931a3f5ff5e44caf68277b6f68",
+      "package": "@modelcontextprotocol/server-filesystem",
+      "status": "compared",
+      "structural_paths": []
+    },
+    {
+      "after": "1.0.0",
+      "baseline_finding_count": 14,
+      "baseline_rules": {
+        "schema_containment_unresolved": 14
+      },
+      "before": "2026.8.31",
+      "comparator_changes": [],
+      "comparator_output_sha256": "c5ebb070a2f8ff0036fa625278ab6142b3e31c931a3f5ff5e44caf68277b6f68",
+      "package": "@modelcontextprotocol/server-filesystem",
+      "status": "compared",
+      "structural_paths": [
+        "/create_directory/inputSchema/$schema",
+        "/create_directory/outputSchema/$schema",
+        "/directory_tree/inputSchema/$schema",
+        "/directory_tree/outputSchema/$schema",
+        "/edit_file/inputSchema/$schema",
+        "/edit_file/outputSchema/$schema",
+        "/get_file_info/inputSchema/$schema",
+        "/get_file_info/outputSchema/$schema",
+        "/list_allowed_directories/inputSchema/$schema",
+        "/list_allowed_directories/outputSchema/$schema",
+        "/list_directory/inputSchema/$schema",
+        "/list_directory/outputSchema/$schema",
+        "/list_directory_with_sizes/inputSchema/$schema",
+        "/list_directory_with_sizes/outputSchema/$schema",
+        "/move_file/inputSchema/$schema",
+        "/move_file/outputSchema/$schema",
+        "/read_file/inputSchema/$schema",
+        "/read_file/outputSchema/$schema",
+        "/read_media_file/inputSchema/$schema",
+        "/read_media_file/outputSchema/$schema",
+        "/read_multiple_files/inputSchema/$schema",
+        "/read_multiple_files/outputSchema/$schema",
+        "/read_text_file/inputSchema/$schema",
+        "/read_text_file/outputSchema/$schema",
+        "/search_files/inputSchema/$schema",
+        "/search_files/outputSchema/$schema",
+        "/write_file/inputSchema/$schema",
+        "/write_file/outputSchema/$schema"
+      ]
+    },
+    {
+      "after": "2026.1.26",
+      "baseline_finding_count": 0,
+      "baseline_rules": {},
+      "before": "2025.11.25",
+      "comparator_changes": [],
+      "comparator_output_sha256": "c5ebb070a2f8ff0036fa625278ab6142b3e31c931a3f5ff5e44caf68277b6f68",
+      "package": "@modelcontextprotocol/server-memory",
+      "status": "compared",
+      "structural_paths": []
+    },
+    {
+      "after": "2026.7.4",
+      "baseline_finding_count": 0,
+      "baseline_rules": {},
+      "before": "2026.1.26",
+      "comparator_changes": [
+        {
+          "breaking": false,
+          "path": "tools/add_observations/annotations.destructiveHint",
+          "ruleId": "T-ANN-CHANGE"
+        },
+        {
+          "breaking": false,
+          "path": "tools/add_observations/annotations.idempotentHint",
+          "ruleId": "T-ANN-CHANGE"
+        },
+        {
+          "breaking": false,
+          "path": "tools/add_observations/annotations.readOnlyHint",
+          "ruleId": "T-ANN-CHANGE"
+        },
+        {
+          "breaking": false,
+          "path": "tools/create_entities/annotations.destructiveHint",
+          "ruleId": "T-ANN-CHANGE"
+        },
+        {
+          "breaking": false,
+          "path": "tools/create_entities/annotations.idempotentHint",
+          "ruleId": "T-ANN-CHANGE"
+        },
+        {
+          "breaking": false,
+          "path": "tools/create_entities/annotations.readOnlyHint",
+          "ruleId": "T-ANN-CHANGE"
+        },
+        {
+          "breaking": false,
+          "path": "tools/create_relations/annotations.destructiveHint",
+          "ruleId": "T-ANN-CHANGE"
+        },
+        {
+          "breaking": false,
+          "path": "tools/create_relations/annotations.idempotentHint",
+          "ruleId": "T-ANN-CHANGE"
+        },
+        {
+          "breaking": false,
+          "path": "tools/create_relations/annotations.readOnlyHint",
+          "ruleId": "T-ANN-CHANGE"
+        },
+        {
+          "breaking": false,
+          "path": "tools/delete_entities/annotations.destructiveHint",
+          "ruleId": "T-ANN-CHANGE"
+        },
+        {
+          "breaking": false,
+          "path": "tools/delete_entities/annotations.idempotentHint",
+          "ruleId": "T-ANN-CHANGE"
+        },
+        {
+          "breaking": false,
+          "path": "tools/delete_entities/annotations.readOnlyHint",
+          "ruleId": "T-ANN-CHANGE"
+        },
+        {
+          "breaking": false,
+          "path": "tools/delete_observations/annotations.destructiveHint",
+          "ruleId": "T-ANN-CHANGE"
+        },
+        {
+          "breaking": false,
+          "path": "tools/delete_observations/annotations.idempotentHint",
+          "ruleId": "T-ANN-CHANGE"
+        },
+        {
+          "breaking": false,
+          "path": "tools/delete_observations/annotations.readOnlyHint",
+          "ruleId": "T-ANN-CHANGE"
+        },
+        {
+          "breaking": false,
+          "path": "tools/delete_relations/annotations.destructiveHint",
+          "ruleId": "T-ANN-CHANGE"
+        },
+        {
+          "breaking": false,
+          "path": "tools/delete_relations/annotations.idempotentHint",
+          "ruleId": "T-ANN-CHANGE"
+        },
+        {
+          "breaking": false,
+          "path": "tools/delete_relations/annotations.readOnlyHint",
+          "ruleId": "T-ANN-CHANGE"
+        },
+        {
+          "breaking": false,
+          "path": "tools/open_nodes/annotations.destructiveHint",
+          "ruleId": "T-ANN-CHANGE"
+        },
+        {
+          "breaking": false,
+          "path": "tools/open_nodes/annotations.idempotentHint",
+          "ruleId": "T-ANN-CHANGE"
+        },
+        {
+          "breaking": false,
+          "path": "tools/open_nodes/annotations.readOnlyHint",
+          "ruleId": "T-ANN-CHANGE"
+        },
+        {
+          "breaking": false,
+          "path": "tools/read_graph/annotations.destructiveHint",
+          "ruleId": "T-ANN-CHANGE"
+        },
+        {
+          "breaking": false,
+          "path": "tools/read_graph/annotations.idempotentHint",
+          "ruleId": "T-ANN-CHANGE"
+        },
+        {
+          "breaking": false,
+          "path": "tools/read_graph/annotations.readOnlyHint",
+          "ruleId": "T-ANN-CHANGE"
+        },
+        {
+          "breaking": false,
+          "path": "tools/search_nodes/annotations.destructiveHint",
+          "ruleId": "T-ANN-CHANGE"
+        },
+        {
+          "breaking": false,
+          "path": "tools/search_nodes/annotations.idempotentHint",
+          "ruleId": "T-ANN-CHANGE"
+        },
+        {
+          "breaking": false,
+          "path": "tools/search_nodes/annotations.readOnlyHint",
+          "ruleId": "T-ANN-CHANGE"
+        }
+      ],
+      "comparator_output_sha256": "4a0c3d66c7512b39be937ffb3187d777469fd9fcedcce1f2d8998a040f02570c",
+      "package": "@modelcontextprotocol/server-memory",
+      "status": "compared",
+      "structural_paths": [
+        "/add_observations/annotations",
+        "/create_entities/annotations",
+        "/create_relations/annotations",
+        "/delete_entities/annotations",
+        "/delete_observations/annotations",
+        "/delete_relations/annotations",
+        "/open_nodes/annotations",
+        "/read_graph/annotations",
+        "/search_nodes/annotations"
+      ]
+    },
+    {
+      "after": "2026.8.31",
+      "baseline_finding_count": 0,
+      "baseline_rules": {},
+      "before": "2026.7.4",
+      "comparator_changes": [],
+      "comparator_output_sha256": "c5ebb070a2f8ff0036fa625278ab6142b3e31c931a3f5ff5e44caf68277b6f68",
+      "package": "@modelcontextprotocol/server-memory",
+      "status": "compared",
+      "structural_paths": []
+    },
+    {
+      "after": "1.0.0",
+      "baseline_finding_count": 0,
+      "baseline_rules": {},
+      "before": "2026.8.31",
+      "comparator_changes": [
+        {
+          "breaking": true,
+          "path": "tools/search_nodes/input.query",
+          "ruleId": "T-CONSTRAINT-TIGHTEN"
+        },
+        {
+          "breaking": false,
+          "drift": "high",
+          "path": "tools/create_entities/description",
+          "ruleId": "T-DESC-DRIFT"
+        },
+        {
+          "breaking": false,
+          "path": "tools/create_entities/output.skipped",
+          "ruleId": "T-OUT-PROP-ADD"
+        }
+      ],
+      "comparator_output_sha256": "6af83322c1ca42ff26118f8d3ec7fbff64e9a8dab69b19760f7e951fb7f79ef3",
+      "package": "@modelcontextprotocol/server-memory",
+      "status": "compared",
+      "structural_paths": [
+        "/create_entities/description",
+        "/create_entities/outputSchema/properties/skipped",
+        "/search_nodes/inputSchema/properties/query/maxLength"
+      ]
+    },
+    {
+      "after": "2025.12.18",
+      "baseline_finding_count": 0,
+      "baseline_rules": {},
+      "before": "2025.11.25",
+      "comparator_changes": [
+        {
+          "breaking": false,
+          "drift": "none",
+          "path": "tools/sequentialthinking/description",
+          "ruleId": "T-DESC-DRIFT"
+        }
+      ],
+      "comparator_output_sha256": "7c7b471fb2c3cf5d6c81407f41161d73c91c4fd87c745576320c6beecc41fb4f",
+      "package": "@modelcontextprotocol/server-sequential-thinking",
+      "status": "compared",
+      "structural_paths": [
+        "/sequentialthinking/description"
+      ]
+    },
+    {
+      "after": "2026.7.4",
+      "baseline_finding_count": 0,
+      "baseline_rules": {},
+      "before": "2025.12.18",
+      "comparator_changes": [
+        {
+          "breaking": false,
+          "path": "tools/sequentialthinking/annotations.destructiveHint",
+          "ruleId": "T-ANN-CHANGE"
+        },
+        {
+          "breaking": false,
+          "path": "tools/sequentialthinking/annotations.idempotentHint",
+          "ruleId": "T-ANN-CHANGE"
+        },
+        {
+          "breaking": false,
+          "path": "tools/sequentialthinking/annotations.readOnlyHint",
+          "ruleId": "T-ANN-CHANGE"
+        }
+      ],
+      "comparator_output_sha256": "e6ccfe0e0d4f9f38a3517763df64077c17cf0ee26f39f25cae0b3efae3a238b6",
+      "package": "@modelcontextprotocol/server-sequential-thinking",
+      "status": "compared",
+      "structural_paths": [
+        "/sequentialthinking/annotations"
+      ]
+    },
+    {
+      "after": "2026.8.31",
+      "baseline_finding_count": 1,
+      "baseline_rules": {
+        "schema_containment_unresolved": 1
+      },
+      "before": "2026.7.4",
+      "comparator_changes": [
+        {
+          "breaking": false,
+          "path": "tools/sequentialthinking/input.isRevision",
+          "ruleId": "T-TYPE-WIDEN"
+        },
+        {
+          "breaking": false,
+          "path": "tools/sequentialthinking/input.needsMoreThoughts",
+          "ruleId": "T-TYPE-WIDEN"
+        },
+        {
+          "breaking": false,
+          "path": "tools/sequentialthinking/input.nextThoughtNeeded",
+          "ruleId": "T-TYPE-WIDEN"
+        }
+      ],
+      "comparator_output_sha256": "f3d6f6dfee06f532e926dee68c0795cf9fb982b182abfea30f97a728466b766b",
+      "package": "@modelcontextprotocol/server-sequential-thinking",
+      "status": "compared",
+      "structural_paths": [
+        "/sequentialthinking/inputSchema/properties/isRevision/type",
+        "/sequentialthinking/inputSchema/properties/needsMoreThoughts/type",
+        "/sequentialthinking/inputSchema/properties/nextThoughtNeeded/type"
+      ]
+    },
+    {
+      "after": "1.0.0",
+      "baseline_finding_count": 1,
+      "baseline_rules": {
+        "readonly_to_destructive": 1
+      },
+      "before": "2026.8.31",
+      "comparator_changes": [
+        {
+          "breaking": true,
+          "path": "tools/sequentialthinking/annotations.idempotentHint",
+          "ruleId": "T-ANN-WEAKEN"
+        },
+        {
+          "breaking": true,
+          "path": "tools/sequentialthinking/annotations.readOnlyHint",
+          "ruleId": "T-ANN-WEAKEN"
+        }
+      ],
+      "comparator_output_sha256": "57b109271390022667aa27c130178d6432011df9626520a315fc1ea462de3a41",
+      "package": "@modelcontextprotocol/server-sequential-thinking",
+      "status": "compared",
+      "structural_paths": [
+        "/sequentialthinking/annotations/idempotentHint",
+        "/sequentialthinking/annotations/readOnlyHint"
+      ]
+    },
+    {
+      "after": "0.0.80",
+      "baseline_finding_count": 0,
+      "baseline_rules": {},
+      "before": "0.0.79",
+      "comparator_changes": [],
+      "comparator_output_sha256": "c5ebb070a2f8ff0036fa625278ab6142b3e31c931a3f5ff5e44caf68277b6f68",
+      "package": "@playwright/mcp",
+      "status": "compared",
+      "structural_paths": []
+    },
+    {
+      "after": "0.0.81",
+      "baseline_finding_count": 1,
+      "baseline_rules": {
+        "risky_tool_added": 1
+      },
+      "before": "0.0.80",
+      "comparator_changes": [
+        {
+          "breaking": false,
+          "path": "tools/browser_webmcp_call",
+          "ruleId": "T-ADDED"
+        },
+        {
+          "breaking": false,
+          "path": "tools/browser_webmcp_list",
+          "ruleId": "T-ADDED"
+        }
+      ],
+      "comparator_output_sha256": "4add1ebf14745bdbef9570f18b7588126e228daae2af714f34febfc0e9326c3f",
+      "package": "@playwright/mcp",
+      "status": "compared",
+      "structural_paths": [
+        "/browser_console_messages/inputSchema/properties/filename/description",
+        "/browser_evaluate/inputSchema/properties/filename/description",
+        "/browser_network_request/inputSchema/properties/filename/description",
+        "/browser_network_requests/inputSchema/properties/filename/description",
+        "/browser_run_code_unsafe/inputSchema/properties/filename/description",
+        "/browser_snapshot/inputSchema/properties/filename/description",
+        "/browser_take_screenshot/inputSchema/properties/filename/description",
+        "/browser_webmcp_call",
+        "/browser_webmcp_list"
+      ]
+    },
+    {
+      "after": "0.0.82",
+      "baseline_finding_count": 1,
+      "baseline_rules": {
+        "risky_tool_added": 1
+      },
+      "before": "0.0.81",
+      "comparator_changes": [
+        {
+          "breaking": true,
+          "path": "tools/browser_webmcp_call",
+          "ruleId": "T-REMOVED"
+        },
+        {
+          "breaking": true,
+          "path": "tools/browser_webmcp_list",
+          "ruleId": "T-REMOVED"
+        },
+        {
+          "breaking": false,
+          "path": "tools/browser_emulate_media",
+          "ruleId": "T-ADDED"
+        }
+      ],
+      "comparator_output_sha256": "995fa14f734af780c47b0dde29bc839bd7ce5fc2b9ff8dda4ba4246b64ba9bad",
+      "package": "@playwright/mcp",
+      "status": "compared",
+      "structural_paths": [
+        "/browser_emulate_media",
+        "/browser_webmcp_call",
+        "/browser_webmcp_list"
+      ]
+    },
+    {
+      "after": "0.0.83",
+      "baseline_finding_count": 1,
+      "baseline_rules": {
+        "closed_world_to_open_world_input": 1
+      },
+      "before": "0.0.82",
+      "comparator_changes": [
+        {
+          "breaking": false,
+          "path": "tools/browser_find/input.filename",
+          "ruleId": "T-PROP-ADD"
+        }
+      ],
+      "comparator_output_sha256": "2ce65d24cc209580b44de916719c334ca8def96746815a032b13495bbd69d0bd",
+      "package": "@playwright/mcp",
+      "status": "compared",
+      "structural_paths": [
+        "/browser_find/inputSchema/properties/filename",
+        "/browser_wait_for/inputSchema/properties/time/description"
+      ]
+    },
+    {
+      "after": "4.3.0",
+      "baseline_finding_count": 0,
+      "baseline_rules": {},
+      "before": "4.2.1",
+      "comparator_changes": [
+        {
+          "breaking": false,
+          "drift": "low",
+          "path": "tools/query-docs/description",
+          "ruleId": "T-DESC-DRIFT"
+        },
+        {
+          "breaking": false,
+          "path": "tools/query-docs/input.language",
+          "ruleId": "T-PROP-ADD"
+        }
+      ],
+      "comparator_output_sha256": "0efab5ffb96c6d0e0d4eb3e09600586c9ec82557fd9e690ac3d7e5d1cacbdcd9",
+      "package": "@upstash/context7-mcp",
+      "status": "compared",
+      "structural_paths": [
+        "/query-docs/description",
+        "/query-docs/inputSchema/properties/language"
+      ]
+    },
+    {
+      "after": "4.4.0",
+      "baseline_finding_count": 0,
+      "baseline_rules": {},
+      "before": "4.3.0",
+      "comparator_changes": [],
+      "comparator_output_sha256": "c5ebb070a2f8ff0036fa625278ab6142b3e31c931a3f5ff5e44caf68277b6f68",
+      "package": "@upstash/context7-mcp",
+      "status": "compared",
+      "structural_paths": [
+        "/query-docs/inputSchema/properties/libraryId/description"
+      ]
+    },
+    {
+      "after": "4.4.1",
+      "baseline_finding_count": 0,
+      "baseline_rules": {},
+      "before": "4.4.0",
+      "comparator_changes": [],
+      "comparator_output_sha256": "c5ebb070a2f8ff0036fa625278ab6142b3e31c931a3f5ff5e44caf68277b6f68",
+      "package": "@upstash/context7-mcp",
+      "status": "compared",
+      "structural_paths": []
+    },
+    {
+      "after": "4.4.2",
+      "baseline_finding_count": 0,
+      "baseline_rules": {},
+      "before": "4.4.1",
+      "comparator_changes": [],
+      "comparator_output_sha256": "c5ebb070a2f8ff0036fa625278ab6142b3e31c931a3f5ff5e44caf68277b6f68",
+      "package": "@upstash/context7-mcp",
+      "status": "compared",
+      "structural_paths": []
+    }
+  ]
+}

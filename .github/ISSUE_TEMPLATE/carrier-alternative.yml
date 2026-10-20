@@ -1,0 +1,65 @@
+name: Carrier alternative
+description: Propose a simpler upstream carrier, integration, or reason the standalone artifact should be demoted.
+title: "[Carrier] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        The current configured-policy and oasdiff results show policy portability, not independent comparator superiority. Proposals for a Spectral ruleset, oasdiff extension, registry check, library, paper-only outcome, or kill decision are first-class feedback.
+  - type: dropdown
+    id: carrier
+    attributes:
+      label: Proposed carrier
+      options:
+        - Existing MCP or registry review process
+        - Spectral ruleset or wrapper
+        - oasdiff extension or custom checks
+        - GitHub Action only
+        - Support library or API
+        - Policy and corpus only
+        - Paper or research note only
+        - No artifact; kill or archive
+        - Other existing tool or process
+    validations:
+      required: true
+  - type: textarea
+    id: mapping
+    attributes:
+      label: Mapping
+      description: Map the proposed carrier to specific labels, evidence fields, and reviewer decisions.
+    validations:
+      required: true
+  - type: dropdown
+    id: independence
+    attributes:
+      label: Comparator independence
+      options:
+        - Independent implementation and semantics
+        - Existing tool with new custom configuration
+        - Reuses this repository's predicates or policy
+        - Design proposal only; not implemented
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Runnable evidence
+      description: Link code or give exact commands and results. State explicitly when no runnable comparison exists.
+    validations:
+      required: true
+  - type: textarea
+    id: decision
+    attributes:
+      label: Recommended decision
+      description: Explain whether to promote, pivot, demote, or kill the standalone carrier.
+    validations:
+      required: true
+  - type: checkboxes
+    id: boundaries
+    attributes:
+      label: Evidence boundary
+      options:
+        - label: I distinguished independent comparator evidence from transport or shared-policy parity.
+          required: true
+        - label: I did not present stars, downloads, impressions, or rank as validation evidence.
+          required: true
