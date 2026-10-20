@@ -68,7 +68,7 @@
     "all source-derived private descriptor bytes, including the 12 blocker-marked records",
     "AI audit and local agent state"
   ],
-  "file_set_sha256": "16333a6f91b1e5ce4a2f95a4d83d0e4a98cc34ee1a85f202280ab9bbcbec1cee",
+  "file_set_sha256": "50716e8c44292a8f8c6d28886759e31b7cea359371e7a2632f9b7e5b8c867b7d",
   "files": [
     {
       "mode": "0644",
@@ -109,8 +109,8 @@
     {
       "mode": "0644",
       "path": ".github/workflows/ci.yml",
-      "sha256": "d2e3c319163882e511399ab5f17ad70332df845b691d798e31286b4a8368e3fe",
-      "size_bytes": 5674
+      "sha256": "c7a0a2cc02a413c8dca9bba58523273cbbbf3eb5e8c0d2859e574e5c8fa34ad9",
+      "size_bytes": 5675
     },
     {
       "mode": "0644",
@@ -169,8 +169,8 @@
     {
       "mode": "0644",
       "path": "action.yml",
-      "sha256": "47227987dd89d5d322b06df18d1fb259962bfb3299a01bf8018b534a5ef09ff5",
-      "size_bytes": 2433
+      "sha256": "d450700885f38bae7c5fd910ad1899333466f800eb35a5a08b255570167d7ff1",
+      "size_bytes": 2437
     },
     {
       "mode": "0644",
@@ -597,7 +597,7 @@
   "release_metadata_sha256": "ec693e39c5b16fd7a48cce09574ee89089fa3555197b2379e957fb7dcddba404",
   "schema_version": "tool-contract-drift-public-export-manifest-v1",
   "source_identity": {
-    "file_set_sha256": "16333a6f91b1e5ce4a2f95a4d83d0e4a98cc34ee1a85f202280ab9bbcbec1cee",
+    "file_set_sha256": "50716e8c44292a8f8c6d28886759e31b7cea359371e7a2632f9b7e5b8c867b7d",
     "state": "selected_public_file_set"
   },
   "status": "public_export_bytes_verified_locally",

@@ -11,7 +11,7 @@ inputs:
     description: Optional fixture JSON path for batch linting.
     required: false
   format:
-    description: Output format: markdown, json, or sarif.
+    description: "Output format: markdown, json, or sarif."
     required: false
     default: sarif
   output:
@@ -19,7 +19,7 @@ inputs:
     required: false
     default: tool-contract-drift.sarif
   fail-on:
-    description: Failure threshold: none, any, medium, or high.
+    description: "Failure threshold: none, any, medium, or high."
     required: false
     default: none
   config:
