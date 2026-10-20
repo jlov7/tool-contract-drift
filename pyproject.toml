@@ -35,3 +35,9 @@ include = ["tool_contract_drift*"]
 tool_contract_drift = ["data/*.json"]
 "tool_contract_drift.fixtures" = ["*.json", "schema/*.json"]
 "tool_contract_drift.policy" = ["*.json", "schema/*.json"]
+
+[dependency-groups]
+dev = [
+    "deepdiff==9.1.0",
+    "jsonpatch==1.36",
+]

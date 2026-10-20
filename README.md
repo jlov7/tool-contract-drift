@@ -73,11 +73,49 @@ This example writes the report and exits 1 because the descriptor changed.
 | `--fail-on change` | 1 if any structural change exists; otherwise 0 |
 | `--fail-on findings` | 1 if policy findings exist; otherwise 0 |
 
-Input and processing errors also exit nonzero. A nonzero exit alone does not distinguish a change from an error; inspect the report and stderr. Completion is not approval.
+Input, processing and report-writing errors exit 2, separately from the change/finding gate's exit 1. Descriptor and file failures use a generic JSON diagnostic and request ID, not the descriptor fields that triggered them. Argument syntax errors report usage. Completion is not approval.
 
-Reports contain descriptor values, tool names and field paths. Check for confidential and third-party content before sharing them. Markdown output currently wraps the JSON report rather than providing a separate change-focused renderer.
+### GitHub Action
 
-**The legacy `lint`, SARIF and composite Action paths remain findings-only.** Use the review command above for the structural inventory. A quiet legacy report must not be treated as an unchanged descriptor or approval.
+With this repository already checked out and Python 3.11 or later available:
+
+```yaml
+- name: Review saved tool objects
+  id: descriptor-review
+  uses: ./actions/descriptor-review
+  with:
+    before: examples/before_quiet_change.json
+    after: examples/after_quiet_change.json
+    fail-on: change
+```
+
+This example fails its change gate while retaining the complete JSON report locally. The Action posts a counts-only job summary by default, with `status`, `change-count`, `policy-finding-count`, `report-path` and `summary-path` outputs. Invalid input fails without comparison outputs. It does not automatically upload reports. In another repository, use an audited commit of the Action when you have access; no release tag is implied here.
+
+**The legacy root Action, `lint` and SARIF paths remain findings-only.** The new `actions/descriptor-review` Action and review command carry the structural inventory. A quiet legacy report must not be treated as an unchanged descriptor or approval.
+
+## Inspect or Share a Report
+
+Markdown groups changes by tool, operation and path, with policy findings kept separate. Long text edits show diffs followed by expandable complete JSON values. Names and values are escaped as data, including Markdown fences, HTML and control characters. JSON remains the authoritative machine format. See the [rendered quiet-change example](examples/quiet_change_review.md).
+
+To retain a full JSON report and write a counts-only Markdown summary from the same comparison:
+
+```bash
+uv run python -m tool_contract_drift.review_cli \
+  --before examples/before_quiet_change.json \
+  --after examples/after_quiet_change.json \
+  --format json --output artifacts/descriptor-review.json \
+  --summary-output artifacts/descriptor-summary.md
+```
+
+| Disclosure | Included | Withheld |
+|---|---|---|
+| `full` (primary report default) | Complete values, names, paths, hashes and findings | Nothing in the review report |
+| `counts` | Status, aggregate change/finding counts and operation counts | Names, paths, values, hashes and finding details |
+| `paths` | Counts plus tool names, paths and operations | Values, hashes and finding details |
+
+Use `--disclosure counts` for a minimized primary report. A separate summary defaults to counts; `--summary-disclosure paths` or `full` explicitly exposes more. The Action uses the same levels through `summary-disclosure` and supports `post-summary: "false"` to keep summaries local.
+
+Full reports may contain confidential or third-party content. Paths can themselves be sensitive. Counts still disclose aggregate structure; minimized output is not anonymization, differential privacy or sufficient evidence for approval. Review the intended audience before sharing. See the [report and CI contract](docs/descriptor_review.md).
 
 ## Case Study
 
@@ -109,13 +147,15 @@ This is a documentation-based scope comparison, not a current-version execution 
 
 ## Limits
 
-This release focuses on saved tool objects. It does not execute tools, verify authorization, find vulnerabilities or certify protocol conformance. The legacy `lint`, SARIF and Action paths remain findings-only. The historical public `capture` command uses the 2025 stdio handshake and has not been qualified as a general current-protocol capture tool.
+This release focuses on saved tool objects. It does not execute tools, verify authorization, find vulnerabilities or certify protocol conformance. The legacy `lint`, SARIF and root Action paths remain findings-only. The historical public `capture` command uses the 2025 stdio handshake and has not been qualified as a general current-protocol capture tool.
 
 There is no external reviewer result, scored sealed evaluation, ethics approval claim, live GitHub SARIF upload evidence, DOI, protocol endorsement or production-readiness claim. Code, analysis and local model review were AI-assisted; model review is not human peer review.
 
 ## Inspect and Reproduce
 
 Start with the [case study](evaluation/README.md), [review implementation](tool_contract_drift/review.py) or [policy specification](docs/policy_spec.md). The [July white paper](paper/agent-tool-contract-drift.pdf) is frozen historical policy/methods background, not the current case study or a validated research result.
+
+[Independent structural checks](evaluation/structural_correctness.md) use pinned DeepDiff and JSON Patch libraries on 400 seeded pairs, explicit edge cases and order permutations. They check path agreement, reconstruction, inversion and input preservation. Library equality disagreements are documented. This is bounded software evidence, not exhaustive correctness or reviewer-benefit evidence. These libraries are development-only dependencies; the installed runtime remains dependency-free.
 
 <details>
 <summary>Synthetic corpus and configured-policy evidence</summary>
@@ -144,8 +184,8 @@ Verify a fresh checkout before running commands that generate environments, cach
 
 ```bash
 command -v pdftotext
-uv run --no-project python -B scripts/verify_public_export.py .
-uv run --no-project python -B scripts/verify_public_history.py .
+PYTHONDONTWRITEBYTECODE=1 uv run --no-project python -B scripts/verify_public_export.py .
+PYTHONDONTWRITEBYTECODE=1 uv run --no-project python -B scripts/verify_public_history.py .
 ```
 
 The file verifier rejects extra or modified files, including generated files. Use a fresh checkout for an exact-byte recheck. The history verifier applies to a Git checkout, not an archive extraction.
@@ -200,7 +240,7 @@ The configured policy and thin oasdiff-style mapper must each map all 53 public 
 Run the public distribution tests:
 
 ```bash
-uv run python -m unittest discover -s public_tests -v
+uv run --locked python -m unittest discover -s public_tests -v
 ```
 
 Build and inspect the Python artifacts:

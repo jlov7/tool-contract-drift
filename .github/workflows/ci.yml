@@ -39,7 +39,7 @@ jobs:
       - name: Check lockfile
         run: uv lock --check
       - name: Run public distribution tests
-        run: PYTHONDONTWRITEBYTECODE=1 python -m unittest discover -s public_tests -v
+        run: PYTHONDONTWRITEBYTECODE=1 uv run --locked python -m unittest discover -s public_tests -v
       - name: Build wheel and source distribution
         run: uv build
       - name: Verify wheel and source-distribution bytes
@@ -106,3 +106,56 @@ jobs:
       - name: Validate Action output boundary
         run: |
           python -c 'import json; d=json.load(open("/tmp/action-public.sarif")); r=d["runs"][0]; assert r["tool"]["driver"]["properties"]["corpus_id"] == "public-reproduction-53" and len(r["results"]) == 25'
+      - name: Exercise complete-inventory Action on an unlabeled change
+        id: quiet-review
+        continue-on-error: true
+        uses: ./actions/descriptor-review
+        with:
+          before: examples/before_quiet_change.json
+          after: examples/after_quiet_change.json
+          report: /tmp/quiet-review.json
+          summary: /tmp/quiet-review.md
+          fail-on: change
+      - name: Verify the unlabeled change gate and minimized summary
+        env:
+          REVIEW_OUTCOME: ${{ steps.quiet-review.outcome }}
+          REVIEW_STATUS: ${{ steps.quiet-review.outputs.status }}
+          CHANGE_COUNT: ${{ steps.quiet-review.outputs.change-count }}
+          FINDING_COUNT: ${{ steps.quiet-review.outputs.policy-finding-count }}
+        run: |
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          report = json.loads(Path("/tmp/quiet-review.json").read_text())
+          summary = Path("/tmp/quiet-review.md").read_text()
+          assert os.environ["REVIEW_OUTCOME"] == "failure"
+          assert os.environ["REVIEW_STATUS"] == "changed"
+          assert os.environ["CHANGE_COUNT"] == "1" and os.environ["FINDING_COUNT"] == "0"
+          assert report["change_count"] == 1 and report["policy_findings"] == []
+          assert report["changes"][0]["path"] == "/tools/lookup_document/inputSchema/properties/query/description"
+          assert "lookup_document" not in summary and "Document title" not in summary
+          assert "sha256" not in summary and "Disclosure: counts." in summary
+          PY
+      - name: Exercise complete-inventory Action input failure
+        id: invalid-review
+        continue-on-error: true
+        uses: ./actions/descriptor-review
+        with:
+          before: examples/before_quiet_change.json
+          after: examples/missing-review-input.json
+          report: /tmp/invalid-review.json
+          summary: /tmp/invalid-review.md
+      - name: Verify failed input cannot report unchanged
+        env:
+          REVIEW_OUTCOME: ${{ steps.invalid-review.outcome }}
+          REVIEW_STATUS: ${{ steps.invalid-review.outputs.status }}
+          CHANGE_COUNT: ${{ steps.invalid-review.outputs.change-count }}
+        run: |
+          python - <<'PY'
+          import os
+          from pathlib import Path
+          assert os.environ["REVIEW_OUTCOME"] == "failure"
+          assert os.environ["REVIEW_STATUS"] == "" and os.environ["CHANGE_COUNT"] == ""
+          assert not Path("/tmp/invalid-review.json").exists()
+          assert not Path("/tmp/invalid-review.md").exists()
+          PY

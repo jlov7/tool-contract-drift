@@ -2,6 +2,10 @@
 
 ## October 2026 Experimental Candidate
 
+- Add a complete-inventory descriptor-review Action with separate change/finding outputs and counts-only job summaries by default. The legacy root Action and SARIF remain findings-only.
+- Add grouped Markdown reports, text diffs and complete expandable values, plus explicit counts/paths disclosure projections. Full reports remain local unless the caller shares them.
+- Distinguish change/finding gate failures (exit 1) from input, processing or output failures (exit 2). Protect input files from report-output aliases and use generic non-disclosing error diagnostics.
+- Add independent structural checks with pinned development-only DeepDiff and JSON Patch libraries: 400 seeded pairs, path agreement, reconstruction, inversion and permutation checks. Retain library equality disagreements explicitly; no exhaustive correctness claim.
 - Add `tool-descriptor-review` and `review_descriptor_pair`: complete structural tool-object changes alongside incomplete policy labels.
 - Add a reproducible 20-transition released-version case study and pinned independent `mcpdiff@0.1.0` comparison. Findings are descriptive observations, not accuracy or human-benefit evidence.
 - Keep the July paper and all-synthetic regression corpus as separate historical background. Preserve the historical CLI and policy bytes.
