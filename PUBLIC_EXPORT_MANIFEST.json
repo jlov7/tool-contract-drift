@@ -68,7 +68,7 @@
     "all source-derived private descriptor bytes, including the 12 blocker-marked records",
     "AI audit and local agent state"
   ],
-  "file_set_sha256": "80a4093ef0f70ae8a506a4b8487d6fb07fbecc248e060c07e825a32454fc1998",
+  "file_set_sha256": "e5fa99d7c82af890de9b3fea8058bb5d5060d3c4b2260f1e719fc0e94965bb46",
   "files": [
     {
       "mode": "0644",
@@ -391,14 +391,14 @@
     {
       "mode": "0644",
       "path": "release/public_export_policy.json",
-      "sha256": "84e3d4a62921a0612fbcfb53134c0fe310c6bcca8083d5166eab1d6430587537",
-      "size_bytes": 3283
+      "sha256": "c3acb3ffabce185eaff752cc331c4b5099b0cdd661cfe447d05a379bc6d18b4d",
+      "size_bytes": 3282
     },
     {
       "mode": "0644",
       "path": "release/public_release_metadata.json",
-      "sha256": "10b1dba46d6091866ae7b7ca4a5ba1d6f31fea3c40d6eccfa6497fda4647820e",
-      "size_bytes": 2877
+      "sha256": "6087ec515b30e821b33d6f70b6e5dcf7aa7dd5f16963b54b55b2f09305d2520c",
+      "size_bytes": 2870
     },
     {
       "mode": "0644",
@@ -676,18 +676,18 @@
     "source_pdf_hashes_verified": true,
     "source_sha256": "6161f741e87065d4512ac4c9e76f2b2cff3e5fc1f624aa478274dfb0e30e5bbf"
   },
-  "policy_sha256": "84e3d4a62921a0612fbcfb53134c0fe310c6bcca8083d5166eab1d6430587537",
+  "policy_sha256": "c3acb3ffabce185eaff752cc331c4b5099b0cdd661cfe447d05a379bc6d18b4d",
   "publication_claims": {
     "archive_or_doi_exists": false,
     "external_validation": false,
     "live_sarif_upload_verified": false,
     "protocol_or_vendor_endorsement": false,
-    "public_github_repository_or_release_exists": false
+    "public_github_repository_or_release_exists": true
   },
-  "release_metadata_sha256": "10b1dba46d6091866ae7b7ca4a5ba1d6f31fea3c40d6eccfa6497fda4647820e",
+  "release_metadata_sha256": "6087ec515b30e821b33d6f70b6e5dcf7aa7dd5f16963b54b55b2f09305d2520c",
   "schema_version": "tool-contract-drift-public-export-manifest-v1",
   "source_identity": {
-    "file_set_sha256": "80a4093ef0f70ae8a506a4b8487d6fb07fbecc248e060c07e825a32454fc1998",
+    "file_set_sha256": "e5fa99d7c82af890de9b3fea8058bb5d5060d3c4b2260f1e719fc0e94965bb46",
     "state": "selected_public_file_set"
   },
   "status": "public_export_bytes_verified_locally",

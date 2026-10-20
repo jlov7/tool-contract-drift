@@ -14,7 +14,7 @@
     "owner": "jlov7",
     "repository_slug": "tool-contract-drift",
     "repository_url": "https://github.com/jlov7/tool-contract-drift",
-    "visibility": "private",
+    "visibility": "public",
     "topics": [
       "mcp",
       "tool-descriptors",
@@ -31,14 +31,14 @@
     "archive_created": false,
     "doi_created_or_reserved": false,
     "github_repository_created": true,
-    "github_repository_public": false,
+    "github_repository_public": true,
     "github_release_created": false,
     "public_post_made": false
   },
   "publication_state_as_of": "2026-10-20",
   "publication_state_scope": "Snapshot at export build, not live GitHub status. archive_created means an external archival deposit, not the local source tarball.",
   "schema_version": "tool-contract-drift-public-release-metadata-v1",
-  "status": "private_staging_not_published",
+  "status": "public_source_repository",
   "version": "0.1.0a0",
   "zenodo": {
     "access_right": "open",

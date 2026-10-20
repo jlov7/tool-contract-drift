@@ -78,7 +78,7 @@
     "publication_claims": {
       "archive_or_doi_exists": false,
       "external_validation": false,
-      "public_github_repository_or_release_exists": false,
+      "public_github_repository_or_release_exists": true,
       "live_sarif_upload_verified": false,
       "protocol_or_vendor_endorsement": false
     },
