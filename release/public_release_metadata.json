@@ -7,17 +7,14 @@
     "sdist": "tool_contract_drift-0.1.0a0.tar.gz",
     "wheel": "tool_contract_drift-0.1.0a0-py3-none-any.whl"
   },
-  "citation_title": "Agent Tool Contract Drift: A Reapproval Vocabulary and Evaluation Harness for Model-Invoked Tools",
+  "citation_title": "Agent Tool Contract Drift: Saved MCP Tool-Object Review",
   "github": {
     "about": "Saved MCP tool-object diffs with supplemental reapproval labels and a reproducible released-version case study.",
     "is_prerelease": true,
     "owner": "jlov7",
-    "prerelease_notes": "Experimental saved-descriptor review utility and released-version case study. The tool-descriptor-review command keeps all structural tool-object changes visible alongside incomplete historical policy labels. In a local pinned comparison of 20 adjacent transitions from 25 released versions, 14 transitions changed and seven of those produced no historical policy findings. An independent mcpdiff@0.1.0 comparison is included; classifier silence is not a false-negative label and no accuracy or reviewer-benefit claim is made. Raw third-party captures are not redistributed. The separate public-reproduction-53 synthetic regression corpus remains 53 project-authored pairs, 22 holds, 31 quiet cases and 25 findings. The private-canonical-65 research corpus and private history are excluded. The July paper is historical methods background. No external reviewer result, public reproduction, scored sealed case, live SARIF upload, ethics approval or DOI is claimed. Counterexamples and simpler existing workflows are welcome.",
-    "prerelease_tag": "v0.1.0a0",
     "repository_slug": "tool-contract-drift",
     "repository_url": "https://github.com/jlov7/tool-contract-drift",
     "visibility": "private",
-    "release_title": "Agent Tool Contract Drift 0.1.0a0 (experimental)",
     "topics": [
       "mcp",
       "tool-descriptors",
@@ -64,17 +61,10 @@
       "software assurance"
     ],
     "license": "MIT",
-    "notes": "Do not deposit until exact public-export, study-visibility, source-metadata, hosted CI and specific publication-approval checks pass. A completed human study is not required for the scoped software/case-study artifact; it is required for any human-benefit claim.",
     "paper_or_preprint_identifier": null,
     "publication_date": null,
     "related_identifiers": [],
-    "relationship_plan": [
-      "After the GitHub prerelease exists and artifact hashes match, record its resolving URL on the Zenodo software record.",
-      "After Zenodo publishes the record, add the returned version DOI to release notes and CITATION.cff.",
-      "Label the Zenodo concept DOI separately as the all-versions identifier only after Zenodo returns it.",
-      "After a paper or preprint identifier exists, relate the software as isDocumentedBy the paper and the paper as isSupplementedBy the software version DOI."
-    ],
-    "title": "Agent Tool Contract Drift: A Reapproval Vocabulary and Evaluation Harness for Model-Invoked Tools",
+    "title": "Agent Tool Contract Drift: Saved MCP Tool-Object Review",
     "upload_type": "software",
     "version": "0.1.0a0",
     "version_doi": null

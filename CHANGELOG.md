@@ -2,6 +2,7 @@
 
 ## October 2026 Experimental Candidate
 
+- Separate the usage README from reproduction/audit instructions, remove unused publication drafts from metadata, and distinguish observed public source availability from a release, DOI or validation result.
 - Isolate both Actions' Python imports from caller checkout modules and `PYTHONPATH`. Recheck descriptor-review file aliases after creation so case-insensitive destinations cannot overwrite reports or mix reports with GitHub output files.
 - Clarify the maintainer-managed contribution/export process and acknowledge that other tools also separate structural diffs from rule interpretation.
 - Add a complete-inventory descriptor-review Action with separate change/finding outputs and counts-only job summaries by default. The legacy root Action and SARIF remain findings-only.

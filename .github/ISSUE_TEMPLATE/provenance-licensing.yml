@@ -5,7 +5,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        Treat every uncleared byte as a release blocker. Do not post confidential legal advice, private contact data, credentials, or exploit details in this public form. Use the security policy and a separately configured private route for sensitive reports.
+        Report the affected file or record and the public evidence for your concern. Do not post confidential legal advice, private contact data, credentials or exploit details. Follow SECURITY.md for sensitive reports.
   - type: dropdown
     id: concern
     attributes:

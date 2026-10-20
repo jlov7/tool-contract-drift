@@ -146,7 +146,7 @@ Changes involving `$ref`, `$dynamicRef`, boolean schemas, `oneOf`, `anyOf`, `not
 
 Sensitive output names include token, secret, password, credential, and payment, excluding token usage counters such as `token_count`.
 
-Emit `sensitive_output_template_drift` when the output template changes and sensitive output fields are newly added or newly rendered.
+Emit `sensitive_output_template_drift` when the template reference changes and sensitive-looking output-schema fields are added or newly mentioned in that reference. This does not establish that a UI renders those fields.
 
 Emit `sensitive_output_schema_expansion` when sensitive output fields are added while the output template does not change.
 

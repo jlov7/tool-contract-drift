@@ -15,12 +15,34 @@ from tool_contract_drift.corpora import (
     select_corpus,
 )
 from tool_contract_drift.linter.tool_contract_drift import lint_fixtures, load_fixtures
+from scripts.verify_public_export import verify_publication_state
 
 
 ROOT = Path(__file__).resolve().parents[1]
 
 
 class PublicDistributionTests(unittest.TestCase):
+    def test_public_source_availability_does_not_imply_other_publications(self) -> None:
+        metadata = json.loads((ROOT / "release/public_release_metadata.json").read_text())
+        metadata["status"] = "public_source_repository"
+        metadata["publication_state"].update(github_repository_created=True, github_repository_public=True)
+        metadata["github"]["visibility"] = "public"
+        self.assertEqual([], verify_publication_state(metadata))
+        for flag in ("github_release_created", "archive_created", "doi_created_or_reserved", "public_post_made"):
+            with self.subTest(flag=flag):
+                metadata["publication_state"][flag] = True
+                self.assertTrue(verify_publication_state(metadata))
+                metadata["publication_state"][flag] = False
+        as_of = metadata.pop("publication_state_as_of")
+        self.assertTrue(verify_publication_state(metadata))
+        for invalid in (None, "not-a-date", "2026-02-30", "20261020"):
+            with self.subTest(date=invalid):
+                metadata["publication_state_as_of"] = invalid
+                self.assertTrue(verify_publication_state(metadata))
+        metadata["publication_state_as_of"] = as_of
+        metadata["publication_state"]["github_repository_created"] = False
+        self.assertTrue(verify_publication_state(metadata))
+
     def test_public_corpus_identity_and_result(self) -> None:
         selected = select_corpus(PUBLIC_REPRODUCTION_CORPUS_ID)
         fixtures = [fixture for path in selected.fixture_paths for fixture in load_fixtures(path)]

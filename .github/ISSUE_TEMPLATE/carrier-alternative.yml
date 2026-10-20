@@ -1,11 +1,11 @@
-name: Carrier alternative
-description: Propose a simpler upstream carrier, integration, or reason the standalone artifact should be demoted.
+name: Alternative tool or workflow
+description: Show how an existing tool or a simpler workflow could replace this utility.
 title: "[Carrier] "
 body:
   - type: markdown
     attributes:
       value: |
-        The current configured-policy and oasdiff results show policy portability, not independent comparator superiority. Proposals for a Spectral ruleset, oasdiff extension, registry check, library, paper-only outcome, or kill decision are first-class feedback.
+        Existing tools may already cover this workflow. Show what the alternative does and distinguish independent comparisons from configurations that reuse this project's policy. The configured-policy and oasdiff results here show portability, not comparator superiority.
   - type: dropdown
     id: carrier
     attributes:
@@ -18,15 +18,15 @@ body:
         - Support library or API
         - Policy and corpus only
         - Paper or research note only
-        - No artifact; kill or archive
+        - Archive this project; no separate tool needed
         - Other existing tool or process
     validations:
       required: true
   - type: textarea
     id: mapping
     attributes:
-      label: Mapping
-      description: Map the proposed carrier to specific labels, evidence fields, and reviewer decisions.
+      label: How it compares
+      description: Show which inputs, changed fields, policy labels and review tasks the alternative covers.
     validations:
       required: true
   - type: dropdown
@@ -51,7 +51,7 @@ body:
     id: decision
     attributes:
       label: Recommended decision
-      description: Explain whether to promote, pivot, demote, or kill the standalone carrier.
+      description: Explain whether to integrate with the alternative, narrow this project, or archive it.
     validations:
       required: true
   - type: checkboxes

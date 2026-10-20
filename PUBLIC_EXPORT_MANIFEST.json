@@ -68,13 +68,13 @@
     "all source-derived private descriptor bytes, including the 12 blocker-marked records",
     "AI audit and local agent state"
   ],
-  "file_set_sha256": "97226ac88e6e0046c88679c2217339e3851e55d465269f6155cbe51fd0efa801",
+  "file_set_sha256": "80a4093ef0f70ae8a506a4b8487d6fb07fbecc248e060c07e825a32454fc1998",
   "files": [
     {
       "mode": "0644",
       "path": ".github/ISSUE_TEMPLATE/carrier-alternative.yml",
-      "sha256": "14fc0b637a70dffcbef865c7b5507d567dccd46d1bb511310f98d642ed0cbe5b",
-      "size_bytes": 2343
+      "sha256": "6b8fddb20ad03448f80abd67736fb55c23f88f1883dd9881099c0341bc505ceb",
+      "size_bytes": 2377
     },
     {
       "mode": "0644",
@@ -97,14 +97,14 @@
     {
       "mode": "0644",
       "path": ".github/ISSUE_TEMPLATE/provenance-licensing.yml",
-      "sha256": "5561e1df1cbc44fd68b1f3560aa582f8ece0d9227854c797d52b9cd7b68a12f5",
-      "size_bytes": 1964
+      "sha256": "9c0efd76179ab6e2da7dde7244232f6ca41b97c40d55845f9107b0a962cd8db2",
+      "size_bytes": 1924
     },
     {
       "mode": "0644",
       "path": ".github/ISSUE_TEMPLATE/reproduction-failure.yml",
-      "sha256": "6325073b87606b7ec0df39b35c90fcec54a36e359213719e0a03478d469be8db",
-      "size_bytes": 2855
+      "sha256": "4a2aa9a99159a03f31148c5eba72bd63c33bc8763f9c80189a60d6b16b6345fb",
+      "size_bytes": 2844
     },
     {
       "mode": "0644",
@@ -121,14 +121,14 @@
     {
       "mode": "0644",
       "path": "CHANGELOG.md",
-      "sha256": "2a8bc8efb1293592d9484ab7bbcb399655bcd127839ecf71c5de68c44db120e4",
-      "size_bytes": 3360
+      "sha256": "3d8aba10e92a07137d4f05ec103f0aa8c74d1fdeb9af68d2c7fbc1fddb8bef4d",
+      "size_bytes": 3568
     },
     {
       "mode": "0644",
       "path": "CITATION.cff",
-      "sha256": "c4ede7e7d9d50b8e7348357ec62ff08e1e29588b29a0f31a16a0455a46247080",
-      "size_bytes": 949
+      "sha256": "f6aa7c24c01dcae9f50146074be9c8574ce68797a69f472ddf011521f02d2734",
+      "size_bytes": 907
     },
     {
       "mode": "0644",
@@ -151,8 +151,8 @@
     {
       "mode": "0644",
       "path": "README.md",
-      "sha256": "2fe2b8c3d6c8efec650154ca85a8ef7292587d738a251032339b6eb755e4b166",
-      "size_bytes": 18628
+      "sha256": "60e1c50418182b40a7419d99afe1069aea1df013fdde1e38764994e42120f1c5",
+      "size_bytes": 12895
     },
     {
       "mode": "0644",
@@ -181,26 +181,32 @@
     {
       "mode": "0644",
       "path": "docs/community_feedback_guide.md",
-      "sha256": "bfcafb55bf0a259f65465dc4b3dbc1293d678baf82268812dccbf4f9e9002f58",
-      "size_bytes": 3766
+      "sha256": "d025a3d7ee3e6c848b2ee408d67673c35cd902d293561917bd7c991d4db4d4cb",
+      "size_bytes": 3577
     },
     {
       "mode": "0644",
       "path": "docs/contributor_response_policy.md",
-      "sha256": "725bd95a8bfaf5e46f7c65aa76c4fdf31952e5bd55033026d89b4939b7051a8b",
-      "size_bytes": 3247
+      "sha256": "aa29a7a702520ca20192969729d5f6eb0cf8b88f5ee5a14e5c3f6f45778464ee",
+      "size_bytes": 3266
     },
     {
       "mode": "0644",
       "path": "docs/descriptor_review.md",
-      "sha256": "cca1dc23e949c56ec999f8472357a4d0fc4fc456264363bbb182213a9e83e58a",
-      "size_bytes": 8142
+      "sha256": "3d2c914f356f2b34f9e3d87468b09da1dde57df0b90ab758e808882646e92cfc",
+      "size_bytes": 8132
     },
     {
       "mode": "0644",
       "path": "docs/policy_spec.md",
-      "sha256": "4fb86c758e4ad46b05935dc51bb822be32aeea8ee3f843c2779336adff34cd5a",
-      "size_bytes": 10471
+      "sha256": "e550631c63919bfe35374fa27f05913d907d486ffb388980311d86c5529470a9",
+      "size_bytes": 10558
+    },
+    {
+      "mode": "0644",
+      "path": "docs/reproduction.md",
+      "sha256": "9363d95d763595c2a571f1c5a4743b77ca2a431fed5bfc3e664c72889a7dd8f7",
+      "size_bytes": 7686
     },
     {
       "mode": "0644",
@@ -349,8 +355,8 @@
     {
       "mode": "0644",
       "path": "public_tests/test_public_distribution.py",
-      "sha256": "5c7a4dc1573df66de6062c61435ba67ed5f6f2b0be4c4677b52c43769aeff356",
-      "size_bytes": 5598
+      "sha256": "41616ee6bfcbb843fe7267a67d57afcaa5014d97f42489486f8d9ac0fca94bcd",
+      "size_bytes": 7018
     },
     {
       "mode": "0644",
@@ -391,8 +397,8 @@
     {
       "mode": "0644",
       "path": "release/public_release_metadata.json",
-      "sha256": "ec693e39c5b16fd7a48cce09574ee89089fa3555197b2379e957fb7dcddba404",
-      "size_bytes": 4938
+      "sha256": "10b1dba46d6091866ae7b7ca4a5ba1d6f31fea3c40d6eccfa6497fda4647820e",
+      "size_bytes": 2877
     },
     {
       "mode": "0644",
@@ -439,8 +445,8 @@
     {
       "mode": "0755",
       "path": "scripts/verify_public_export.py",
-      "sha256": "aa1eddd548439ee9a671b991b05b5540b82ba34d20a55e4ebddd40a4b2031132",
-      "size_bytes": 39229
+      "sha256": "dac0f4c35d042a5ce5440fea58f70738fc2bf7061fd5dd4eba8299c7d9e997d3",
+      "size_bytes": 40730
     },
     {
       "mode": "0755",
@@ -678,10 +684,10 @@
     "protocol_or_vendor_endorsement": false,
     "public_github_repository_or_release_exists": false
   },
-  "release_metadata_sha256": "ec693e39c5b16fd7a48cce09574ee89089fa3555197b2379e957fb7dcddba404",
+  "release_metadata_sha256": "10b1dba46d6091866ae7b7ca4a5ba1d6f31fea3c40d6eccfa6497fda4647820e",
   "schema_version": "tool-contract-drift-public-export-manifest-v1",
   "source_identity": {
-    "file_set_sha256": "97226ac88e6e0046c88679c2217339e3851e55d465269f6155cbe51fd0efa801",
+    "file_set_sha256": "80a4093ef0f70ae8a506a4b8487d6fb07fbecc248e060c07e825a32454fc1998",
     "state": "selected_public_file_set"
   },
   "status": "public_export_bytes_verified_locally",

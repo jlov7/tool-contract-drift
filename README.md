@@ -2,7 +2,7 @@
 
 Review saved MCP tool-object changes, including edits a policy classifier leaves unlabeled.
 
-A tool's parameter description can change while a compatibility or risk report stays quiet. That silence may be intentional, but it is not evidence that the descriptor is unchanged. Agent Tool Contract Drift keeps the structural changes and the policy findings separate, so you can inspect both.
+A parameter description can change while a risk report stays quiet. That may be intentional; it does not mean the descriptor is unchanged. Agent Tool Contract Drift shows structural changes alongside policy findings so you can inspect both.
 
 This is a small experimental utility and [released-version case study](evaluation/README.md). It does not decide whether a change is safe or needs approval. Python 3.11 or later, MIT license, no third-party Python runtime dependencies.
 
@@ -10,13 +10,15 @@ This is a small experimental utility and [released-version case study](evaluatio
 
 From a checkout, with [uv](https://docs.astral.sh/uv/):
 
+For an exact-byte audit, [verify a fresh checkout](docs/reproduction.md#verify-a-fresh-checkout) before running these commands. Ordinary use does not require that audit.
+
 ```bash
 uv run python -m tool_contract_drift.review_cli \
   --before examples/before_quiet_change.json \
   --after examples/after_quiet_change.json --format json
 ```
 
-The example changes one parameter description, from "Document title to look up." to "Document title or reference number to look up." The policy classifier emits nothing. The review still contains the edit:
+The example changes one parameter description. The policy classifier emits nothing, but the review contains the edit:
 
 ```json
 {
@@ -77,7 +79,7 @@ Input, processing and report-writing errors exit 2, separately from the change/f
 
 ### GitHub Action
 
-With this repository already checked out and Python 3.11 or later available:
+With this repository checked out, Python 3.11 or later with pip, and Bash:
 
 ```yaml
 - name: Review saved tool objects
@@ -89,7 +91,9 @@ With this repository already checked out and Python 3.11 or later available:
     fail-on: change
 ```
 
-This example fails its change gate while retaining the complete JSON report locally. The Action posts a counts-only job summary by default, with `status`, `change-count`, `policy-finding-count`, `report-path` and `summary-path` outputs. Invalid input fails without comparison outputs. It does not automatically upload reports. In another repository, use an audited commit of the Action when you have access; no release tag is implied here.
+This example fails its change gate while retaining the complete JSON report locally. The Action posts a counts-only job summary by default and emits separate change/finding counts and report paths. Invalid input fails without comparison outputs. It does not automatically upload reports.
+
+From another repository, use `jlov7/tool-contract-drift/actions/descriptor-review@2d9f0fe12deae01586baf2cb7eaa7c98caf4d0bd` with snapshot paths from that checkout. This pins audited Action code; it does not refer to a release tag. See the [Action inputs and outputs](docs/descriptor_review.md#github-action).
 
 **The legacy root Action, `lint` and SARIF paths remain findings-only.** The new `actions/descriptor-review` Action and review command carry the structural inventory. A quiet legacy report must not be treated as an unchanged descriptor or approval.
 
@@ -143,13 +147,13 @@ The structural diff is conventional. Before adopting another tool, check whether
 | [Cisco MCP Contract Toolkit](https://github.com/cisco-open/mcptoolkit-contract) | Capability dumps, structural diffs with optional rule annotations, breaking-change checks, changelogs and documentation generation |
 | [agent-tool-drift](https://github.com/fykong/agent-tool-drift) | Source and manifest inputs, MCP snapshots, policy configuration and HTML reports |
 
-Documentation checked 20 October 2026; this is a scope comparison, not a current-version execution benchmark. Only the pinned `mcpdiff@0.1.0` comparator was executed in the case study. No endorsement is implied. The separation of structural changes from rule interpretation also exists elsewhere, including Cisco's toolkit. This project offers a small, inspectable reference workflow and a reproducible case study of that distinction, not an exclusive capability.
+Documentation checked 20 October 2026. This is a scope comparison, not a current-version benchmark; only `mcpdiff@0.1.0` was executed in the case study. Other tools, including Cisco's toolkit, also separate structural changes from rule interpretation. This project is an inspectable reference workflow and case study, not an exclusive capability. No endorsement is implied.
 
 ## Limits
 
 This release focuses on saved tool objects. It does not execute tools, verify authorization, find vulnerabilities or certify protocol conformance. The legacy `lint`, SARIF and root Action paths remain findings-only. The historical public `capture` command uses the 2025 stdio handshake and has not been qualified as a general current-protocol capture tool.
 
-There is no external reviewer result, scored sealed evaluation, ethics approval claim, live GitHub SARIF upload evidence, DOI, protocol endorsement or production-readiness claim. Code, analysis and local model review were AI-assisted; model review is not human peer review.
+There is no completed human review study, independent approval labeling or production-readiness result. Code, analysis and local model review were AI-assisted; model review is not human peer review. The [reproduction guide](docs/reproduction.md) distinguishes the software checks, historical corpus and uncompleted research claims.
 
 ## Inspect and Reproduce
 
@@ -157,121 +161,7 @@ Start with the [case study](evaluation/README.md), [review implementation](tool_
 
 [Independent structural checks](evaluation/structural_correctness.md) use pinned DeepDiff and JSON Patch libraries on 400 seeded pairs, explicit edge cases and order permutations. They check path agreement, reconstruction, inversion and input preservation. Library equality disagreements are documented. This is bounded software evidence, not exhaustive correctness or reviewer-benefit evidence. These libraries are development-only dependencies; the installed runtime remains dependency-free.
 
-<details>
-<summary>Synthetic corpus and configured-policy evidence</summary>
-
-This public source export contains the manifest-verified `public-reproduction-53` corpus:
-
-- 53 descriptor pairs;
-- 53 project-authored synthetic records: 28 regression cases retained byte-for-byte from the private corpus's project-authored synthetic rows plus 25 newly authored quiet controls;
-- 22 hold fixtures and 31 quiet/control fixtures;
-- 25 emitted finding instances under `tool-contract-drift-v1`.
-
-No source-derived descriptor bytes are part of this corpus. It provides synthetic regression checks, not real-source findings, prevalence evidence or independent performance evidence. Released-version observations are separate; their raw acquisitions are not redistributed.
-
-The separate research/coordinator corpus is `private-canonical-65`: 65 pairs, 30 finding instances, 26 fixtures with holds, and 39 quiet/control fixtures. `public-reproduction-53` is a separate manifest-bound identity, not a subset of that corpus: it retains the 28 project-authored synthetic private-corpus rows byte-for-byte and adds 25 new synthetic controls, while excluding all 37 source-derived rows. It is not an independent external reproduction. The public export cannot select the private corpus and must fail instead of silently substituting these 53 cases.
-
-Configured-policy and oasdiff-adapter parity on the private corpus are shared-policy carrier results. They show transportability and substitute pressure, not independent comparator accuracy or evidence that a standalone detector is novel.
-
-</details>
-
-<details>
-<summary>Verify source bytes and distribution history</summary>
-
-### Verify the Source
-
-Verify a fresh checkout before running commands that generate environments, caches or reports:
-
-```bash
-command -v pdftotext
-PYTHONDONTWRITEBYTECODE=1 uv run --no-project python -B scripts/verify_public_export.py .
-PYTHONDONTWRITEBYTECODE=1 uv run --no-project python -B scripts/verify_public_history.py .
-```
-
-The file verifier rejects extra or modified files, including generated files. Use a fresh checkout for an exact-byte recheck. The history verifier applies to a Git checkout, not an archive extraction.
-
-If using a separately supplied source archive and sidecars, verify them before extraction:
-
-```bash
-python3 scripts/verify_public_archive.py \
-  dist/public-export/tool-contract-drift-0.1.0a0-public-source.tar.gz \
-  --build-record dist/public-export/tool-contract-drift-0.1.0a0-public-source.build.json \
-  --manifest dist/public-export/tool-contract-drift-0.1.0a0-public-source.manifest.json \
-  --checksum dist/public-export/tool-contract-drift-0.1.0a0-public-source.tar.gz.sha256 \
-  --extract-to /tmp/tool-contract-drift-public
-```
-
-From the verified extraction root, run the file verifier above, without the Git history command. It checks every allowlisted byte against `PUBLIC_EXPORT_MANIFEST.json`, scans the PDF's reader-visible text, and recomputes the synthetic corpus identity, composition, count, finding set, Markdown and SARIF. Builder-recorded study-visibility and case-separation assertions are included, but their private inputs are excluded and cannot be independently rechecked from this export.
-
-The manifest records build-tool versions and a declared oasdiff pin for separate private adapter evidence. The public 53-case command exercises a thin shared-semantics mapper, not native oasdiff. These byte and regression checks do not establish research validity. Release metadata records private staging separately from public publication; neither implies external validation.
-
-</details>
-
-<details>
-<summary>Run synthetic regression checks and package audits</summary>
-
-### Reproduce the Public Result
-
-```bash
-uv sync --locked
-uv run python tool_contract_drift_cli.py validate-fixtures \
-  --corpus public-reproduction-53 \
-  --format json \
-  --output public-fixture-validation.json
-uv run python tool_contract_drift_cli.py lint \
-  --corpus public-reproduction-53 \
-  --format json \
-  --output public-linter-report.json
-```
-
-The lint report must identify `public-reproduction-53`, 53 fixtures, and 25 total findings. These are regression-harness counts, not benchmark performance or ecosystem rates.
-
-Reproduce the public carrier-pressure result:
-
-```bash
-uv run python tool_contract_drift_cli.py configured-baselines \
-  --corpus public-reproduction-53 \
-  --output public-configured-carriers.md \
-  --json public-configured-carriers.json
-```
-
-The configured policy and thin oasdiff-style mapper must each map all 53 public cases under the authored policy. This is shared-policy transport parity, not an independent comparison or a zero-error performance claim.
-
-Run the public distribution tests:
-
-```bash
-uv run --locked python -m unittest discover -s public_tests -v
-```
-
-Build and inspect the Python artifacts:
-
-```bash
-uv build
-python3 scripts/verify_built_distributions.py --dist dist
-```
-
-The wheel and source distribution contain the installed runtime, packaged public corpus and documented CLI/API behavior. They do not include the private checkout's full repository test suite or fixture tree. The CI workflow installs each artifact into a clean environment, reproduces the 53-case/25-finding result, checks shared-policy carrier parity, and verifies that the private corpus selector fails closed. Inspect the workflow run for the exact commit rather than treating this description as a test result.
-
-### Legacy SARIF Output
-
-```bash
-uv run python tool_contract_drift_cli.py lint \
-  --before examples/before_descriptor.json \
-  --after examples/after_descriptor.json \
-  --format sarif \
-  --output tool-contract-drift.sarif
-```
-
-SARIF severity is a reapproval-triage signal, not a vulnerability severity.
-
-## Policy and API
-
-- `policy/tool-contract-drift-v1.json` is the versioned policy vocabulary.
-- `docs/policy_spec.md` describes the rule intent and evidence boundary.
-- `tool_contract_drift` exposes the alpha Python API.
-- `action.yml` is the composite Action surface; use a local checkout until a real public repository and tag exist.
-
-</details>
+Run the public tests with `uv run --locked python -m unittest discover -s public_tests -v`. The [reproduction guide](docs/reproduction.md) covers exact-byte and history checks, package audits, and the separate 53-pair synthetic corpus. It also explains which files support each part of the artifact.
 
 ## Feedback
 
@@ -283,7 +173,7 @@ Counterexamples and negative results are welcome. If a submitted case is inspect
 
 ## Citation
 
-Jason M. Lovell, [ORCID 0009-0001-6300-9155](https://orcid.org/0009-0001-6300-9155). Use [CITATION.cff](CITATION.cff) and cite the exact commit or archive SHA-256. Add a DOI only after a resolving archival record exists and its artifact hash matches this export.
+Jason M. Lovell, [ORCID 0009-0001-6300-9155](https://orcid.org/0009-0001-6300-9155). Use [CITATION.cff](CITATION.cff) and cite the exact commit or archive SHA-256.
 
 ## License
 

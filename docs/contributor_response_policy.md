@@ -1,6 +1,8 @@
 # Contributor Response Policy
 
-Status: operator policy for future public feedback. Timelines begin only after a public repository exists and an issue or discussion is actually received.
+This describes how feedback on the experimental utility is handled. Response times
+are best-effort targets for a personal R&D project, not service guarantees. They
+start when a public report is received.
 
 ## Service Targets
 
@@ -14,7 +16,8 @@ These are response targets, not guarantees:
 | Reproduce it or publish a bounded status update | 10 business days |
 | Decide fix, document, defer, pivot, demote, or reject | 20 business days |
 
-If a report cannot be resolved on that schedule, keep it open with a concrete blocker and next checkpoint. Silence is not a disposition.
+If a report cannot be resolved on that schedule, keep it open with the blocker and
+next checkpoint stated.
 
 ## Triage Classes
 

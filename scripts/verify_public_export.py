@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+from datetime import date
 import hashlib
 import json
 import re
@@ -305,6 +306,9 @@ def verify_release_metadata(path: Path, policy: dict[str, Any]) -> list[str]:
         if artifact_path.is_absolute() or len(artifact_path.parts) != 1 or artifact_path.name != name:
             issues.append(f"public artifact filename is unsafe: {name!r}")
     issues.extend(verify_publication_state(metadata))
+    issues.extend(verify_publication_claims(
+        metadata, policy.get("manifest_contract", {}).get("publication_claims", {}),
+    ))
     zenodo = metadata.get("zenodo", {})
     for key in ("version_doi", "concept_doi", "github_release_url", "paper_or_preprint_identifier"):
         if zenodo.get(key) is not None:
@@ -314,21 +318,34 @@ def verify_release_metadata(path: Path, policy: dict[str, Any]) -> list[str]:
 
 def verify_publication_state(metadata: dict[str, Any]) -> list[str]:
     issues: list[str] = []
+    as_of = metadata.get("publication_state_as_of")
+    try:
+        if not isinstance(as_of, str) or re.fullmatch(r"[0-9]{4}-[0-9]{2}-[0-9]{2}", as_of) is None:
+            raise ValueError
+        date.fromisoformat(as_of)
+    except ValueError:
+        issues.append("release metadata requires a valid YYYY-MM-DD hosting snapshot date")
     state = metadata.get("publication_state", {})
     created = state.get("github_repository_created")
+    public = state.get("github_repository_public")
     expected = {
         "archive_created": False,
         "doi_created_or_reserved": False,
         "github_repository_created": created,
-        "github_repository_public": False,
+        "github_repository_public": public,
         "github_release_created": False,
         "public_post_made": False,
     }
-    if (created is not True and created is not False) or set(state) != set(expected) or any(
-        state[key] is not value for key, value in expected.items()
-    ):
-        issues.append("release metadata must distinguish private staging from unapproved publication")
-    status = "private_staging_not_published" if created is True else "prepared_locally_not_published"
+    if ((created is not True and created is not False)
+            or (public is not True and public is not False)
+            or set(state) != set(expected)
+            or any(state[key] is not value for key, value in expected.items())):
+        issues.append("release metadata must distinguish source hosting from other publication events")
+    if public is True and created is not True:
+        issues.append("public source hosting requires an existing repository")
+    status = "public_source_repository" if public is True else (
+        "private_staging_not_published" if created is True else "prepared_locally_not_published"
+    )
     if metadata.get("status") != status:
         issues.append("release metadata status differs from its repository state")
     github = metadata.get("github", {})
@@ -341,12 +358,25 @@ def verify_publication_state(metadata: dict[str, Any]) -> list[str]:
             or not isinstance(slug, str)
             or not re.fullmatch(r"[a-z0-9-]+", slug)
             or github.get("repository_url") != f"https://github.com/{owner}/{slug}"
-            or github.get("visibility") != "private"
+            or github.get("visibility") != ("public" if public is True else "private")
         ):
-            issues.append("private staging requires a matching owner, repository URL and private visibility")
+            issues.append("source hosting requires a matching owner, repository URL and visibility")
     elif any(github.get(key) is not None for key in ("owner", "repository_url", "visibility")):
         issues.append("local-only metadata must not claim an existing repository")
     return issues
+
+
+def verify_publication_claims(metadata: dict[str, Any], claims: dict[str, Any]) -> list[str]:
+    expected = {
+        "archive_or_doi_exists": False,
+        "external_validation": False,
+        "public_github_repository_or_release_exists": metadata.get("publication_state", {}).get("github_repository_public") is True,
+        "live_sarif_upload_verified": False,
+        "protocol_or_vendor_endorsement": False,
+    }
+    if set(claims) != set(expected) or any(claims[key] is not value for key, value in expected.items()):
+        return ["publication claims must match the hosting snapshot and deny unobserved releases or validation"]
+    return []
 
 
 def is_denied_public_path(path: PurePosixPath, policy: dict[str, Any]) -> bool:
