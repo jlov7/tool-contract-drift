@@ -68,7 +68,7 @@
     "all source-derived private descriptor bytes, including the 12 blocker-marked records",
     "AI audit and local agent state"
   ],
-  "file_set_sha256": "50716e8c44292a8f8c6d28886759e31b7cea359371e7a2632f9b7e5b8c867b7d",
+  "file_set_sha256": "0c587b4f3bc45b51f807a08a0cd80121b8955e519e298c1790b0923bcb37791e",
   "files": [
     {
       "mode": "0644",
@@ -151,8 +151,8 @@
     {
       "mode": "0644",
       "path": "README.md",
-      "sha256": "b80166d3f709d5ca26bd34bf733e9375fbd149d05157e4c0f3869cee71b6e058",
-      "size_bytes": 9981
+      "sha256": "f9472efe8f81502553bd48b4bf19f31dc25927d1d88c7ced5387b012aea64dde",
+      "size_bytes": 15267
     },
     {
       "mode": "0644",
@@ -193,8 +193,8 @@
     {
       "mode": "0644",
       "path": "evaluation/README.md",
-      "sha256": "1050b8e6a1941c5999ac96391510a0215dd186b5e9a0eed090a5c9162464ebad",
-      "size_bytes": 11272
+      "sha256": "489f01f364cb0bdebe7a8a7763cacc99c99cffcb40b2eaa7b117fbfeccaf84cd",
+      "size_bytes": 11741
     },
     {
       "mode": "0644",
@@ -234,9 +234,21 @@
     },
     {
       "mode": "0644",
+      "path": "examples/after_quiet_change.json",
+      "sha256": "985495a025dcbdff6953f32b0c858859f5e0a8a17eb3c27a627d791a8415e0cf",
+      "size_bytes": 468
+    },
+    {
+      "mode": "0644",
       "path": "examples/before_descriptor.json",
       "sha256": "250a4016e474f51be9f532e771c199c7aa8cec7035f5fcc2f131184ba41ad2f2",
       "size_bytes": 346
+    },
+    {
+      "mode": "0644",
+      "path": "examples/before_quiet_change.json",
+      "sha256": "9bd1fe885c278940d3c435fa34a9dc8c7e834f831c92cace9fb110a03ebe2af1",
+      "size_bytes": 448
     },
     {
       "mode": "0644",
@@ -295,14 +307,14 @@
     {
       "mode": "0644",
       "path": "public_tests/test_descriptor_review.py",
-      "sha256": "39dfa0a51fd0a4a18f2f58e8a9ac93099868217865d2f0161cd7e38ab09be3b7",
-      "size_bytes": 5901
+      "sha256": "2a0c3b25c919defe85f63c9d1a7076fddfac7f65ce9f1064e664ed0986fce2ef",
+      "size_bytes": 6631
     },
     {
       "mode": "0644",
       "path": "public_tests/test_practical_evaluation.py",
-      "sha256": "b5605b4bb87a35b9d025d59eb1fcccf5d1e4682a603b51f8b6ba01e1e9260536",
-      "size_bytes": 3364
+      "sha256": "f433ec3ad923064c9bdc3ae060ee69df0b2805c240ea1c0ac4e12e8c9ea7b6ad",
+      "size_bytes": 6198
     },
     {
       "mode": "0644",
@@ -343,8 +355,8 @@
     {
       "mode": "0755",
       "path": "scripts/check_practical_review.py",
-      "sha256": "5c853666a4b9e3e1b84551c7a6ebad226c5cf38f9856f9c0e5747c997efe9971",
-      "size_bytes": 3578
+      "sha256": "63667753932bceb747e36c32241f34f1bd85c87047fb3f6cfa5f53d9f3b0439e",
+      "size_bytes": 6128
     },
     {
       "mode": "0755",
@@ -597,7 +609,7 @@
   "release_metadata_sha256": "ec693e39c5b16fd7a48cce09574ee89089fa3555197b2379e957fb7dcddba404",
   "schema_version": "tool-contract-drift-public-export-manifest-v1",
   "source_identity": {
-    "file_set_sha256": "50716e8c44292a8f8c6d28886759e31b7cea359371e7a2632f9b7e5b8c867b7d",
+    "file_set_sha256": "0c587b4f3bc45b51f807a08a0cd80121b8955e519e298c1790b0923bcb37791e",
     "state": "selected_public_file_set"
   },
   "status": "public_export_bytes_verified_locally",

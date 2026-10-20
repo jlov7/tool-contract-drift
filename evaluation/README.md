@@ -81,10 +81,13 @@ uv run python scripts/run_practical_evaluation.py \
   --output artifacts/practical-reproduction/reproduced-results.json
 uv run python scripts/check_practical_review.py \
   --work artifacts/practical-reproduction \
+  --acquisition-results artifacts/practical-reproduction/reproduced-results.json \
   --output artifacts/practical-reproduction/reproduced-review.json
 ```
 
-Use a fresh work directory for each reproduction. Both runners refuse to overwrite an existing receipt, and acquisition refuses existing capture/comparison directories. `practical_protocol.json` and `practical_sample.json` freeze selection, tarball integrity, and the initial policy commit. `practical_results.json` is the original comparison receipt. `review_results.json` binds the repaired review module to the regression check. A reproduction must compare capture hashes, paths, classifications and counts; runtime-version fields can differ. The checker rejects a capture identity different from the frozen receipt. Different current server behavior or nondeterminism is a result to investigate, not a reason to quietly replace these receipts.
+Use a fresh work directory for each reproduction. Both runners refuse to overwrite an existing receipt, and acquisition refuses existing capture/comparison directories. `practical_protocol.json` and `practical_sample.json` freeze selection, tarball integrity, and the initial policy commit. `practical_results.json` is the original comparison receipt. `review_results.json` preserves the original review regression check; it has not been rewritten.
+
+The current checker emits a version-2 receipt. It requires the reproduced acquisition results, stable status and matching frozen identities for both captures of every version. It also compares structural paths, finding counts and the policy-label histogram. Missing repetitions, divergent second captures, failed acquisition statuses and changed labels with unchanged totals fail verification. These checks were added after review found that the original checker inspected only the first capture and finding totals. Runtime-version fields can differ. Different current server behavior or nondeterminism is a result to investigate, not a reason to quietly replace the frozen receipts.
 
 The recorded baseline commit is a private custody identifier, not a reachable commit in the clean distribution history. The unchanged baseline implementation is included here; its byte hash is recorded in the receipts.
 

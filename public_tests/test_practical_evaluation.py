@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 import asyncio
+import copy
+import json
 from pathlib import Path
 import sys
 import tempfile
@@ -8,7 +10,8 @@ from types import SimpleNamespace
 import unittest
 
 from scripts.prepare_practical_evaluation import select_versions
-from scripts.run_practical_evaluation import acquire, changed_paths, launch_environment, run, tool_map
+from scripts.check_practical_review import verified_captures, verify_inventory
+from scripts.run_practical_evaluation import acquire, changed_paths, digest, launch_environment, run, tool_map
 
 
 class PracticalEvaluationTests(unittest.TestCase):
@@ -58,6 +61,54 @@ for line in sys.stdin:
             (work / "captures").mkdir()
             with self.assertRaisesRegex(ValueError, "fresh --work"):
                 asyncio.run(run(SimpleNamespace(work=work)))
+
+
+class PracticalReviewVerificationTests(unittest.TestCase):
+    def setUp(self):
+        self.temporary = tempfile.TemporaryDirectory()
+        self.addCleanup(self.temporary.cleanup)
+        self.work = Path(self.temporary.name)
+        self.capture = self.work / "captures" / "example"
+        self.capture.mkdir(parents=True)
+        self.snapshot = {"tools": [{"name": "lookup", "inputSchema": {}}]}
+        for repetition in range(2):
+            (self.capture / f"{repetition}.json").write_text(json.dumps(self.snapshot))
+        self.original = [{"alias": "example", "status": "stable", "tool_set_sha256": [digest(tool_map(self.snapshot))] * 2}]
+        self.reproduced = copy.deepcopy(self.original)
+
+    def test_both_repetitions_match_the_frozen_identity(self):
+        snapshots = verified_captures(self.work, self.original, self.reproduced, 2)
+        self.assertEqual(snapshots, {"example": self.snapshot})
+
+    def test_missing_second_capture_fails(self):
+        (self.capture / "1.json").unlink()
+        with self.assertRaises(FileNotFoundError):
+            verified_captures(self.work, self.original, self.reproduced, 2)
+
+    def test_divergent_second_capture_fails_even_with_stable_receipt(self):
+        self.snapshot["tools"][0]["title"] = "Changed on the second launch"
+        (self.capture / "1.json").write_text(json.dumps(self.snapshot))
+        with self.assertRaisesRegex(ValueError, "Capture identity"):
+            verified_captures(self.work, self.original, self.reproduced, 2)
+
+    def test_failed_reproduction_cannot_pass_with_matching_files(self):
+        self.reproduced[0]["status"] = "failed-or-unstable"
+        with self.assertRaisesRegex(ValueError, "stable"):
+            verified_captures(self.work, self.original, self.reproduced, 2)
+
+    def test_missing_duplicate_or_different_capture_receipts_fail(self):
+        for captures in ([], self.reproduced * 2, [{**self.reproduced[0], "tool_set_sha256": ["different"] * 2}]):
+            with self.subTest(captures=captures), self.assertRaises(ValueError):
+                verified_captures(self.work, self.original, captures, 2)
+
+    def test_rule_histogram_must_match_not_only_the_count(self):
+        report = {"changes": [{"path": "/tools/lookup/title"}], "policy_findings": [{"risk": "risky_tool_added"}]}
+        row = {"package": "example", "before": "1", "after": "2", "structural_paths": ["/lookup/title"],
+               "baseline_finding_count": 1, "baseline_rules": {"risky_tool_added": 1}}
+        verify_inventory(report, row)
+        report["policy_findings"][0]["risk"] = "schema_containment_unresolved"
+        with self.assertRaisesRegex(ValueError, "frozen inventory"):
+            verify_inventory(report, row)
 
 
 if __name__ == "__main__":

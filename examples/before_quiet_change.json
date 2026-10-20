@@ -1,0 +1,20 @@
+{
+  "tools": [
+    {
+      "name": "lookup_document",
+      "description": "Look up a document by its title.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "Document title to look up."
+          }
+        },
+        "required": ["query"],
+        "additionalProperties": false
+      },
+      "annotations": {"readOnlyHint": true}
+    }
+  ]
+}

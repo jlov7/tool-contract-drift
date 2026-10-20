@@ -23,6 +23,20 @@ class DescriptorReviewTests(unittest.TestCase):
         self.assertTrue(report["changed_without_policy_findings"])
         self.assertEqual(report["changes"][0]["path"], "/tools/lookup/inputSchema/properties/id/description")
 
+    def test_readme_quiet_change_example_matches_its_report(self):
+        root = Path(__file__).resolve().parents[1]
+        before = json.loads((root / "examples/before_quiet_change.json").read_text())
+        after = json.loads((root / "examples/after_quiet_change.json").read_text())
+        report = review_descriptor_pair(before, after)
+        self.assertEqual("changed", report["status"])
+        self.assertEqual(1, report["change_count"])
+        self.assertEqual([], report["policy_findings"])
+        self.assertTrue(report["changed_without_policy_findings"])
+        self.assertEqual(
+            "/tools/lookup_document/inputSchema/properties/query/description",
+            report["changes"][0]["path"],
+        )
+
     def test_every_change_survives_when_the_same_tool_has_a_finding(self):
         self.after["tools"][0]["annotations"]["readOnlyHint"] = False
         self.after["tools"][0]["title"] = "New title"
