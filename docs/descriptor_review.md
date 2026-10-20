@@ -31,7 +31,9 @@ excluded from identity. This is not a complete behavioral or protocol-context di
 
 Input files are limited to 10 MB each. Reports must not alias either input or each
 other, including existing hard links. Individual file writes use temporary files
-and atomic replacement. Multiple output files are not a joint transaction: a later
+and atomic replacement. Destinations are checked again before subsequent writes:
+creating a file can reveal a previously absent case or Unicode-normalization alias.
+Multiple output files are not a joint transaction: a later
 output failure can leave an earlier complete file. Exit 2 means the invocation
 failed, not that any existing artifact is current or approved. Pre-existing reports
 are not deleted on failure. Never substitute a stale report for a failed comparison.
@@ -85,7 +87,8 @@ or appropriate. Review confidential and third-party text before redistribution.
 ## GitHub Action
 
 `actions/descriptor-review/action.yml` is separate from the legacy root Action.
-It requires a checkout accessible to the workflow, Python 3.11 or later, and Bash.
+It requires a checkout accessible to the workflow, Python 3.11 or later with pip,
+and Bash.
 It has no runtime Python dependencies beyond the installed project. Hosted checks
 exercise Linux with Python 3.11 and 3.12; other runner platforms are not qualified
 by those checks.
@@ -108,7 +111,10 @@ failure, not a comparison result.
 Inputs travel through environment variables, not interpolated shell commands.
 The adapter rejects multiline path/output-protocol injection and destinations
 that alias input, report or GitHub output/summary files. It writes no descriptor
-values to stdout. Job summaries use [GitHub's summary file](https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-commands#adding-a-job-summary)
+values to stdout. Both Actions' Python commands use isolated mode so checkout modules and
+`PYTHONPATH` cannot replace pip or the installed reviewer. This does not isolate
+the runner from other workflow steps or an already compromised Python environment.
+Job summaries use [GitHub's summary file](https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-commands#adding-a-job-summary)
 and outputs use the [composite Action output contract](https://docs.github.com/en/actions/reference/workflows-and-actions/metadata-syntax#outputs-for-composite-actions).
 
 The Action retains the full report locally and does not upload it automatically.

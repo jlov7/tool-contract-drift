@@ -3,6 +3,7 @@ from __future__ import annotations
 import json
 import os
 from pathlib import Path
+import shlex
 import subprocess
 import sys
 import tempfile
@@ -142,6 +143,58 @@ class ReviewActionTests(unittest.TestCase):
                 self.assertEqual(2, result.returncode)
                 self.assertEqual(original, self.before.read_bytes())
                 self.assertFalse(self.report.exists())
+
+    def test_absent_case_aliases_cannot_corrupt_reports_or_github_files(self):
+        probe = self.root / "case-probe"
+        probe.write_text("")
+        if not (self.root / "CASE-PROBE").exists():
+            self.skipTest("requires a case-insensitive filesystem")
+        for index, (key, target) in enumerate((
+            ("TCD_REVIEW_SUMMARY", self.report),
+            ("GITHUB_OUTPUT", self.report),
+            ("GITHUB_STEP_SUMMARY", self.summary),
+            ("GITHUB_OUTPUT", self.job_summary),
+        )):
+            with self.subTest(key=key, target=target.name):
+                directory = self.root / str(index)
+                directory.mkdir()
+                paths = {name: str(directory / path.name) for name, path in (
+                    ("TCD_REVIEW_REPORT", self.report), ("TCD_REVIEW_SUMMARY", self.summary),
+                    ("GITHUB_OUTPUT", self.outputs), ("GITHUB_STEP_SUMMARY", self.job_summary),
+                )}
+                paths[key] = str(directory / target.name.upper())
+                result = self.run_action(**paths)
+                self.assertEqual(2, result.returncode, result.stderr)
+                report = json.loads((directory / self.report.name).read_text())
+                self.assertEqual(1, report["change_count"])
+                self.assertNotIn(CANARY, result.stdout + result.stderr)
+                if key == "GITHUB_OUTPUT" and target == self.job_summary:
+                    self.assertNotIn("status=", (directory / target.name).read_text())
+                elif key == "GITHUB_OUTPUT":
+                    self.assertNotIn("status=", (directory / self.report.name).read_text())
+
+    def test_action_python_commands_ignore_checkout_and_pythonpath_shadows(self):
+        action = (ROOT / "actions/descriptor-review/action.yml").read_text()
+        commands = [shlex.split(line.strip()[5:]) for line in action.splitlines() if line.strip().startswith("run: ")]
+        self.assertEqual(2, len(commands))
+        for command in commands:
+            self.assertIn("-I", command[:command.index("-m")])
+        legacy = (ROOT / "action.yml").read_text()
+        legacy_install = next(shlex.split(line.strip()[5:]) for line in legacy.splitlines()
+                              if line.strip().startswith("run: "))
+        self.assertIn("-I", legacy_install[:legacy_install.index("-m")])
+        self.assertIn("cmd=(python -I -B -m tool_contract_drift_cli lint ", legacy)
+        (self.root / "pip.py").write_text("raise SystemExit('CHECKOUT_SHADOW_EXECUTED')\n")
+        prefix = commands[0][1:commands[0].index("pip") + 1]
+        result = subprocess.run(
+            [sys.executable, *prefix, "--version"], cwd=self.root,
+            env={**os.environ, "PYTHONPATH": str(self.root)},
+            capture_output=True, text=True, timeout=10,
+        )
+        if result.returncode:
+            # uv test environments need not include pip; never fall back to the checkout.
+            self.assertEqual(f"{sys.executable}: No module named pip", result.stderr.strip())
+        self.assertNotIn("CHECKOUT_SHADOW_EXECUTED", result.stdout + result.stderr)
 
     def test_symlink_loops_cannot_leak_paths_or_masquerade_as_gate_failure(self):
         loop = self.root / (CANARY + "-loop")

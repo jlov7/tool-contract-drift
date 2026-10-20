@@ -68,7 +68,7 @@
     "all source-derived private descriptor bytes, including the 12 blocker-marked records",
     "AI audit and local agent state"
   ],
-  "file_set_sha256": "17b077848930ce406251ca9cfaff5d8d90320793e9f195d9bb56c6a0b024ee7b",
+  "file_set_sha256": "97226ac88e6e0046c88679c2217339e3851e55d465269f6155cbe51fd0efa801",
   "files": [
     {
       "mode": "0644",
@@ -121,8 +121,8 @@
     {
       "mode": "0644",
       "path": "CHANGELOG.md",
-      "sha256": "b4a1a8867bdf6f8a64b03d82bd2ef802401e1cc2c4018beb90555d9f6aac5fa8",
-      "size_bytes": 2970
+      "sha256": "2a8bc8efb1293592d9484ab7bbcb399655bcd127839ecf71c5de68c44db120e4",
+      "size_bytes": 3360
     },
     {
       "mode": "0644",
@@ -133,8 +133,8 @@
     {
       "mode": "0644",
       "path": "CONTRIBUTING.md",
-      "sha256": "81b3771defff16ee8f610eef6915f450b8edad3aacfe6e5284d293ee8ad4dde1",
-      "size_bytes": 408
+      "sha256": "4b365fff7f631ec1da404f3281e09db3c9eef930e382ca0caf07d0c85b178752",
+      "size_bytes": 1250
     },
     {
       "mode": "0644",
@@ -151,8 +151,8 @@
     {
       "mode": "0644",
       "path": "README.md",
-      "sha256": "a612a0a12a29ff2eed0b0830da8301ed68aaa1236bf407d8b76b20633f99fe06",
-      "size_bytes": 18294
+      "sha256": "2fe2b8c3d6c8efec650154ca85a8ef7292587d738a251032339b6eb755e4b166",
+      "size_bytes": 18628
     },
     {
       "mode": "0644",
@@ -169,14 +169,14 @@
     {
       "mode": "0644",
       "path": "action.yml",
-      "sha256": "d450700885f38bae7c5fd910ad1899333466f800eb35a5a08b255570167d7ff1",
-      "size_bytes": 2437
+      "sha256": "9710b6713f4c42fe3f43aae20e3c1e31629666c69ea0e373a2f0b2470791787e",
+      "size_bytes": 2523
     },
     {
       "mode": "0644",
       "path": "actions/descriptor-review/action.yml",
-      "sha256": "13dcff9e6b64becef55ffb55676a8ad1930f62aae5cb7c6fd9db7669ee25358a",
-      "size_bytes": 2454
+      "sha256": "3b64f534802fe66de553237e751c654d9b8cb365729a7ca657f1efadf59deac1",
+      "size_bytes": 2460
     },
     {
       "mode": "0644",
@@ -193,8 +193,8 @@
     {
       "mode": "0644",
       "path": "docs/descriptor_review.md",
-      "sha256": "03801fda6afedc83e84205d7ebe303dec15c70edbc88c88830dae03aa3a5df03",
-      "size_bytes": 7756
+      "sha256": "cca1dc23e949c56ec999f8472357a4d0fc4fc456264363bbb182213a9e83e58a",
+      "size_bytes": 8142
     },
     {
       "mode": "0644",
@@ -355,14 +355,14 @@
     {
       "mode": "0644",
       "path": "public_tests/test_review_action.py",
-      "sha256": "cc7486b898ec95dd21abc844f532dcfa2a331b04d91140f67955f0ac38c6e61f",
-      "size_bytes": 8296
+      "sha256": "14749952d54ec6b26df15036d2dd6622fed8fb2369d49268e00c8caff2bd1255",
+      "size_bytes": 11424
     },
     {
       "mode": "0644",
       "path": "public_tests/test_review_cli.py",
-      "sha256": "b7b8809989396dac81d0049b2ef76f18734b8ab6ea9c483ddf18eed3b9888f59",
-      "size_bytes": 7343
+      "sha256": "2b9d5b16b4f6a987903a5bd7508caca726b6c3f86206470ca2810250db15b134",
+      "size_bytes": 8559
     },
     {
       "mode": "0644",
@@ -631,14 +631,14 @@
     {
       "mode": "0644",
       "path": "tool_contract_drift/review_action.py",
-      "sha256": "fd4597b3a228062aeb996961bb0ed8db0e1269534ec6fad3ae509f5d5a3f0c53",
-      "size_bytes": 2700
+      "sha256": "99fea45e32aaf3a9c1121744c8e383a4dffdbd05be9e8531d1ad048a7f634748",
+      "size_bytes": 2835
     },
     {
       "mode": "0644",
       "path": "tool_contract_drift/review_cli.py",
-      "sha256": "317950fcf4520af0e60bc863a53c87d8153531e96ef23f9e0e2baddf7e85efde",
-      "size_bytes": 4582
+      "sha256": "0a58d61e152063a34db179bca26a4a0f89eb994ac0e53571c7065fb0f66e9ac7",
+      "size_bytes": 4730
     },
     {
       "mode": "0644",
@@ -681,7 +681,7 @@
   "release_metadata_sha256": "ec693e39c5b16fd7a48cce09574ee89089fa3555197b2379e957fb7dcddba404",
   "schema_version": "tool-contract-drift-public-export-manifest-v1",
   "source_identity": {
-    "file_set_sha256": "17b077848930ce406251ca9cfaff5d8d90320793e9f195d9bb56c6a0b024ee7b",
+    "file_set_sha256": "97226ac88e6e0046c88679c2217339e3851e55d465269f6155cbe51fd0efa801",
     "state": "selected_public_file_set"
   },
   "status": "public_export_bytes_verified_locally",

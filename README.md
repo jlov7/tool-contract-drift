@@ -140,10 +140,10 @@ The structural diff is conventional. Before adopting another tool, check whether
 | Project | Adjacent capabilities described in its documentation |
 |---|---|
 | [mcpdiff](https://github.com/samlader/mcpdiff) | Live capture, saved snapshots and Git inputs, configurable checks, compatibility and changelog output |
-| [Cisco MCP Contract Toolkit](https://github.com/cisco-open/mcptoolkit-contract) | Capability dumps, comparison, breaking-change checks, changelogs and documentation generation |
+| [Cisco MCP Contract Toolkit](https://github.com/cisco-open/mcptoolkit-contract) | Capability dumps, structural diffs with optional rule annotations, breaking-change checks, changelogs and documentation generation |
 | [agent-tool-drift](https://github.com/fykong/agent-tool-drift) | Source and manifest inputs, MCP snapshots, policy configuration and HTML reports |
 
-This is a documentation-based scope comparison, not a current-version execution benchmark. Only the pinned `mcpdiff@0.1.0` comparator was executed in the case study. No endorsement is implied. This project's reason to exist is an inspectable reference workflow that keeps change visibility separate from policy interpretation, with a reproducible example of why that distinction matters.
+Documentation checked 20 October 2026; this is a scope comparison, not a current-version execution benchmark. Only the pinned `mcpdiff@0.1.0` comparator was executed in the case study. No endorsement is implied. The separation of structural changes from rule interpretation also exists elsewhere, including Cisco's toolkit. This project offers a small, inspectable reference workflow and a reproducible case study of that distinction, not an exclusive capability.
 
 ## Limits
 
@@ -276,6 +276,8 @@ SARIF severity is a reapproval-triage signal, not a vulnerability severity.
 ## Feedback
 
 Use the structured issue forms for reproduction failures, label disputes, descriptor pairs, carrier alternatives, and provenance/licensing concerns. Read `docs/community_feedback_guide.md` and `docs/contributor_response_policy.md` first.
+
+For proposed patches, [CONTRIBUTING.md](CONTRIBUTING.md) explains local tests and the maintainer-managed export process. Edited checkouts intentionally fail the exact-byte release gate until their export is regenerated.
 
 Counterexamples and negative results are welcome. If a submitted case is inspected or used to tune the policy, it is development evidence and will not be scored as held out in the same release.
 

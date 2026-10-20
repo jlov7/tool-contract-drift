@@ -2,6 +2,8 @@
 
 ## October 2026 Experimental Candidate
 
+- Isolate both Actions' Python imports from caller checkout modules and `PYTHONPATH`. Recheck descriptor-review file aliases after creation so case-insensitive destinations cannot overwrite reports or mix reports with GitHub output files.
+- Clarify the maintainer-managed contribution/export process and acknowledge that other tools also separate structural diffs from rule interpretation.
 - Add a complete-inventory descriptor-review Action with separate change/finding outputs and counts-only job summaries by default. The legacy root Action and SARIF remain findings-only.
 - Add grouped Markdown reports, text diffs and complete expandable values, plus explicit counts/paths disclosure projections. Full reports remain local unless the caller shares them.
 - Distinguish change/finding gate failures (exit 1) from input, processing or output failures (exit 2). Protect input files from report-output aliases and use generic non-disclosing error diagnostics.

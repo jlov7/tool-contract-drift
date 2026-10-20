@@ -28,10 +28,9 @@ def main() -> int:
             or any(not path or any(char in path for char in "\r\n\0") for path in paths)):
         return report_error()
     try:
-        _validate_destinations(
-            [Path(before), Path(after)],
-            [Path(path) for path in paths[2:]],
-        )
+        inputs = [Path(before), Path(after)]
+        destinations = [Path(path) for path in paths[2:]]
+        _validate_destinations(inputs, destinations)
         status = review_main([
             "--before=" + before, "--after=" + after,
             "--format=json", "--output=" + report_path,
@@ -42,6 +41,7 @@ def main() -> int:
             return status
         counts = minimize_review_report(json.loads(Path(report_path).read_text()))
         if post_summary == "true":
+            _validate_destinations(inputs, destinations)
             with Path(github_summary).open("a", encoding="utf-8") as output:
                 output.write(Path(summary_path).read_text(encoding="utf-8"))
         fields = {
@@ -49,6 +49,7 @@ def main() -> int:
             "policy-finding-count": counts["policy_finding_count"],
             "report-path": report_path, "summary-path": summary_path,
         }
+        _validate_destinations(inputs, destinations)
         with Path(github_output).open("a", encoding="utf-8") as output:
             output.writelines(f"{key}={value}\n" for key, value in fields.items())
         return status

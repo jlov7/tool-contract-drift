@@ -95,6 +95,8 @@ def main(argv: list[str] | None = None) -> int:
         if args.output:
             _write_report(Path(args.output), output)
         if args.summary_output:
+            # A newly created file reveals case/normalization aliases on some filesystems.
+            _validate_destinations(inputs, destinations)
             _write_report(Path(args.summary_output), summary)
         if not args.output:
             sys.stdout.write(output)

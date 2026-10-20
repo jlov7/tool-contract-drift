@@ -117,6 +117,26 @@ class ReviewCliTests(unittest.TestCase):
         self.assertEqual(2, result.returncode)
         self.assertFalse(output.exists())
 
+    def test_absent_case_alias_cannot_replace_primary_report(self):
+        probe = self.directory / "case-probe"
+        probe.write_text("")
+        if not (self.directory / "CASE-PROBE").exists():
+            self.skipTest("requires a case-insensitive filesystem")
+        for primary_disclosure, summary_disclosure in (("full", "counts"), ("counts", "full")):
+            with self.subTest(primary=primary_disclosure):
+                primary = self.directory / (primary_disclosure + "-REVIEW.json")
+                summary = self.directory / (primary_disclosure + "-review.json")
+                result = self.run_cli(
+                    "--format", "json", "--output", str(primary),
+                    "--disclosure", primary_disclosure, "--summary-output", str(summary),
+                    "--summary-disclosure", summary_disclosure,
+                )
+                self.assertEqual(2, result.returncode, result.stderr)
+                report = json.loads(primary.read_text())
+                self.assertEqual(1, report["change_count"])
+                self.assertEqual(primary_disclosure == "full", CANARY in primary.read_text())
+                self.assertNotIn(CANARY, result.stdout + result.stderr)
+
     def test_output_failure_is_not_a_change_gate_failure(self):
         result = self.run_cli("--output", str(self.directory))
         self.assertEqual(2, result.returncode)

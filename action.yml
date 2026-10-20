@@ -34,7 +34,9 @@ runs:
   steps:
     - name: Install tool-contract-drift
       shell: bash
-      run: python -m pip install "${{ github.action_path }}"
+      env:
+        TCD_ACTION_ROOT: ${{ github.action_path }}
+      run: python -I -m pip install --no-deps "$TCD_ACTION_ROOT"
     - name: Run tool-contract-drift
       shell: bash
       env:
@@ -48,7 +50,7 @@ runs:
         TCD_BUILTIN_CORPUS: ${{ inputs.builtin-corpus }}
       run: |
         set -euo pipefail
-        cmd=(tool-contract-drift lint --format "$TCD_FORMAT" --output "$TCD_OUTPUT" --fail-on "$TCD_FAIL_ON")
+        cmd=(python -I -B -m tool_contract_drift_cli lint --format "$TCD_FORMAT" --output "$TCD_OUTPUT" --fail-on "$TCD_FAIL_ON")
         if [[ -n "$TCD_CONFIG" ]]; then
           cmd+=(--config "$TCD_CONFIG")
         fi
