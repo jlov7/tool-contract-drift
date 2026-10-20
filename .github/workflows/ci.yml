@@ -27,8 +27,11 @@ jobs:
       - uses: astral-sh/setup-uv@d0cc045d04ccac9d8b7881df0226f9e82c39688e # v6.8.0
         with:
           version: "0.11.28"
-      - name: Require PDF text audit tool
-        run: command -v pdftotext
+      - name: Install PDF text audit tool
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes --no-install-recommends poppler-utils
+          command -v pdftotext
       - name: Verify exact public file set and corpus
         run: PYTHONDONTWRITEBYTECODE=1 python scripts/verify_public_export.py .
       - name: Audit public tracked tree and reachable history
